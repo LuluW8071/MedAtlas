@@ -6,7 +6,8 @@
     "dev": "tsx watch src/main.ts",
     "build": "tsc",
     "start": "bun dist/src/main.js",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/service/chunker.test.ts"
   },
   "dependencies": {
     "@pinecone-database/pinecone": "^9.0.0",
