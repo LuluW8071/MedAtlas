@@ -21,21 +21,23 @@ PINECONE_NAMESPACE=llama-text-embed-v2
 EMBEDDING_MODEL=llama-text-embed-v2
 ```
 
-- Client: http://localhost:3000
-- API: http://localhost:4000/health
-- API docs: http://localhost:4000/docs
-- OpenAPI JSON: http://localhost:4000/docs.json
-- Redis: localhost:6379
+URLs:
+
+- Client: `http://localhost:3000`
+- API health: `http://localhost:4000/health`
+- Swagger UI: `http://localhost:4000/docs`
+- OpenAPI JSON: `http://localhost:4000/docs.json`
+- Redis: `localhost:6379`
 
 ## API
 
-Health check:
+Check API health:
 
 ```bash
 curl http://localhost:4000/health
 ```
 
-Upload a Markdown or text knowledge base:
+Upload Markdown or text knowledge base:
 
 ```bash
 curl -X POST http://localhost:4000/ingest \
@@ -51,7 +53,14 @@ are limited to 20 MB and accepted extensions are `.md` and `.txt`.
 bun run dev       # client and API in watch mode
 bun run build     # production builds
 bun run typecheck # TypeScript checks
+bun run start     # run compiled API
 docker compose down
+```
+
+Run chunking diagnostics:
+
+```bash
+bunx tsx server/tests/chunk.ts ./knowledge.md
 ```
 
 ## Structure
@@ -59,7 +68,7 @@ docker compose down
 ```text
 client/  Next.js web application
 server/  Express API and Pinecone ingestion service
-assets/  Shared project assets
+assets/  Shared knowledge-base assets
 ```
 
 Environment files are local-only. Commit `.env.example`, never `.env`.
