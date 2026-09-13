@@ -1,0 +1,1833 @@
+## A
+
+- Abdominal aorta ultrasound see Abdominal ultrasound
+- Abdominal aortic aneurysm see Aortic aneurysm
+
+Abdominal hernia see Hernia
+
+Abdominal thrust see Heimlich maneuver
+
+# Abdominal ultrasound
+## DEFINITION
+
+Ultrasound  technology  allows  doctors  to  'see' inside a patient without resorting to surgery. A transmitter  sends  high  frequency  sound  waves  into  the  body, where they bounce off the different tissues and organs to produce  a  distinctive  pattern  of echoes.  A  receiver 'hears' the returning echo pattern and forwards it to a computer, which translates the data into an image on a television screen. Because ultrasound can distinguish subtle variations between soft, fluid-filled tissues, it is particularly useful in providing diagnostic images of the abdomen. Ultrasound can also be used in treatment.
+
+## PURPOSE
+
+The  potential  medical  applications  of  ultrasound were first recognized in the 1940s as an outgrowth of the sonar technology developed to detect submarines during World War II. The first useful medical images were produced in the early 1950s, and, by 1965, ultrasound quality had improved to the point that it came into general medical use. Improvements in the technology, application, and interpretation of ultrasound continue. Its low cost, versatility, safety and speed have brought it into the top drawer of medical imaging techniques.
+
+While pelvic ultrasound is widely known and commonly  used  for  fetal  monitoring  during pregnancy , ultrasound is also routinely used for general abdominal imaging. It has great advantage over x-ray imaging technologies in that it does not damage tissues with ionizing radiation. Ultrasound is also generally far better than plain x rays at distinguishing the subtle variations of soft tissue  structures, and  can  be  used  in  any  of  several modes, depending on the need at hand.
+
+As an imaging tool, abdominal ultrasound generally is warranted for patients afflicted with: chronic or acute abdominal pain ; abdominal trauma; an obvious or suspected abdominal mass; symptoms of liver disease, pancreatic disease, gallstones , spleen disease, kidney disease and urinary blockage; or symptoms of an abdominal aortic aneurysm . Specifically:
+
+- Abdominal pain. Whether acute or chronic, pain can signal a serious problem-from organ malfunction or injury to the presence of malignant growths. Ultrasound scanning can help doctors quickly sort through potential causes when presented with general or ambiguous symptoms. All of the major abdominal organs can be studied for signs of disease that appear as changes in size, shape and internal structure.
+- Abdominal trauma. After a serious accident, such as a car  crash  or  a  fall, internal  bleeding  from  injured abdominal organs is often the most serious threat to survival.  Neither  the  injuries  nor  the  bleeding  are immediately apparent. Ultrasound is very useful as an initial scan when abdominal trauma is suspected, and it can be used to pinpoint the location, cause, and severity of hemorrhaging. In the case of puncture wounds , from a bullet for example, ultrasound can locate the foreign object and provide a preliminary survey of the damage. The easy portability and versatility of ultrasound technology has brought it into common emergency room use, and even into limited ambulance service.
+- Abdominal mass. Abnormal growths-tumors, cysts, abscesses, scar tissue and accessory organs-can be
+
+located and tentatively identified with ultrasound. In particular, potentially malignant solid tumors can be distinguished from benign fluid-filled cysts  and abscesses. Masses and malformations in any organ or part of the abdomen can be found.
+
+- Liver disease. The types and underlying causes of liver disease are numerous, though jaundice tends to be a general symptom. Ultrasound can differentiate between many of the types and causes of liver malfunction, and is particularly good at identifying obstruction of the bile  ducts  and cirrhosis , which  is  characterized  by abnormal fibrous growths and reduced blood flow.
+- Pancreatic disease. Inflammation and malformation of the pancreas are readily identified by ultrasound, as are pancreatic stones (calculi), which can disrupt proper functioning.
+- Gallstones. Gallstones cause more hospital admissions than  any  other  digestive  malady.  These  calculi  can cause painful inflammation of the gallbladder and also obstruct the bile ducts that carry digestive enzymes from the gallbladder and liver to the intestines. Gallstones are readily identifiable with ultrasound.
+- Spleen  disease.  The  spleen  is  particularly  prone  to injury during abdominal trauma. It may also become painfully  inflamed  when  beset  with  infection  or cancer . These conditions also lend themselves well to ultrasonic inspection and diagnosis.
+- Kidney disease. The kidneys are also prone to traumatic injury and are the organs most likely to form calculi, which can block the flow of urine and cause blood poisoning (uremia). A variety of diseases causing distinct changes in kidney morphology can also lead to complete kidney failure. Ultrasound imaging has proven extremely useful in diagnosing kidney disorders.
+- Abdominal aortic aneurysm. This is a bulging weak spot  in  the  abdominal  aorta, which  supplies  blood directly from the heart to the entire lower body. These aneurysms  are  relatively  common  and  increase  in prevalence with age. A burst aortic aneurysm is imminently life-threatening. However, they can be readily identified and monitored with ultrasound before acute complications result.
+
+Ultrasound technology can also be used for treatment purposes, most frequently as a visual aid during surgical procedures-such as guiding needle placement to drain fluid from a cyst, or to extract tumor cells for biopsy. Increasingly, direct therapeutic applications for ultrasound are being developed.
+
+The direct therapeutic value of ultrasonic waves lies in their mechanical nature. They are shock waves, just like audible sound, and vibrate the materials through which they pass. These vibrations are mild, virtually unnoticeable at the frequencies and intensities used for imaging. Properly focused however, high-intensity ultrasound can be used to heat and physically agitate targeted tissues.
+
+High-intensity ultrasound is used routinely to treat soft tissue injuries, such as strains, tears and associated scarring. The heating and agitation are believed to promote rapid healing through increased circulation. Strongly focused, high-intensity, high-frequency ultrasound can also  be  used  to  physically  destroy  certain  types  of tumors, as well as gallstones and other types of calculi. Developing new treatment applications for ultrasound is an active area of medical research.
+
+## PRECAUTIONS
+
+Properly performed, ultrasound imaging is virtually without risk or side effects. Some patients report feeling a slight tingling and/or warmth while being scanned, but most feel nothing at all. Ultrasound waves of appropriate frequency and intensity are not known to cause or aggravate  any  medical  condition, though  any  woman  who thinks she might be pregnant should raise the issue with her doctor before undergoing an abdominal ultrasound.
+
+The value of ultrasound imaging as a medical tool, however, depends greatly on the quality of the equipment used and the skill of the medical personnel operating it. Improperly performed and/or interpreted, ultrasound can be worse than useless if it indicates that a problem exists where there is none, or fails to detect a significant condition. Basic ultrasound equipment is relatively inexpensive to obtain, and any doctor with the equipment can perform the procedure whether qualified or not. Patients should not hesitate to verify the credentials of technicians and doctors performing ultrasounds, as well as the quality of the equipment used and the benefits of the proposed procedure.
+
+In cases where ultrasound is used as a treatment tool, patients should educate themselves about the proposed procedure with the help of their doctors-as is appropriate before any surgical procedure. Also, any abdominal ultrasound procedure, diagnostic or therapeutic, may be hampered by a patient's body type or other factors, such as the presence of excessive bowel gas (which is opaque to ultrasound). In particular, very obese people are often not good candidates for abdominal ultrasound.
+
+## DESCRIPTION
+
+Ultrasound includes all sound waves above the frequency of human hearing-about 20 thousand hertz, or cycles per second. Medical ultrasound generally uses frequencies between one and 10 million hertz (1-10 MHz).
+
+## KEY TERMS
+
+Accessory organ -A lump of tissue adjacent to an organ  that  is  similar  to  it,  but  which  serves  no important purpose, if functional at all. While not necessarily harmful, such organs can cause problems if they grow too large or become cancerous. In any case, their presence points to an underlying abnormality in the parent organ.
+
+and expensive to perform, and they use ionizing electromagnetic radiation.
+
+Benign -In medical usage, benign is the opposite of malignant. It describes an abnormal growth that is stable, treatable and generally not life-threatening.
+
+Biopsy -The surgical removal and analysis of a tissue sample for diagnostic purposes. Usually, the term refers to the collection and analysis of tissue from a suspected tumor to establish malignancy.
+
+Calculus -Any type of hard concretion (stone) in the body, but usually found in the gallbladder, pancreas and kidneys. They are formed by the accumulation  of  excess  mineral  salts  and  other  organic material such as blood or mucous. Calculi (pl.) can cause problems by lodging in and obstructing the proper flow of fluids, such as bile to the intestines or urine to the bladder.
+
+Cirrhosis -A chronic liver disease characterized by the invasion of connective tissue and the degeneration  of  proper  functioning-jaundice  is  often  an accompanying symptom. Causes of cirrhosis include alcoholism, metabolic diseases, syphilis and congestive heart disease.
+
+Common bile duct -The branching passage through which bile-a necessary digestive enzyme-travels from the liver and gallbladder into the  small  intestine.  Digestive  enzymes  from  the pancreas also enter the intestines through the common bile duct.
+
+Computed tomography scan (CT scan) -A specialized type of x-ray imaging that uses highly focused and  relatively  low  energy  radiation  to  produce detailed  two-dimensional  images  of  soft  tissue structures, particularly the brain. CT scans are the chief competitor to ultrasound and can yield higher quality images not disrupted by bone or gas. They are, however, more cumbersome, time consuming
+
+Doppler -The Doppler effect refers to the apparent change in frequency of sound wave echoes returning to a stationary source from a moving target. If the object is moving toward the source, the frequency increases; if the object is moving away, the frequency decreases. The size of this frequency shift can be used to compute the object's speed-be it a car on the road or blood in an artery. The Doppler effect holds true for all types of radiation, not just sound.
+
+Frequency -Sound, whether traveling through air or  the  human  body,  produces  vibrations-molecules bouncing into each other-as the shock wave travels along. The frequency of a sound is the number of vibrations per second. Within the audible range, frequency means pitch-the higher the frequency, the higher a sound's pitch.
+
+Ionizing radiation -Radiation that can damage living tissue by disrupting and destroying individual cells at the molecular level. All types of nuclear radiation-x rays, gamma rays and beta rays-are potentially ionizing. Sound waves physically vibrate the material through which they pass, but do not ionize it.
+
+Jaundice -A condition that results in a yellow tint to the skin, eyes and body fluids. Bile retention in the liver, gallbladder and pancreas is the immediate cause, but the underlying cause could be as simple as obstruction of the common bile duct by a gallstone or as serious as pancreatic cancer. Ultrasound can distinguish between these conditions.
+
+Malignant -The term literally means growing worse and resisting treatment. It is used as a synonym for cancerous and connotes a harmful condition that generally is life-threatening.
+
+Morphology -Literally, the study of form. In medicine,  morphology  refers  to  the  size,  shape  and structure rather than the function of a given organ. As a diagnostic imaging technique, ultrasound facilitates the recognition of abnormal morphologies as symptoms of underlying conditions.
+
+Higher  frequency  ultrasound  waves  produce  more detailed images, but are also more readily absorbed and so cannot penetrate as deeply into the body. Abdominal ultrasound imaging is generally performed at frequencies between 2-5 MHz.
+
+An ultrasound machine consists of two parts: the transducer and the analyzer. The transducer both produces the sound waves that penetrate the body and receives the reflected echoes. Transducers are built around piezoelectric ceramic chips. (Piezoelectric refers to electricity that is produced when you put pressure on certain crystals such as quartz). These ceramic chips react to electric pulses  by  producing  sound  waves  (  they  are  transmitting waves) and react to sound waves by producing electric pulses (receiving). Bursts of high frequency electric pulses  supplied to the transducer causes it to produce the scanning sound waves. The transducer then receives the returning echoes, translates them back into electric pulses and sends them to the analyzer-a computer that organizes the data into an image on a television screen.
+
+Because sound waves travel through all the body's tissues at nearly the same speed-about 3,400 miles per hour-the  microseconds  it  takes  for  each  echo  to  be received can be plotted on the screen as a distance into the body. The relative strength of each echo, a function of the specific tissue or organ boundary that produced it, can be plotted as a point of varying brightness. In this way, the echoes are translated into a picture. Tissues surrounded by bone or filled with gas (the stomach, intestines and bowel) cannot be imaged using ultrasound, because the waves are blocked or become randomly scattered.
+
+Four different modes of ultrasound are used in medical imaging:
+
+- A-mode. This  is  the  simplest  type  of  ultrasound  in which a single transducer scans a line through the body with  the  echoes  plotted  on  screen  as  a  function  of depth. This method is used to measure distances within the body and the size of internal organs. Therapeutic ultrasound aimed at a specific tumor or calculus is also A-mode, to allow for pinpoint accurate focus of the destructive wave energy.
+- B-mode. In B-mode ultrasound, a linear array of transducers simultaneously scans a plane through the body that  can  be  viewed  as  a  two-dimensional  image  on screen. Ultrasound probes containing more than 100 transducers in sequence form the basis for these most commonly used scanners, which cost about $50,000.
+- M-Mode. The M stands for motion. A rapid sequence of B-mode scans whose images follow each other in sequence on screen enables doctors to see and measure range of motion, as the organ boundaries that produce reflections move relative to the probe. M-
+
+mode ultrasound  has  been  put  to  particular  use  in studying heart motion.
+
+- Doppler mode. Doppler ultrasonography includes the capability of accurately measuring velocities of moving material, such as blood in arteries and veins. The principle is the same as that used in radar guns that measure the speed of a car on the highway. Doppler capability is most often combined with B-mode scanning to produce images of blood vessels from which blood flow can be directly measured. This technique is used extensively to investigate valve defects, arteriosclerosis and hypertension , particularly in the heart, but also in the abdominal  aorta  and  the  portal  vein  of  the  liver.  These machines cost about $250,000.
+
+The actual procedure for a patient undergoing an abdominal ultrasound is relatively simple, regardless of the type of scan or its purpose. Fasting for at least eight hours prior to the procedure ensures that the stomach is empty and as small as possible, and that the intestines and bowels are relatively inactive. Fasting also allows the gall bladder to be seen, as it contracts after eating and may not be seen if the stomach is full. In some cases, a full bladder helps to push intestinal folds out of the way so that the gas they contain does not disrupt the image. The patient's abdomen is then greased with a special gel that allows the ultrasound probe to glide easily across the skin while transmitting and receiving ultrasonic pulses.
+
+This procedure is conducted by a doctor with the assistance  of  a  technologist  skilled  in  operating  the equipment. The probe is moved around the abdomen to obtain different views of the target areas. The patient will likely be asked to change positions from side to side and to hold their breath as necessary to obtain the desired views. Discomfort during the procedure is minimal.
+
+The many types and uses of ultrasound technology makes it difficult to generalize about the time and costs involved. Relatively simple imaging-scanning a suspicious abdominal mass or a suspected abdominal aortic aneurysm-will take about half an hour to perform and will cost a few hundred dollars or more, depending on the quality of the equipment, the operator and other factors. More involved techniques such as multiple M-mode and Doppler-enhanced scans, or cases where the targets not well defined in advance, generally take more time and are more expensive.
+
+Regardless of the type of scan used and the potential difficulties encountered, ultrasound remains faster and less expensive than computed tomography scans (CT), its primary rival in abdominal imaging. Furthermore, as abdominal  ultrasounds  are  generally  undertaken  as 'medically necessary' procedures designed to detect the presence of suspected abnormalities, they are covered
+
+under most types of major medical insurance. As always, though, the patient would be wise to confirm that their coverage extends to the specific procedure proposed. For nonemergency situations, most underwriters stipulate prior approval as a condition of coverage.
+
+Specific conditions for which ultrasound may be selected as a treatment option-certain types of tumors, lesions, kidney stones and other calculi, muscle and ligament injuries, etc.-are described in detail under the appropriate entries in this encyclopedia.
+
+## PREPARATION
+
+A patient undergoing abdominal ultrasound will be advised by their physician about what to expect and how to prepare. As mentioned above, preparations generally include fasting and arriving for the procedure with a full bladder, if necessary. This preparation is particularly useful if the gallbladder, ovaries or veins are to be examined.
+
+## AFTERCARE
+
+In  general, no aftercare  related  to  the  abdominal ultrasound procedure itself is required.
+
+## RISKS
+
+Abdominal ultrasound carries with it no recognized risks or side effects, if properly performed using appropriate frequency and intensity ranges. Sensitive tissues, particularly those of the reproductive organs, could possibly sustain damage if violently vibrated by overly intense ultrasound waves. In general though, such damage would only result from improper use of the equipment.
+
+Any  woman  who  thinks  she  might  be  pregnant should raise this issue with her doctor before undergoing an abdominal ultrasound, as a fetus in the early stages of development could be injured by ultrasound meant to probe deeply recessed abdominal organs.
+
+## NORMAL RESULTS
+
+As a diagnostic imaging technique, a normal abdominal ultrasound is one that indicates the absence of the suspected condition that prompted the scan. For example, symptoms such as a persistent cough , labored breathing, and  upper  abdominal  pain  suggest  the  possibility  of, among other things, an abdominal aortic aneurysm. An ultrasound scan that indicates the absence of an aneurysm would rule out this life-threatening condition and point to other, less serious causes.
+
+## ABNORMAL RESULTS
+
+Because abdominal ultrasound imaging is generally undertaken to confirm a suspected condition, the results of a scan often will prove abnormal-that is they will confirm the diagnosis, be it kidney stones, cirrhosis of the liver or an aortic aneurysm. At that point, appropriate medical treatment as prescribed by a patient's doctor is in order. See the relevant disease and disorder entries in this encyclopedia for more information.
+
+# Abdominal wall defects
+
+## DEFINITION
+
+Abdominal  wall  defects  are  birth  (congenital) defects that allow the stomach or intestines to protrude.## KEY TERMS
+
+Hernia -Movement of a structure into a place it does not belong.
+
+Umbilical -Referring  to the opening  in the abdominal wall where the blood vessels from the placenta enter.
+
+Viscera -Any of the body's organs located in the chest or abdomen.
+
+## DESCRIPTION
+
+Many unexpected and fascinating events occur during the development of a fetus inside the womb. The stomach and intestines begin development outside the baby's abdomen and only later does the abdominal wall enclose them. Occasionally, either the umbilical opening is too large, or it develops improperly, allowing the bowels or stomach to remain outside or squeeze through the abdominal wall.
+
+## CAUSES AND SYMPTOMS
+
+There are many causes for birth defects that still remain unclear. Presently, the cause(s) of abdominal wall defects is unknown, and any symptoms the mother may have to indicate that the defects are present in the fetus are nondescript.
+
+## DIAGNOSIS
+
+At birth, the problem is obvious, because the base of the umbilical cord at the navel will bulge or, in worse cases, contain viscera (internal organs). Before birth, an ultrasound  examination  may  detect  the  problem.  It  is always necessary in children with one birth defect to look for others, because birth defects are usually multiple.
+
+## TREATMENT
+
+Abdominal wall defects are effectively treated with surgical repair. Unless there are accompanying anomalies, the surgical procedure is not overly complicated. The organs are normal, just misplaced. However, if the defect is large, it may be difficult to fit all the viscera into the small abdominal cavity.
+
+## PROGNOSIS
+
+If there are no other defects, the prognosis after surgical repair of this condition is relatively good. However,
+
+10% of those with more severe or additional abnormalities die from it. The organs themselves are fully functional; the difficulty lies in fitting them inside the abdomen. The condition is, in fact, a hernia requiring only replacement  and  strengthening  of  the  passageway  through which it occurred. After surgery, increased pressure in the stretched abdomen can compromise the function of the organs inside.
+
+## PREVENTION
+
+Some, but by no means all, birth defects are preventable by early and attentive prenatal care, good nutrition , supplemental vitamins , diligent avoidance of all unnecessary drugs and chemicals-especially tobaccoand other elements of a healthy lifestyle.
+
+# Abortion, partial birth
+
+## DEFINITION
+
+Partial birth abortion is a method of late-term abortion that terminates a pregnancy and results in the death and intact removal of a fetus. This procedure is most commonly referred to as intact dilatation and extraction (D &amp; X).
+
+## PURPOSE
+
+Partial birth abortion, or D&amp;X, is performed to end a pregnancy and results in the death of a fetus, typically in
+
+the late second or third trimester. Although D&amp;X is highly controversial, some physicians argue that it has advantages that make it a preferable procedure in some circumstances.  One  perceived  advantage  is  that  the  fetus  is removed largely intact, allowing for better evaluation and autopsy of the fetus in cases of known fetal anomalies. Intact removal of the fetus may also confer a lower risk of puncturing the uterus or damaging the cervix. Another perceived advantage is that D&amp;X ends the pregnancy without requiring the woman to go through labor, which may be less emotionally traumatic than other methods of late-term abortion. In addition, D&amp;X may offer a lower cost and shorter procedure time.
+
+## PRECAUTIONS
+
+Women considering D&amp;X should be aware of the highly controversial nature of this procedure. A controversy common to all late-term abortions is whether the fetus is viable, or able to survive outside of the woman's body. A specific area of controversy with D&amp;X is that fetal death does not occur until after most of the fetal body has exited the uterus. Several states have taken legal action to limit or ban D&amp;X and many physicians who perform abortions do not perform D&amp;X. This may restrict the availability of this procedure to women seeking late-term abortion.
+
+## DESCRIPTION
+
+Intact D&amp;X, or partial birth abortion first involves administration  of  medications  to  cause  the  cervix  to dilate, usually over the course of several days. Next, the physician rotates the fetus to a footling breech position. The body of the fetus is then drawn out of the uterus feet first, until only the head remains inside the uterus. Then, the physician uses an instrument to puncture the base of the skull, which collapses the fetal head. Typically, the contents of the fetal head are then partially suctioned out, which results in the death of the fetus, and reduces the sizes of the fetal head enough to allow it to pass through the cervix. The dead and otherwise intact fetus is then removed from the woman's body.
+
+## PREPARATION
+
+Medical preparation for D&amp;X involves an outpatient visit to administer medications, such as laminaria , to cause the cervix to begin dilating.
+
+In addition, preparation may involve fulfilling local legal requirements, such as a mandatory waiting period, counseling, or an informed consent procedure reviewing stages of fetal development, childbirth , alternative abortion methods, and adoption.
+
+## KEY TERMS
+
+Cervix -The narrow outer end of the uterus that separates the uterus from the vaginal canal.
+
+Footling breech -A position of the fetus while in the uterus where the feet of the fetus are nearest the cervix would be the first part of the fetus to exit the uterus, with the head of the fetus being the last part to exit the uterus.
+
+Laminaria -A medical product made from a certain type of seaweed that is physically placed near the cervix to cause it to dilate.
+
+## AFTERCARE
+
+D&amp;X typically does not require an overnight hospital stay, so a follow up appointment may be scheduled to monitor the woman for any complications.
+
+## RISKS
+
+With all abortion, the later in pregnancy an abortion is performed, the more complicated the procedure and the greater the risk of injury to the woman. In addition to associated emotion reactions, D&amp;X carries the risk of injury to the woman, including heavy bleeding, blood clots, damage to the cervix or uterus, pelvic infection, and anesthesia-related complications. There is also a risk of  incomplete abortion, meaning that the fetus is not dead when removed from the woman's body. Possible long-term risks include difficulty becoming pregnant or carrying a future pregnancy to term.
+
+## NORMAL RESULTS
+
+The expected outcome of D&amp;X is the termination of a  pregnancy  with  removal  of  a  dead  fetus  from  the woman's body.
+
+# Abortion, selective
+
+## DEFINITION
+
+Selective abortion, also known as selective reduction, refers to choosing to abort a fetus, typically in a multi-fetal pregnancy , to decrease the health risks to the mother in carrying and giving birth to more than one or two babies, and also to decrease the risk of complications to the remaining fetus(es). The term selective abortion also refers to choosing to abort a fetus for reasons such as the woman is carrying a fetus which likely will be born with some birth defect or impairment, or because the sex of the fetus is not preferred by the individual.
+
+## PURPOSE
+
+A woman may decide to abort for health reasons, for example, she is at higher risk for complications during pregnancy because of a disorder or disease such as diabetes.
+
+However, selective reduction is recommended often in cases of multi-fetal pregnancy, or the presence of more than one fetus, typically, at least three or more fetuses. In the general population, multi-fetal pregnancy happens in only about 1-2% of pregnant women. But multi-fetal pregnancies occur far more often in women using fertility drugs.
+
+## PRECAUTIONS
+
+Because women or couples who use fertility drugs have made an extra effort to become pregnant, it is possible that the individuals may be unwilling or uncomfortable with the decision to abort a fetus in cases of multifetal pregnancy. Individuals engaging in fertility treatment should be made aware of the risk of multi-fetal pregnancy and consider the prospect of recommended reduction before undergoing fertility treatment.
+
+## DESCRIPTION
+
+Selective reduction is usually performed between nine and 12 weeks of pregnancy and is most successful when performed in early pregnancy. It is a simple procedure and can be performed on an outpatient basis. A needle is inserted into the woman's stomach or vagina and potassium chloride is injected into the fetus.
+
+## PREPARATION
+
+Individuals who have chosen selective reduction to safeguard  the  remaining  fetuses  should  be  counseled prior to the procedure. Individuals should receive information regarding the risks of a multi-fetal pregnancy to both the fetuses and the mother compared with the risks after the reduction.
+
+Individuals  seeking  an  abortion  for  any  reason should consider the ethical implications whether it be because the fetus is not the preferred sex or because the fetus would be born with a severe birth defect.
+
+## AFTERCARE
+
+Counseling  should  continue  after  the  abortion because  it  is  a  traumatic  event.  Individuals  may  feel guilty about choosing one fetus over another. Mental health professionals should be consulted throughout the process.
+
+## RISKS
+
+About 75% of women who undergo selective reduction  will  go  into premature  labor .  About  4-5%  of women undergoing selective reduction also miscarry one or more of the remaining fetuses. The risks associated with multi-fetal pregnancy is considered higher.
+
+## NORMAL RESULTS
+
+In  cases  where  a  multi-fetal  pregnancy, three  or more fetuses, is reduced to two, the twin fetuses typically develop as they would as if they were conceived as twins.
+
+## KEY TERMS
+
+Multi-fetal  pregnancy -A pregnancy of two or more fetuses.
+
+Selective reduction -Typically referred to in cases of multifetal pregnancy, when one or more fetuses are aborted to preserve the viability of the remaining fetuses and decrease health risks to the mother.
+
+# Abortion, therapeutic
+
+## DEFINITION
+
+Therapeutic abortion is the intentional termination of a pregnancy before the fetus can live independently. Abortion has been a legal procedure in the United States since 1973.
+
+## PURPOSE
+
+An abortion may be performed whenever there is some compelling reason to end a pregnancy. Women have abortions because continuing the pregnancy would cause them hardship, endanger their life or health, or because prenatal testing has shown that the fetus will be born with severe abnormalities.
+
+Abortions are safest when performed within the first six to 10 weeks after the last menstrual period. The calculation of this date is referred to as the gestational age and is used in determining the stage of pregnancy. For example, a woman who is two weeks late having her period is said to be six weeks pregnant, because it is six weeks since she last menstruated.
+
+About 90% of women who have abortions do so before  13  weeks  and  experience  few  complications. Abortions performed between 13-24 weeks have a higher rate  of  complications.  Abortions  after  24  weeks  are extremely rare and are usually limited to situations where the life of the mother is in danger.
+
+## PRECAUTIONS
+
+Most women are able to have abortions at clinics or outpatient facilities if the procedure is performed early in pregnancy. Women who have stable diabetes, controlled epilepsy, mild to moderate high blood pressure, or who are HIV positive can often have abortions as outpatients if precautions are taken. Women with heart disease, previous endocarditis , asthma , lupus erythematosus, uterine fibroid tumors, blood clotting disorders, poorly controlled epilepsy, or some psychological disorders usually need to be hospitalized in order to receive special monitoring and medications during the procedure.
+
+## DESCRIPTION
+
+Very early abortions
+
+Between five and seven weeks, a pregnancy can be ended by a procedure called menstrual extraction. This procedure is also sometimes called menstrual regulation, mini-suction, or preemptive abortion. The contents of the uterus are suctioned out through a thin (3-4 mm) plastic tube that is inserted through the undilated cervix. Suction is applied either by a bulb syringe or a small pump.
+
+Another method is called the 'morning after' pill, or emergency contraception . Basically, it involves taking high doses of birth control pills within 24 to 48 hours of having unprotected sex. The high doses of hormones causes the uterine lining to change so that it will not support a pregnancy. Thus, if the egg has been fertilized, it is simply expelled from the body.
+
+There are two types of emergency contraception. One type is identical to ordinary birth control pills, and uses the hormones estrogen and progestin). This type is available with a prescription under the brand name Preven. But women can even use their regular birth control pills for emergency contraception, after they check with their doctor about the proper dose. About half of women who use birth control pills for emergency contraception get nauseated and 20 percent vomit. This method cuts the risk of pregnancy 75 percent.
+
+The other type of morning-after pill contains only one hormone: progestin, and is available under the brand name Plan B. It is more effective than the first type with a lower risk of nausea and vomiting . It reduces the risk of pregnancy 89 percent.
+
+Women should check with their physicians regarding the proper dose of pills to take, as it depends on the
+
+Between 5 and 7 weeks, a pregnancy can be ended by a procedure called menstrual extraction.The contents of the uterus are suctioned out through a thin extraction tube that is inserted through the undilated cervix. (Illustration by Electronic Illustrators Group.)
+
+<!-- image -->
+
+brand of birth control pill. Not all birth control pills will work for emergency contraception.
+
+Menstrual  extractions  are  safe, but  because  the amount of fetal material is so small at this stage of development, it is easy to miss. This results in an incomplete abortion that means the pregnancy continues.
+
+## FIRST TRIMESTER ABORTIONS
+
+The first trimester of pregnancy includes the first 13 weeks  after  the  last  menstrual  period.  In  the  United States, about 90% of abortions are performed during this period. It is the safest time in which to have an abortion, and the time in which women have the most choice of how the procedure is performed.
+
+MEDICAL ABORTIONS. Medical abortions are brought about by taking medications that end the pregnancy. The advantages of a first trimester medical abortion are:
+
+- The procedure is non-invasive; no surgical instruments are used.
+- Anesthesia is not required.
+- Drugs are administered either orally or by injection.
+- The procedure resembles a natural miscarriage Disadvantages of a medical abortion are:
+- .
+- The effectiveness decreases after the seventh week.
+- The procedure may require multiple visits to the doctor.
+- Bleeding after the abortion lasts longer than after a surgical abortion.
+- The woman may see the contents of her womb as it is expelled.
+
+Two different medications can be used to bring about an abortion. Methotrexate (Rheumatrex) works by stopping fetal cells from dividing which causes the fetus to die.
+
+On the first visit to the doctor, the woman receives an injection of methotrexate. On the second visit, about a  week later, she is  given  misoprostol  (Cytotec), an oxygenated unsaturated cyclic fatty acid responsible for various hormonal reactions such as muscle contraction (prostaglandin), that  stimulates  contractions  of  the uterus. Within two weeks, the woman will expel the contents of her uterus, ending the pregnancy. A followup visit to the doctor is necessary to assure that the abortion is complete.
+
+With this procedure, a woman will feel cramping and  may  feel  nauseated  from  the  misoprostol.  This combination of drugs is 90-96% effective in ending pregnancy.
+
+Mifepristone (RU-486), which goes by the brand name Mifeprex, works by blocking the action of progesterone, a hormone needed for pregnancy to continue, then  stimulates  uterine  contractions  thus  ending  the pregnancy. It can be taken a much as 49 days after the first day of a woman's last period. On the first visit to the doctor, a woman takes a mifepristone pill. Two days later  she  returns  and, if  the  miscarriage  has  not occurred, takes two misoprostol pills, which causes the uterus to contract. Five percent of women won't need to take  misoprostol.  After  an  observation  period, she returns home.
+
+Within four days, 90% of women have expelled the contents  of  their  uterus  and  completed  the  abortion. Within 14 days, 95-97% of women have completed the abortion. A third follow-up visit to the doctor is necessary to confirm through observation or ultrasound that the procedure is complete. In the event that it is not, a surgical abortion is performed. Studies show that 4.5 to 8 percent of women need surgery or a blood transfusion after taking mifepristone, and the pregnancy persists in about 1 percent of women. In this case, surgical abortion is recommended because the fetus may be damanged. Side effects include nausea, vaginal bleeding and heavy cramping. The bleeding is typically heavier than a normal period and may last up to 16 days.
+
+Mifepristone is not recommended for women with ectopic pregnancy , an IUD , who have been taking long-term steroidal therapy, have bleeding abnormalities or on blood-thinners such as Coumadin.
+
+## SURGICAL ABORTIONS
+
+First  trimester  surgical  abortions  are  performed using vacuum aspiration. The procedure is also called dilation and evacuation (D &amp; E), suction dilation, vacuum curettage, or suction curettage.
+
+Advantages of a vacuum aspiration abortion are:
+
+- It is usually done as a one-day outpatient procedure.
+- The procedure takes only 10-15 minutes.
+- Bleeding after the abortion lasts five days or less.
+- The woman does not see the products of her womb being removed.
+
+Disadvantages include:
+
+- The procedure is invasive; surgical instruments are used.
+- Infection may occur.
+
+During a vacuum aspiration, the woman's cervix is gradually dilated by expanding rods inserted into the cervical opening. Once dilated, a tube attached to a suction pump is inserted through the cervix and the contents of the uterus are suctioned out. The procedure is 97-99% effective. The amount of discomfort a woman feels  varies  considerably.  Local  anesthesia  is  often given to numb the cervix, but it does not mask uterine cramping. After a few hours of rest, the woman may return home.
+
+## SECOND TRIMESTER ABORTIONS
+
+Although it is better to have an abortion during the first trimester, some second trimester abortions may be inevitable. The results of genetic testing are often not available until 16 weeks. In addition, women, especially teens, may not have recognized the pregnancy or come to terms with it emotionally soon enough to have a first trimester abortion. Teens make up the largest group having second trimester abortions.
+
+Some second trimester abortions are performed as a D &amp; E. The procedures are similar to those used in the first trimester, but a larger suction tube must be used because more material must be removed. This increases the amount of cervical dilation necessary and increases the risk of the procedure. Many physicians are reluctant to perform a D &amp; E this late in pregnancy, and for some women is it not a medically safe option.
+
+The alternative to a D &amp; E in the second trimester is an abortion by induced labor. Induced labor may require an overnight stay in a hospital. The day before the procedure, the woman visits the doctor for tests, and to either
+
+## KEY TERMS
+
+Endocarditis -An  infection  of  the  inner  membrane lining of the heart.
+
+Fibroid tumors -Fibroid tumors are non-cancerous (benign) growths in the uterus. They occur in 30-40% of women over age 40, and do not need to be removed unless they are causing symptoms that interfere with a woman's normal activities.
+
+Lupus erythematosus -A chronic inflammatory disease in which inappropriate immune system reactions cause abnormalities in the blood vessels and connective tissue.
+
+Prostaglandin -Oxygenated  unsaturated  cyclic fatty acids responsible for various hormonal reactions such as muscle contraction.
+
+Rh negative -Lacking the Rh factor, genetically determined antigens in red blood cells that produce immune responses. If an Rh negative woman is pregnant with an Rh positive fetus, her body will produce antibodies against the fetus's blood, causing a disease known as Rh disease. Sensitization to the  disease  occurs  when  the  women's  blood  is exposed to the fetus's blood. Rh immune globulin (RhoGAM) is a vaccine that must be given to a woman after an abortion, miscarriage, or prenatal tests in order to prevent sensitization to Rh disease.
+
+have rods inserted in her cervix to help dilate it or to receive medication that will soften the cervix and speed up labor.
+
+On the day of the abortion, drugs, usually prostaglandins to induce contractions, and a salt water solution, are injected into the uterus. Contractions begin, and within eight to 72 hours the woman delivers the fetus.
+
+Side effects of this procedure include nausea, vomiting, and diarrhea from the prostaglandins, and pain from  uterine  cramps.  Anesthesia  of  the  sort  used  in childbirth can be given to mask the pain. Many women are able to go home a few hours after the procedure.
+
+Very early abortions cost between $200-$400. Later abortions cost more. The cost increases about $100 per week between the thirteenth and sixteenth week. Second trimester abortions are much more costly because they often involve more risk, more services, anesthesia, and sometimes a hospital stay. Insurance carriers and HMOs may or may not cover the procedure. Federal law pro-
+
+hibits  federal  funds  including  Medicaid  funds, from being used to pay for an elective abortion.
+
+## PREPARATION
+
+The  doctor  must  know  accurately  the  stage  of  a woman's pregnancy before an abortion is performed. The doctor will ask the woman questions about her menstrual cycle and also do a physical examination to confirm the stage of pregnancy. This may be done at an office visit before the abortion or on the day of the abortion. Some states require a waiting period before an abortion can be performed. Others require parental or court consent for a child under age 18 to receive an abortion.
+
+Despite the fact that almost half of all women in the United States have had at least one abortion by the time they reach age 45, abortion is surrounded by controversy. Women often find themselves in emotional turmoil when deciding if an abortion is a procedure they wish to undergo. Pre-abortion counseling is important in helping a woman resolve any questions she may have about having the procedure.
+
+## AFTERCARE
+
+Regardless of the method used to perform the abortion, a woman will be observed for a period of time to make sure her blood pressure is stable and that bleeding is controlled. The doctor may prescribe antibiotics to reduce the chance of infection. Women who are Rh negative (lacking genetically determined antigens in their red blood cells that produce immune responses) should be given a human Rh immune globulin (RhoGAM) after the procedure unless the father of the fetus is also Rh negative. This prevents blood incompatibility complications in future pregnancies.
+
+Bleeding will continue for about five days in a surgical abortion and longer in a medical abortion. To decrease the risk of infection, a woman should avoid intercourse and not use tampons and douches for two weeks after the abortion.
+
+A follow-up visit is a necessary part of the woman's aftercare. Contraception will be offered to women who wish  to  avoid  future  pregnancies, because  menstrual periods normally resume within a few weeks.
+
+## RISKS
+
+Serious complications resulting from abortions performed before 13 weeks are rare. Of the 90% of women who have abortions in this time period, 2.5% have minor complications that can be handled without hospitalization. Less than 0.5% have complications that require a hospital stay. The rate of complications increases as the pregnancy progresses.
+
+Complications from abortions can include:
+
+- uncontrolled bleeding
+- infection
+- blood clots accumulating in the uterus
+- a tear in the cervix or uterus
+- missed abortion where the pregnancy continues
+- incomplete  abortion  where  some  material  from  the pregnancy remains in the uterus
+
+Women who experience any of the following symptoms of post-abortion complications should call the clinic or doctor who performed the abortion immediately.
+
+- severe pain
+- fever over 100.4°F (38.2°C)
+- heavy bleeding that soaks through more than one sanitary pad per hour
+- foul-smelling discharge from the vagina
+- continuing symptoms of pregnancy
+
+## NORMAL RESULTS
+
+Usually the pregnancy is ended without complication and without altering future fertility.
+
+## ORGANIZATION
+
+National Abortion Federation. (800) 772-9100. &lt;http://www. prochoice.org&gt;.
+
+Debra Gordon
+
+Abrasions see
+
+Wounds
+
+Abruptio placentae see Placental abruption
+
+# Abscess
+
+## DEFINITION
+
+An abscess is an enclosed collection of liquefied tissue, known as pus, somewhere in the body. It is the result of the body's defensive reaction to foreign material.
+
+## DESCRIPTION
+
+There are two types of abscesses, septic and sterile. Most abscesses are septic, which means that they are the result of an infection. Septic abscesses can occur anywhere in the body. Only a germ and the body's immune response are required. In response to the invading germ, white blood cells gather at the infected site and begin producing chemicals called enzymes that attack the germ by digesting it. These enzymes act like acid, killing the germs and breaking them down into small pieces that can be picked up by the circulation and eliminated from the body. Unfortunately, these chemicals also digest body tissues. In most cases, the germ produces similar chemicals. The result is a thick, yellow liquid-pus-containing digested germs, digested tissue, white blood cells, and enzymes.
+
+An abscess is the last stage of a tissue infection that begins with a process called inflammation. Initially, as the invading germ activates the body's immune system, several events occur:
+
+- Blood flow to the area increases.
+- The  temperature  of  the  area  increases  due  to  the increased blood supply.
+- The area swells due to the accumulation of water, blood, and other liquids.
+- It turns red.
+- It hurts, because of the irritation from the swelling and the chemical activity.
+
+These four signs-heat, swelling, redness, and paincharacterize inflammation.
+
+As the process progresses, the tissue begins to turn to liquid, and an abscess forms. It is the nature of an abscess  to  spread  as  the  chemical  digestion  liquefies more and more tissue. Furthermore, the spreading follows the path of least resistance-the tissues most easily digested. A good example is an abscess just beneath the skin.  It  most  easily  continues  along  beneath  the  skin rather than working its way through the skin where it could drain its toxic contents. The contents of the abscess also leak into the general circulation and produce symptoms just like any other infection. These include chills, fever , aching, and general discomfort.
+
+Sterile abscesses are sometimes a milder form of the same process caused not by germs but by non-living irritants such as drugs. If an injected drug like penicillin is not absorbed, it stays where it was injected and may cause enough irritation to generate a sterile abscesssterile  because  there  is  no  infection  involved.  Sterile abscesses are quite likely to turn into hard, solid lumps as they scar, rather than remaining pockets of pus.
+
+An amoebic abscess caused by Entameoba histolytica. (Phototake NYC. Reproduced by permission.)
+
+<!-- image -->
+
+## CAUSES AND SYMPTOMS
+
+Many different agents cause abscesses. The most common are the pus-forming (pyogenic) bacteria like Staphylococcus aureus , which is nearly always the cause of abscesses under the skin. Abscesses near the large bowel, particularly around the anus, may be caused by any  of  the  numerous  bacteria  found  within  the  large bowel. Brain abscesses and liver abscesses can be caused by any organism that can travel there through the circulation. Bacteria, amoeba, and certain fungi can travel in this fashion. Abscesses in other parts of the body are caused by organisms that normally inhabit nearby structures or that infect them. Some common causes of specific abscesses are:
+
+- skin abscesses by normal skin flora
+- dental and throat abscesses by mouth flora
+- lung  abscesses  by  normal  airway  flora, pneumonia germs, or tuberculosis
+- abdominal and anal abscesses by normal bowel flora
+
+## SPECIFIC TYPES OF ABSCESSES
+
+Listed below are some of the more common and important abscesses.
+
+- Carbuncles and other boils . Skin oil glands (sebaceous glands) on the back or the back of the neck are the ones usually infected. The most common germ involved is Staphylococcus aureus . Acne is a similar condition of sebaceous glands on the face and back.
+- Pilonidal abscess. Many people have as a birth defect a tiny opening in the skin just above the anus. Fecal bacteria can enter this opening, causing an infection and subsequent abscess.
+
+## KEY TERMS
+
+Cellulitis -Inflammation of tissue due to infection.
+
+Enzyme -Any of a number of protein chemicals that can change other chemicals.
+
+Fallopian tubes -Part of the internal female anatomy that carries eggs from the ovaries to the uterus.
+
+Flora -Living inhabitants of a region or area.
+
+Pyogenic -Capable of generating pus. Streptococcus , Staphocococcus , and bowel bacteria are the primary pyogenic organisms.
+
+Sebaceous glands -Tiny structures in the skin that produce  oil  (sebum).  If  they  become  plugged, sebum collects inside and forms a nurturing place for germs to grow.
+
+Septicemia -The spread of an infectious agent throughout  the  body  by  means  of  the  blood stream.
+
+Sinus -A tubular channel connecting one body part with another or with the outside.
+
+- Retropharyngeal, parapharyngeal, peritonsillar abscess. As a result of throat infections like strep throat and tonsillitis , bacteria can invade the deeper tissues of the throat and cause an abscess. These abscesses can compromise swallowing and even breathing.
+- Lung abscess. During or after pneumonia, whether it's due  to  bacteria  [common  pneumonia], tuberculosis, fungi, parasites, or other germs, abscesses can develop as a complication.
+- Liver abscess. Bacteria or amoeba from the intestines can spread through the blood to the liver and cause abscesses.
+- Psoas abscess. Deep in the back of the abdomen on either side of the lumbar spine lie the psoas muscles. They flex the hips. An abscess can develop in one of these muscles, usually when it spreads from the appendix, the large bowel, or the fallopian tubes.
+
+## DIAGNOSIS
+
+The common findings of inflammation-heat, redness, swelling, and  pain-easily  identify  superficial abscesses. Abscesses in other places may produce only generalized symptoms such as fever and discomfort. If the patient's symptoms and physical examination do not help, a physician may have to resort to a battery of tests to locate the site of an abscess, but usually something in the initial evaluation directs the search. Recent or chronic disease in an organ suggests it may be the site of an abscess. Dysfunction of an organ or system-for instance, seizures or altered bowel function-may provide the clue. Pain and  tenderness  on  physical  examination  are  common findings. Sometimes a deep abscess will eat a small channel (sinus) to the surface and begin leaking pus. A sterile abscess may cause only a painful lump deep in the buttock where a shot was given.
+
+## TREATMENT
+
+Since skin is very resistant to the spread of infection, it acts as a barrier, often keeping the toxic chemicals of an abscess from escaping the body on their own. Thus, the pus must be drained from the abscess by a physician. The surgeon determines when the abscess is ready for drainage and opens a path to the outside, allowing the pus to escape. Ordinarily, the body handles the remaining infection, sometimes with the help of antibiotics or other drugs. The surgeon may leave a drain (a piece of cloth or rubber) in the abscess cavity to prevent it from closing before all the pus has drained out.
+
+## ALTERNATIVE TREATMENT
+
+If an abscess is directly beneath the skin, it will be slowly working its way through the skin as it is more rapidly  working  its  way  elsewhere.  Since  chemicals work faster at higher temperatures, applications of hot compresses to the skin over the abscess will hasten the digestion of the skin and eventually result in its breaking down, releasing the pus spontaneously. This treatment is best reserved for smaller abscesses in relatively less dangerous areas of the body-limbs, trunk, back of the neck. It is also useful for all superficial abscesses in their very early stages. It will 'ripen' them.
+
+Contrast hydrotherapy , alternating  hot  and  cold compresses, can also help assist the body in resorption of the abscess. There are two homeopathic remedies that work to rebalance the body in relation to abscess formation, Silica and Hepar  sulphuris .  In  cases  of  septic abscesses, bentonite clay packs (bentonite clay and a small amount of Hydrastis powder) can be used to draw the infection from the area.
+
+## PROGNOSIS
+
+Once the abscess is properly drained, the prognosis is excellent for the condition itself. The reason for the abscess (other diseases the patient has) will determine the overall outcome. If, on the other hand, the abscess ruptures into neighboring areas or permits the infectious
+
+agent to spill into the bloodstream, serious or fatal consequences are likely. Abscesses in and around the nasal sinuses, face, ears, and scalp may work their way into the brain. Abscesses within an abdominal organ such as the liver may rupture into the abdominal cavity. In either case, the result is life threatening. Blood poisoning is a term commonly used to describe an infection that has spilled into the blood stream and spread throughout the body from a localized origin. Blood poisoning, known to physicians as septicemia, is also life threatening.
+
+Of special note, abscesses in the hand are more serious than they might appear. Due to the intricate structure and the overriding importance of the hand, any hand infection must be treated promptly and competently.
+
+## PREVENTION
+
+Infections that are treated early with heat (if superficial) or antibiotics will often resolve without the formation of an abscess. It is even better to avoid infections altogether by taking prompt care of open injuries, particularly puncture wounds . Bites are the most dangerous of all, even more so because they often occur on the hand.
+
+# Abscess incision &amp; drainage
+
+## DEFINITION
+
+An infected skin nodule that contains pus may need to be drained via a cut if it does not respond to antibiotics . This allows the pus to escape, and the infection to heal.
+
+## PURPOSE
+
+An abscess is a pus-filled sore, usually caused by a bacterial infection. The pus is made up of both live and dead  organisms  and  destroyed  tissue  from  the  white
+
+Although abscesses are often found in the soft tissue under the skin, such as the armpit or the groin, they may develop in any organ, such as the liver. (Illustration by Electronic Illustrators Group.)
+
+<!-- image -->
+
+blood cells that were carried to the area to fight the infection. Abscesses are often found in the soft tissue under the skin, such as the armpit or the groin. However, they may develop in any organ, and are commonly found in the breast and gums. Abscesses are far more serious and call for more specific treatment if they are located in deep organs such as the lung, liver or brain.
+
+Because the lining of the abscess cavity tends to interfere with the amount of the drug that can penetrate the source of infection from the blood, the cavity itself may require draining. Once an abscess has fully formed, it  often  does  not  respond  to  antibiotics.  Even  if  the antibiotic does penetrate into the abscess, it doesn't function as well in that environment.
+
+## PRECAUTIONS
+
+An abscess can usually be diagnosed visually, although an imaging technique such as a computed tomography scan may be used to confirm the extent of the abscess before drainage. Such procedures may also be needed to localize internal abscesses, such as those in the abdominal cavity or brain.## KEY TERMS
+
+White blood cells -Cells that protect the body against infection.
+
+## DESCRIPTION
+
+A doctor will cut into the lining of the abscess, allowing the pus to escape either through a drainage tube or by leaving the cavity open to the skin. How big the incision is depends on how quickly the pus is encountered.
+
+Once the abscess is opened, the doctor will clean and irrigate the wound thoroughly with saline. If it is not too  large  or  deep, the  doctor  may  simply  pack  the abscess wound with gauze for 24-48 hours to absorb the pus and discharge.
+
+If  it  is  a  deeper  abscess, the  doctor  may  insert  a drainage tube after cleaning out the wound. Once the tube is in place, the surgeon closes the incision with simple stitches, and applies a sterile dressing. Drainage is maintained for several days to help prevent the abscess from reforming.
+
+## PREPARATION
+
+The skin over the abscess will be cleansed by swabbing gently with an antiseptic solution.
+
+## AFTERCARE
+
+Much of the pain around the abscess will be gone after the surgery. Healing is usually very fast. After the tube is taken out, antibiotics may be continued for several days. Applying heat and keeping the affected area elevated may help relieve inflammation.
+
+## RISKS
+
+If there is any scarring, it is likely to become much less noticeable as time goes on, and eventually almost invisible. Occasionally, an abscess within a vital organ (such as the brain) damages enough surrounding tissue that there is some permanent loss of normal function.
+
+## NORMAL RESULTS
+
+Most  abscesses  heal  after  drainage  alone;  others require drainage and antibiotic drug treatment.
+
+## DEFINITION
+
+Abuse is defined as any thing that is harmful, injurious, or  offensive.  Abuse  also  includes  excessive  and wrongful misuse of anything. There are several major types of abuse: physical and sexual abuse of a child or an adult, substance abuse, elderly abuse, and emotional abuse.
+
+## DESCRIPTION
+
+Physical abuse of a child is the infliction of injury by an other person. The injuries can include punching, kicking, biting, burning, beating, or pulling the victim's hair. The  physical  abuse  inflicted  on  a  child  can  result  in bruises , burns , poisoning , broken bones, and internal hemorrhages. Physical assault against an adult primarily occurs with women, usually in the form of domestic violence. It is estimated that approximately three million children witness domestic violence every year.
+
+Sexual abuse of a child refers to sexual behavior between an adult and child or between two children, one of whom is dominant or significantly older. The sexual behaviors can include touching breasts, genitals, and buttocks; either dressed or undressed. The behavior can also include exhibitionism, cunnilingus, fellatio, or penetration of the vagina or anus with sexual organs or objects.
+
+Pornographic photography is also used in sexual abuse with children. Reported sex offenders are 97% male. Females are more often perpetrators in child-care settings, since children may confuse sexual abuse by a female with normal hygiene care. Sexual abuse by stepfathers is five times more common than with biological fathers.  Sexual  abuse  of  daughters  by  stepfathers  or fathers is the most common form of incest.
+
+Sexual abuse can also take the form of rape. The legal definition of rape includes only slight penile penetration in the victim's outer vulva area. Complete erection and ejaculation are not necessary. Rape is the perpetration of an act of sexual intercourse whether:
+
+- will is overcome by force or fear (from threats or by use of drugs).
+
+- mental  impairment  renders  the  victim  incapable  of rational judgment.
+- if the victim is below the legal age established for consent.
+
+Substance abuse is an abnormal pattern of substance usage leading to significant distress or impairment. The criteria include one or more of the following occurring within a 12-month period:
+
+- recurrent substance use resulting in failure to fulfill obligations at home, work, or school.
+- using substance in situations that are physically dangerous (i.e., while driving).
+- recurrent substance-related legal problems.
+- continued usage despite recurrent social and interpersonal problems (i.e., arguments and fights with significant other).
+
+Abuse in the elderly is common and occurs mostly as a result of caretaker burnout, due to the high level of dependency frail, elderly patients usually require. Abuse can be manifested by physical signs, fear, and delaying or  not  reporting  the  need  for  advanced  medical  care. Elderly patients may also exhibit financial abuse (money or possessions taken away) and abandonment.
+
+Emotional abuse generally continues even after physical assaults have stopped. In most cases it is a personally tailored form of verbal or gesture abuse expressed to illicit a provoked response.
+
+## CAUSES AND SYMPTOMS
+
+Children who have been abused usually have a variety of symptoms that encompass behavioral, emotional, and psychosomatic problems. Children who have been physically abused tend to be more aggressive, angry, hostile, depressed, and have low self-esteem. Additionally, they exhibit fear, anxiety , and nightmares. Severe psychological problems may result in suicidal behavior or posttraumatic stress disorder. Physically abused children may complain of physical illness even in the absence of a cause. They may also suffer from eating disorders and encopresis. Children who are sexually abused may exhibit abnormal sexual behavior in the form of aggressiveness and hyperarousal. Adolescents may display promiscuity, sexual acting out, and-in some situations-homosexual contact.
+
+Physical abuse directed towards adults can ultimately lead to death . Approximately 50% of women murdered in the United States were killed by a former or current male  partner.  Approximately  one-third  of  emergency room  consultations  by  women  were  prompted  due  to domestic violence. Female victims who are married also have a higher rate of internal injuries and unconscious-
+
+## KEY TERMS
+
+Encopresis -Abnormalities relating to bowel movements that can occur as a result of stress or fear.
+
+ness than victims of stranger assault (mugging, robbery). Physical abuse or rape can also occur between married persons and persons of the same gender. Perpetrators usually sexually assault their victims to dominate, hurt, and debase them. It is common for physical and sexual violence to occur at the same time. A large percentage of sexually assaulted persons were also physically abused in the form of punching, beating, or threatening the victim with a weapon such as a gun or knife. Usually males who are hurt  and  humiliated  tend  to  physical  assault  persons whom they are intimately involved with, such as spouses and/or children. Males who assault a female tend to have experienced  or  witnessed  violence  during  childhood. They also tend to abuse alcohol, to be sexually assaultive, and are at increased risk for assaultive behavior directed against  children.  Jealous  males  tend  to  monitor  the women's  movements  and  whereabouts  and  to  isolate other sources of protection and support. They interpret their behavior as betrayal of trust and this causes resentment and explosive anger outbursts during periods of losing  control.  Males  may  also  use  aggression  against females in an effort to control and intimidate partners.
+
+Abuse in the elderly usually occurs in the frail, elderly community. The caretaker is usually the perpetrator. Caretaker abuse can be suspected if there is evidence suggesting behavioral changes in the elderly person when the caretaker is present. Additionally, elderly abuse can be possible if there are delays between injuries and treatment, inconsistencies between injury and explanations, lack of hygiene or clothing, and prescriptions no being filled.
+
+## DIAGNOSIS
+
+Children who are victims of domestic violence are frequently  injured  attempting  to  protect  their  mother from an abusive partner. Injuries are visible by inspection or self-report. Physical abuse of an adult may be also be evident by inspection with visible cuts and/or bruises or self report.
+
+Sexual abuse of both a child and an adult can be diagnosed with a history from the victim. Victims can be assessed for ejaculatory evidence from the perpetrator. Ejaculatory specimens can be retrieved from the mouth, rectum, and clothing. Tests for sexually transmitted diseases may be performed.
+
+Elderly abuse can be suspected if the elderly patient demonstrates  a  fear  from  the  caretaker. Additionally, elderly abuse can be suspected if there are signs indicating  intentional  delay  of  required  medical  care  or  a change in medical status.
+
+Substance abuse can be suspected in a person who continues to indulge in their drug of choice despite recurrent negative consequences. The diagnosis can be made after  administration  of  a  comprehensive  bio-psychosocial  exam and standardized chemical abuse assessments by a therapist.
+
+## TREATMENT
+
+Children who are victims of physical or sexual abuse typically require psychological support and medical attention. A complaint may be filed with the local family social services that will initiate investigations. The authorities will usually follow up the allegation or offense. Children may also be referred for psychological evaluation and/or treatment. The victim may be placed in foster care pending the investigation outcome. The police may also investigate physical and sexual abuse of an adult. The victim may require immediate medical care and long-term psychological treatment. It is common for children to be adversely affected by domestic violence situations and the local family services agency may be involved.
+
+Substance abusers should elect treatment, either inpatient or outpatient, depending on severity of addiction . Long term treatment and/or medications may be utilized to assist in abstinence. The patient should be encouraged to participate in community centered support groups.
+
+## PROGNOSIS
+
+The prognosis depends on the diagnosis. Usually victims of physical and sexual abuse require therapy to deal with emotional distress associated with the incident. Perpetrators require further psychological evaluation and treatment. Victims of abuse may have a variety of emotional problems including depression, acts of suicide, or anxiety. Children of sexual abuse may as adults enter abusive relationships or have problems with intimacy. The substance abuser may experience relapses, since the cardinal feature of all addictive disorders is a tendency to return to symptoms. Elderly patients may suffer from further medical problems and/or anxiety, and in some cases neglect may precipitate death.
+
+## PREVENTION
+
+Prevention programs are geared to education and awareness. Detection of initial symptoms or characteris- tic  behaviors  may  assist  in  some  situations.  In  some cases treatment may be sought before incident. The professional  treating  the  abused  persons  must  develop  a clear sense of the relationship dynamics and the chances for continued harm.
+
+# Acetaminophen
+
+## DEFINITION
+
+Acetaminophen is a medicine used to relieve pain and reduce fever .
+
+## PURPOSE
+
+Acetaminophen is used to relieve many kinds of minor aches and pains-headaches, muscle aches, backaches, toothaches, menstrual cramps, arthritis, and the aches and pains that often accompany colds.
+
+## DESCRIPTION
+
+This drug is available without a prescription. Acetaminophen-or  APAP-is  sold  under  various  brand names, including Tylenol, Panadol, Aspirin Free Anacin, and Bayer Select Maximum Strength Headache Pain Relief  Formula.  Many  multi-symptom  cold, flu, and sinus medicines also contain acetaminophen. Check the ingredients  listed  on  the  container  to  see  if  acetaminophen is included in the product.
+
+Studies have shown that acetaminophen relieves pain and reduces fever about as well as aspirin. But differences between these two common drugs exist. Acetaminophen is less likely than aspirin to irritate the stomach. However, unlike aspirin, acetaminophen does not reduce the redness, stiffness, or swelling that accompany arthritis.
+
+## RECOMMENDED DOSAGE
+
+The usual dosage for adults and children age 12 and over is 325-650 mg every 4- 6 hours as needed. No more than 4 grams (4000 mg) should be taken in 24 hours. Because the drug can potentially harm the liver, people who drink alcohol in large quantities should take considerably less acetaminophen and possibly should avoid the drug completely.
+
+For children ages 6-11 years, the usual dose is 150300 mg, three to four times a day. Check with a physician for dosages for children under age 6 years.
+
+## PRECAUTIONS
+
+Never take more than the recommended dosage of acetaminophen unless told to do so by a physician or dentist.
+
+Patients should not use acetaminophen for more than 10 days to relieve pain (5 days for children) or for more than 3 days to reduce fever, unless directed to do so by a physician. If symptoms do not go away-or if they get worse-contact a physician. Anyone who drinks three or more alcoholic  beverages  a  day  should  check  with  a physician before using this drug and should never take more than the recommended dosage. A risk of liver damage exists from combining large amounts of alcohol and acetaminophen. People who already have kidney or liver disease or liver infections should also consult with a physician before using the drug. So should women who are pregnant or breastfeeding.
+
+Smoking cigarettes may interfere with the effectiveness of acetaminophen. Smokers may need to take higher doses of the medicine, but should not take more than the recommended daily dosage unless told by a physician to do so.
+
+## KEY TERMS
+
+Arthritis -Inflammation of the joints. The condition causes pain and swelling.
+
+Fatigue -Physical or mental weariness.
+
+Inflammation -A response to irritation, infection, or injury, resulting in pain, redness, and swelling.
+
+Many drugs can interact with one another. Consult a  physician  or  pharmacist  before  combining  acetaminophen with any other medicine. Do not use two different  acetaminophen-containing  products  at  the same time.
+
+Acetaminophen interferes with the results of some medical tests. Before having medical tests done, check to see whether taking acetaminophen will affect the results. Avoiding the drug for a few days before the tests may be necessary.
+
+## SIDE EFFECTS
+
+Acetaminophen causes few side effects. The most common one is  lightheadedness.  Some  people  may experience trembling and pain in the side or the lower back. Allergic reactions do occur in some people, but they are rare. Anyone who develops symptoms such as a rash, swelling, or difficulty breathing after taking acetaminophen should stop taking the drug and get immediate medical attention. Other rare side effects include yellow skin or eyes, unusual bleeding or bruising, weakness, fatigue , bloody or black stools, bloody or cloudy urine, and a sudden decrease in the amount of urine.
+
+Overdoses  of  acetaminophen  may  cause  nausea, vomiting, sweating, and exhaustion. Very large overdoses can  cause  liver  damage.  In  case  of  an  overdose, get immediate medical attention.
+
+## INTERACTIONS
+
+Acetaminophen may interact with a variety of other medicines. When this happens, the effects of one or both of the drugs may change or the risk of side effects may be  greater.  Among  the  drugs  that  may  interact  with acetaminophen are alcohol, nonsteroidal anti-inflammatory drugs (NSAIDs) such as Motrin, oral contraceptives , the antiseizure drug phenytoin (Dilantin), the blood-thinning drug warfarin (Coumadin), the cholesterol-lowering  drug  cholestyramine  (Questran), the antibiotic Isoniazid, and zidovudine (Retrovir, AZT).
+
+Check with a physician or pharmacist before combining acetaminophen with any other prescription or nonprescription (over-the-counter) medicine.
+
+Nancy Ross-Flanigan
+
+Acetylsalicylic acid see Aspirin
+
+# Achalasia
+
+## DEFINITION
+
+Achalasia is a disorder of the esophagus that prevents normal swallowing.
+
+## DESCRIPTION
+
+Achalasia affects the esophagus, the tube that carries swallowed food from the back of the throat down into the stomach. A ring of muscle called the lower esophageal sphincter encircles the esophagus just above the entrance to the stomach. This sphincter muscle is normally contracted to close the esophagus. When the sphincter is closed, the contents of the stomach cannot flow back into the esophagus. Backward flow of stomach contents (reflux) can irritate and inflame the esophagus, causing symptoms such as heartburn .  The  act  of  swallowing  causes  a  wave  of esophageal contraction called peristalsis. Peristalsis pushes food along the esophagus. Normally, peristalsis causes the esophageal sphincter to relax and allow food into the stomach.  In  achalasia, which  means  'failure  to  relax,' the esophageal sphincter remains contracted. Normal peristalsis is interrupted and food cannot enter the stomach.
+
+## CAUSES AND SYMPTOMS
+
+
+
+## CAUSES
+
+Achalasia is caused by degeneration of the nerve cells that normally  signal the brain to relax the esophageal sphincter. The ultimate cause of this degeneration is unknown. Autoimmune disease or hidden infection is suspected.
+
+## SYMPTOMS
+
+Dysphagia, or difficulty swallowing, is the most common symptom of achalasia. The person with achalasia usually has trouble swallowing both liquid and solid foods, often feeling that food 'gets stuck' on the way down. The person has chest pain that is often mistaken for angina pectoris (cardiac pain). Heartburn and difficulty belching are common. Symptoms usually get steadily worse. Other symptoms  may  include  nighttime cough or  recurrent pneumonia caused by food passing into the lower airways.
+
+## DIAGNOSIS
+
+Diagnosis of achalasia begins with a careful medical history. The history should focus on the timing of symptoms and on eliminating other medical conditions that may cause similar symptoms. Tests used to diagnose achalasia include:
+
+- Esophageal  manometry.  In  this  test, a  thin  tube  is passed  into  the  esophagus  to  measure  the  pressure exerted by the esophageal sphincter.
+- X ray of the esophagus. Barium may be swallowed to act as a contrast agent. Barium reveals the outlines of the esophagus in greater detail and makes it easier to see its constriction at the sphincter.
+- Endoscopy. In this test, a tube containing a lens and a light source is passed into the esophagus. Endoscopy is used to look directly at the surface of the esophagus. This test can also detect tumors that cause symptoms like those of achalasia. Cancer of the esophagus occurs as a complication of achalasia in 2-7% of patients.
+
+## TREATMENT
+
+The first-line treatment for achalasia is balloon dilation. In this procedure, an inflatable membrane or balloon is passed down the esophagus to the sphincter and inflated to force the sphincter open. Dilation is effective in about 70% of patients.
+
+Three other treatments are used for achalasia when balloon dilation is inappropriate or unacceptable.
+
+- Botulinum toxin injection. Injected into the sphincter, botulinum toxin paralyzes the muscle and allows it to relax. Symptoms usually return within one to two years.
+- Esophagomyotomy. This surgical procedure cuts the sphincter  muscle  to  allow  the  esophagus  to  open. Esophagomyotomy is becoming more popular with the development of techniques allowing very small abdominal incisions.
+- Drug therapy. Nifedipine, a calcium-channel blocker, reduces muscle contraction. Taken daily, this drug provides relief for about two-thirds of patients for as long as two years.
+
+## PROGNOSIS
+
+Most patients with achalasia can be treated effectively.  Achalasia  does  not  reduce  life  expectancy  unless esophageal carcinoma develops.## KEY TERMS
+
+Botulinum toxin -Any of a group of potent bacterial toxins or poisons produced by different strains of the bacterium Clostridium botulinum . The toxins cause muscle paralysis.
+
+Dysphagia -Difficulty in swallowing.
+
+Endoscopy -A test in which a viewing device and a light source are introduced into the esophagus by means of a flexible tube. Endoscopy permits visual inspection of the esophagus for abnormalities.
+
+Esophageal manometry -A test in which a thin tube is passed into the esophagus to measure the degree of pressure exerted by the muscles of the esophageal wall.
+
+Esophageal sphincter -A circular band of muscle that closes the last few centimeters of the esophagus and prevents the backward flow of stomach contents.
+
+Esophagomyotomy -A surgical incision through the muscular tissue of the esophagus.
+
+Esophagus -The muscular tube that leads from the back of the throat to the entrance of the stomach.
+
+Peristalsis -The coordinated, rhythmic wave of smooth  muscle  contraction  that  forces  food through the digestive tract.
+
+Reflux -An abnormal backward or return flow of a fluid.
+
+## PREVENTION
+
+There is no known way to prevent achalasia.
+
+# Achondroplasia
+
+## DEFINITION
+
+Achondroplasia  is  the  most  common  cause  of dwarfism, or significantly abnormal short stature.
+
+An x-ray image of an achondroplastic person's head and chest. (Custom Medical Stock Photo. Reproduced by permission.)
+
+<!-- image -->
+
+## DESCRIPTION
+
+Achondroplasia is one of a number of chondodystrophies, in which the development of cartilage, and therefore, bone is disturbed. The disorder appears in approximately one in every 10,000 births. Achondroplasia is usually diagnosed at birth, owing to the characteristic appearance of the newborn.
+
+Normal bone growth depends on the production of cartilage (a fibrous connective tissue). Over time, calcium is deposited within the cartilage, causing it to harden and become bone. In achondroplasia, abnormalities of this process prevent the bones (especially those in the  limbs)  from  growing  as  long  as  they  normally should, at the same time allowing the bones to become abnormally thickened. The bones in the trunk of the body and the skull are mostly not affected, although the opening from the skull through which the spinal cord passes (foramen magnum) is often narrower than normal, and the opening (spinal canal) through which the spinal cord runs in the back bones (vertebrae) becomes increasingly and abnormally small down the length of the spine.
+
+## CAUSES AND SYMPTOMS
+
+Achondroplasia is caused by a genetic defect. It is a dominant trait, meaning that anybody with the genetic defect will display all the symptoms of the disorder. A parent with the disorder has a 50% chance of passing it
+
+## KEY TERMS
+
+Cartilage -A flexible, fibrous type of connective tissue which serves as a base on which bone is built.
+
+Foramen magnum -The opening at the base of the skull, through which the spinal cord and the brainstem pass.
+
+Hydrocephalus -An abnormal accumulation of fluid within the brain. This accumulation can be destructive by pressing on brain structures, and damaging them.
+
+Mutation -A new, permanent change in the structure of a gene, which can result in abnormal structure or function somewhere in the body.
+
+Spinal canal -The opening that runs through the center of the column of spinal bones (vertebrae), and through which the spinal cord passes.
+
+Vertebrae -The individual bones of the spinal column which are stacked on top of each other. There is  a  hole  in  the  center  of  each  bone,  through which the spinal cord passes.
+
+on  to  the  offspring. Although  achondroplasia  can  be passed on to subsequent offspring, the majority of cases occur due to a new mutation (change) in a gene. Interestingly enough, the defect seen in achondroplasia is one of only a few defects known to increase in frequency with increasing age of the father (many genetic defects are linked to increased age of the mother).
+
+People with achondroplasia have abnormally short arms and legs. Their trunk is usually of normal size, as is their head. The appearance of short limbs and normal head size actually makes the head appear to be oversized. The bridge of the nose often has a scooped out appearance termed 'saddle nose.' The lower back has an abnormal curvature, or sway back. The face often displays an overly prominent forehead, and a relative lack of development of the face in the area of the upper jaw. Because the foramen magnum and spinal canal are abnormally narrowed, nerve damage may occur if the spinal cord or nerves become compressed. The narrowed foramen magnum may disrupt the normal flow of fluid between the brain and the spinal cord, resulting in the accumulation of too much fluid in the brain ( hydrocephalus ). Children with achondroplasia have a very high risk of serious and repeated middle ear infections, which can result in hearing loss . The disease does not affect either mental capacity, or reproductive ability.
+
+## DIAGNOSIS
+
+Diagnosis is often made at birth due to the characteristically short limbs, and the appearance of a large head. Xray examination will reveal a characteristic appearance to the bones, with the bones of the limbs appearing short in length, yet broad in width. A number of measurements of the bones in x-ray images will reveal abnormal proportions.
+
+## TREATMENT
+
+No treatment will reverse the defect present in achondroplasia. All patients with the disease will be short, with abnormally proportioned limbs, trunk, and head. Treatment of achondroplasia primarily addresses some of the complications of the disorder, including problems due to nerve  compression, hydrocephalus, bowed  legs, and abnormal curves in the spine. Children with achondroplasia  who  develop  middle  ear  infections  (acute otitis media ) will require quick treatment with antibiotics and careful monitoring in order to avoid hearing loss.
+
+## PROGNOSIS
+
+Achondroplasia is a disease which causes considerable deformity. However, with careful attention paid to the  development  of  dangerous  complications  (nerve compression, hydrocephalus), most people are in good health, and can live a normal lifespan.
+
+## PREVENTION
+
+The  only  form  of  prevention  is  through genetic counseling , which could help parents assess their risk of having a child with achondroplasia.
+
+# Acid phosphatase test
+
+## DEFINITION
+
+Acid phosphatase is an enzyme found throughout the body, but primarily in the prostate gland. Like all enzymes, it is needed to trigger specific chemical reactions.  Acid  phosphatase  testing  is  done  to  diagnose whether prostate cancer has spread to other parts of the body (metastasized), and to check the effectiveness of treatment. The test has been largely supplanted by the prostate specific antigen test (PSA).
+
+## PURPOSE
+
+The male prostate gland has 100 times more acid phosphatase than any other body tissue. When prostate cancer spreads to other parts of the body, acid phosphatase levels rise, particularly if the cancer spreads to the bone. One-half to three-fourths of persons who have metastasized prostate cancer have high acid phosphatase levels. Levels fall after the tumor is removed or reduced through treatment.
+
+Tissues other than prostate have small amounts of acid phosphatase, including bone, liver, spleen, kidney, and red blood cells and platelets. Damage to these tissues causes a moderate increase in acid phosphatase levels.
+
+Acid phosphatase is very concentrated in semen. Rape investigations will often include testing  for  the presence of acid phosphatase in vaginal fluid.
+
+## PRECAUTIONS
+
+This is not a screening test for prostate cancer. Acid phosphatase levels rise only after prostate cancer has metastasized.
+
+## DESCRIPTION
+
+Laboratory  testing  measures  the  amount  of  acid phosphatase in a person's blood, and can determine from what tissue the enzyme is coming. For example, it is important to know if the increased acid phosphatase is from the prostate or red blood cells. Acid phosphatase from  the  prostate, called  prostatic  acid  phosphatase (PAP), is the most medically significant type of acid phosphatase.
+
+## KEY TERMS
+
+Enzyme -A substance needed to trigger specific chemical reactions.
+
+Metastasize -Spread to other parts of the body; usually refers to cancer.
+
+Prostate gland -A gland of the male reproductive system.
+
+Subtle  differences  between  prostatic  acid  phosphatase and acid phosphatases from other tissues cause them to react differently in the laboratory when mixed with certain chemicals. For example, adding the chemical tartrate to the test mixture inhibits the activity of prostatic acid phosphatase but not red blood cell acid phosphatase. Laboratory test methods based on these differences reveal how much of a person's total acid phosphatase is derived from the prostate. Results are usually available the next day.
+
+## PREPARATION
+
+This test requires drawing about 5-10 mL of blood. The patient should not have a rectal exam or prostate massage for two to three days prior to the test.
+
+## AFTERCARE
+
+Discomfort or bruising may occur at the puncture site, and the person may feel dizzy or faint. Applying pressure to the puncture site until the bleeding stops will reduce bruising. Warm packs to the puncture site will relieve discomfort.
+
+## NORMAL RESULTS
+
+Normal results vary based on the laboratory and the method used.
+
+## ABNORMAL RESULTS
+
+The highest levels of acid phosphatase are found in metastasized prostate cancer. Diseases of the bone, such as Paget's disease or hyperparathyroidism ; diseases of blood  cells, such  as sickle  cell  disease or multiple myeloma ; or lysosomal disorders, such as Gaucher's disease, will show moderately increased levels.
+
+Certain medications can cause temporary increases or decreases in acid phosphatase levels. Manipulation of the  prostate  gland  through massage, biopsy, or rectal exam before a test can increase the level.
+
+# Acne
+
+## DEFINITION
+
+Acne is a common skin disease characterized by pimples on the face, chest, and back. It occurs when the pores of the skin become clogged with oil, dead skin cells, and bacteria.
+
+## DESCRIPTION
+
+Acne vulgaris, the medical term for common acne, is the most common skin disease. It affects nearly 17 million people in the United States. While acne can arise at any age, it usually begins at puberty and worsens during adolescence. Nearly 85% of people develop acne at some time between the ages of 12-25 years. Up to 20% of women develop mild acne. It is also found in some newborns.
+
+The sebaceous glands lie just beneath the skin's surface. They produce an oil called sebum, the skin's natural moisturizer. These glands and the hair follicles within which  they  are  found  are  called  sebaceous  follicles. These  follicles  open  onto  the  skin  through  pores. At puberty, increased levels of androgens (male hormones) cause  the  glands  to  produce  too  much  sebum. When excess sebum combines with dead, sticky skin cells, a hard plug, or comedo, forms that blocks the pore. Mild noninflammatory acne consists of the two types of comedones, whiteheads and blackheads.
+
+Moderate and severe inflammatory types of acne result after the plugged follicle is invaded by Propionibacterium acnes , a bacteria that normally lives on the skin. A pimple forms when the damaged follicle weakens and bursts open, releasing sebum, bacteria, and skin and white blood cells into the surrounding tissues. Inflamed pimples near the skin's surface are called papules; when deeper, they are called pustules. The most severe type of acne consists of cysts (closed sacs) and nodules (hard swellings). Scarring occurs when new skin cells are laid down to replace damaged cells.
+
+The most common sites of acne are the face, chest, shoulders, and back since these are the parts of the body where the most sebaceous follicles are found.
+
+## CAUSES AND SYMPTOMS
+
+The exact cause of acne is unknown. Several risk factors have been identified:
+
+- Age. Due to the hormonal changes they experience, teenagers are more likely to develop acne.
+- Gender. Boys have more severe acne and develop it more often than girls.
+- Disease. Hormonal disorders can complicate acne in girls.
+- Heredity. Individuals with a family history of acne have greater susceptibility to the disease.
+- Hormonal changes. Acne can flare up before menstruation, during pregnancy , and menopause .
+- Diet. No foods cause acne, but certain foods may cause flare-ups.
+- Drugs. Acne can be a side effect of drugs including tranquilizers, antidepressants, antibiotics , oral contraceptives , and anabolic steroids.
+- Personal hygiene. Abrasive soaps, hard scrubbing, or picking at pimples will make them worse.
+- Cosmetics. Oil-based makeup and hair sprays worsen acne.
+- Environment. Exposure to oils and greases, polluted air, and sweating in hot weather aggravate acne.
+- Stress . Emotional stress may contribute to acne.
+
+Acne is usually not conspicuous, although inflamed lesions may cause pain , tenderness, itching , or swelling. The most troubling aspects of these lesions are the negative cosmetic effects and potential for scarring. Some people, especially teenagers, become emotionally upset about their condition, and have problems forming relationships or keeping jobs.
+
+## DIAGNOSIS
+
+Acne patients are often treated by family doctors. Complicated cases are referred to a dermatologist, a skin
+
+disease specialist, or an endocrinologist, a specialist who treats diseases of the body's endocrine (hormones and glands) system.
+
+Acne has a characteristic appearance and is not difficult to diagnose. The doctor takes a complete medical history, including questions about skin care, diet, factors causing flare-ups, medication use, and prior treatment. Physical examination includes the face, upper neck, chest, shoulders, back, and other affected areas. Under good lighting, the doctor determines what types and how many blemishes are present, whether they are inflamed, whether they are deep or superficial, and whether there is scarring or skin discoloration.
+
+In teenagers, acne is often found on the forehead, nose, and chin. As people get older, acne tends to appear towards the outer part of the face. Adult women may have acne on their chins and around their mouths. The elderly may develop whiteheads and blackheads on the upper cheeks and skin around the eyes.
+
+Laboratory  tests  are  not  done  unless  the  patient appears to have a hormonal disorder or other medical problem. In this case, blood analyses or other tests may be ordered. Most insurance plans cover the costs of diagnosing and treating acne.
+
+## TREATMENT
+
+Acne treatment consists of reducing sebum production, removing dead skin cells, and killing bacteria with topical drugs and oral medications. Treatment choice depends upon whether the acne is mild, moderate, or severe.
+
+## DRUGS
+
+TOPICAL DRUGS. Treatment for mild noninflammatory  acne  consists  of  reducing  the  formation  of  new comedones with topical tretinoin, benzoyl peroxide, adapalene, or salicylic acid. Tretinoin is especially effective because it increases turnover ( death and replacement) of skin cells. When complicated by inflammation, topical antibiotics  may  be  added  to  the  treatment  regimen. Improvement is usually seen in two to four weeks.
+
+Topical  medications  are  available  as  cream, gel, lotion, or pad preparations of varying strengths. They include antibiotics (agents that kill bacteria), such as erythromycin, clindamycin (Cleocin-T), and meclocycline (Meclan); comedolytics (agents that loosen hard plugs and open pores) such as the vitamin A acid tretinoin (Retin-A), salicylic acid, adapalene (Differin), resorcinol, and sulfur. Drugs that act as both comedolytics and antibiotics, such  as  benzoyl  peroxide, azelaic  acid (Azelex), or benzoyl peroxide plus erythromycin (Benza-
+
+Acne vulgaris affecting a woman's face. Acne is the general name given to a skin disorder in which the sebaceous glands become inflamed. (Photograph by Biophoto Associates, Photo Researchers, Inc. Reproduced by permission.)
+
+<!-- image -->
+
+mycin), are  also  used.  These  drugs  may  be  used  for months to years to achieve disease control.
+
+After washing with mild soap, the drugs are applied alone or in combination, once or twice a day over the entire affected area of skin. Possible side effects include mild redness, peeling, irritation, dryness, and an increased sensitivity to sunlight that requires use of a sunscreen.
+
+ORAL DRUGS. Oral antibiotics are taken daily for two to four months. The drugs used include tetracycline, erythromycin, minocycline (Minocin), doxycycline, clindamycin (Cleocin), and trimethoprim- sulfamethoxazole (Bactrim, Septra). Possible side effects include allergic reactions, stomach upset, vaginal yeast infections, dizziness , and tooth discoloration.
+
+The goal of treating moderate acne is to decrease inflammation and prevent new comedone formation. One effective treatment is topical tretinoin along with a topical## KEY TERMS
+
+Androgens -Male sex hormones that are linked with the development of acne.
+
+Antiandrogens -Drugs that inhibit the production of androgens.
+
+Antibiotics -Medicines that kill bacteria.
+
+Comedo -A hard plug composed of sebum and dead skin cells. The mildest type of acne.
+
+Comedolytic -Drugs that break up comedones and open clogged pores.
+
+Corticosteroids -A group of hormones produced by  the  adrenal  glands  with  different  functions, including regulation of fluid balance, androgen activity, and reaction to inflammation.
+
+Estrogens -Hormones produced by the ovaries, the female sex glands.
+
+Isotretinoin -A drug that decreases sebum production and dries up acne pimples.
+
+Sebaceous follicles -A structure found within the skin that houses the oil-producing glands and hair follicles, where pimples form.
+
+Sebum -An oily  skin  moisturizer  produced  by sebaceous glands.
+
+Tretinoin -A drug that works by increasing the turnover (death and replacement) of skin cells.
+
+or oral antibiotic. A combination of topical benzoyl peroxide and erythromycin is also very effective. Improvement is normally seen within four to six weeks, but treatment is maintained for at least two to four months.
+
+A drug reserved for the treatment of severe acne, oral isotretinoin (Accutane), reduces sebum production and cell stickiness. It is the treatment of choice for severe acne with cysts and nodules, and is used with or without topical or oral antibiotics. Taken for four to five months, it provides long-term disease control in up to 60% of patients. If the acne reappears, another course of isotretinoin may be needed by about 20% of patients, while another 20% may do well with topical drugs or oral antibiotics. Side effects include temporary worsening of the acne, dry skin, nosebleeds, vision disorders, and elevated liver enzymes, blood fats and cholesterol. This drug must not be taken during pregnancy since it causes birth defects .
+
+Anti-androgens, drugs that inhibit androgen production, are used to treat women who are unresponsive to other therapies. Certain types of oral contraceptives (for example, Ortho-Tri-Cyclen) and female sex hormones (estrogens) reduce hormone activity in the ovaries. Other drugs, for example, spironolactone and corticosteroids , reduce hormone activity in the adrenal glands. Improvement may take up to four months.
+
+Oral corticosteroids, or anti-inflammatory drugs, are the treatment of choice for an extremely severe, but rare type of destructive inflammatory acne called acne fulminans, found mostly in adolescent males. Acne conglobata, a more common form of severe inflammation, is characterized by numerous, deep, inflammatory nodules that heal with scarring. It is treated with oral isotretinoin and corticosteroids.
+
+## OTHER TREATMENTS
+
+Several surgical or medical treatments are available to alleviate acne or the resulting scars:
+
+- Comedone extraction. The comedo is removed from the pore with a special tool.
+- Chemical peels. Glycolic acid is applied to peel off the top layer of skin to reduce scarring.
+- Dermabrasion. The affected skin is frozen with a chemical spray, and removed by brushing or planing.
+- Punch grafting. Deep scars are excised and the area repaired with small skin grafts.
+- Intralesional  injection.  Corticosteroids  are  injected directly into inflamed pimples.
+- Collagen injection. Shallow scars are elevated by collagen (protein) injections.
+
+## ALTERNATIVE TREATMENT
+
+Alternative  treatments  for  acne  focus  on  proper cleansing to keep the skin oil-free; eating a well-balanced diet high in fiber, zinc, and raw foods; and avoiding alcohol, dairy products, smoking , caffeine , sugar,processed foods, and foods high in iodine, such as salt. Supplementation with herbs such as burdock root ( Arctium lappa ), red clover ( Trifolium pratense ), and milk thistle ( Silybum marianum ), and with nutrients such as essential fatty acids, vitamin B complex, zinc, vitamin A, and chromium is also recommended. Chinese herbal remedies used for acne include cnidium seed ( Cnidium monnieri ) and honeysuckle flower ( Lonicera japonica ). Wholistic physicians or nutritionists can recommend the proper amounts of these herbs.
+
+## PROGNOSIS
+
+Acne is not curable, although long-term control is achieved in up to 60%  of  patients treated with
+
+isotretinoin. It can be controlled by proper treatment, with  improvement  taking  two  or  more  months. Acne tends to reappear when treatment stops, but spontaneously  improves over time. Inflammatory acne may leave scars that require further treatment.
+
+## PREVENTION
+
+There are no sure ways to prevent acne, but the following steps may be taken to minimize flare-ups:
+
+- gentle washing of affected areas once or twice every day
+- avoid abrasive cleansers
+- use noncomedogenic makeup and moisturizers
+- shampoo often and wear hair off face
+- eat a well-balanced diet, avoiding foods that trigger flare-ups
+- unless  told  otherwise, give  dry  pimples  a  limited amount of sun exposur
+- do not pick or squeeze blemishes
+- reduce stress
+
+# Acoustic neuroma
+
+## DEFINITION
+
+An acoustic neuroma is a benign tumor involving cells of the myelin sheath that surrounds the vestibulocochlear nerve (eighth cranial nerve).
+
+## DESCRIPTION
+
+The vestibulocochlear nerve extends from the inner ear to the brain and is made up of a vestibular branch, often called the vestibular nerve, and a cochlear branch, called the cochlear nerve. The vestibular and cochlear nerves lie next to one another. They also run along side other cranial nerves. People possess two of each type of vestibulocochlear nerve, one that extends from the left ear and one that extends from the right ear.
+
+The vestibular nerve transmits information concerning balance from the inner ear to the brain and the cochlear nerve transmits information about hearing. The vestibular nerve, like many nerves, is surrounded by a cover called a myelin sheath. A tumor, called a schwannoma, can sometimes develop from the cells of the myelin sheath. A tumor is  an  abnormal  growth  of  tissue  that  results  from  the uncontrolled growth of cells. Acoustic neuromas are often called vestibular schwannomas because they are tumors that  arise  from  the  myelin  sheath  that  surrounds  the vestibular  nerve.  Acoustic  neuromas  are  considered benign (non-cancerous) tumors since they do not spread to other parts of the body. They can occur anywhere along the vestibular nerve but are most likely to occur where the vestibulocochlear nerve passes through the tiny bony canal that connects the brain and the inner ear.
+
+An acoustic neuroma can arise from the left vestibular nerve or the right vestibular nerve. A unilateral tumor is a tumor arising from one nerve and a bilateral tumor arises from both vestibular nerves. Unilateral acoustic neuromas usually occur spontaneously (by chance). Bilateral acoustic neuromas occur as part of a hereditary con-
+
+dition called Neurofibromatosis Type 2 (NF2). A person with NF2 has inherited a predisposition for developing acoustic neuromas and other tumors of the nerve cells.
+
+Acoustic  neuromas  usually  grow  slowly  and  can take years to develop. Some acoustic neuromas remain so small that they do not cause any symptoms. As the acoustic neuroma grows it can interfere with the functioning of the vestibular nerve and can cause vertigo and balance difficulties. If the acoustic nerve grows large enough to press against the cochlear nerve, then hearing loss and a ringing ( tinnitus ) in the affected ear will usually occur. If untreated and the acoustic neuroma continues to grow it can press against other nerves in the region and cause other symptoms. This tumor can be life threatening if it becomes large enough to press against and interfere with the functioning of the brain.
+
+## CAUSES AND SYMPTOMS
+
+
+
+## CAUSES
+
+An  acoustic  neuroma  is  caused  by  a  change  or absence of both of the NF2 tumor suppressor genes in a nerve cell. Every person possesses a pair of NF2 genes in every cell of their body including their nerve cells. One NF2 gene is inherited from the egg cell of the mother and one NF2 gene is inherited from the sperm cell of the father. The NF2 gene is responsible for helping to prevent the formation of tumors in the nerve cells. In particular the NF2 gene helps to prevent acoustic neuromas.
+
+Only one unchanged and functioning NF2 gene is necessary to prevent the formation of an acoustic neuroma. If both NF2 genes become changed or missing in one of the myelin sheath cells of the vestibular nerve then an acoustic neuroma will usually develop. Most unilateral  acoustic  neuromas result when the NF2 genes become spontaneously changed or missing. Someone with a unilateral acoustic neuroma that has developed spontaneously is not at increased risk for having children with an acoustic neuroma. Some unilateral acoustic neuromas result from the hereditary condition NF2. It is also possible that some unilateral acoustic neuromas may be caused by changes in other genes responsible for preventing the formation of tumors.
+
+Bilateral acoustic neuromas result when someone is affected with the hereditary condition NF2. A person with NF2  is  typically  born  with  one  unchanged  and  one changed or missing NF2 gene in every cell of their body. Sometimes they inherit this change from their mother or father. Sometimes the change occurs spontaneously when the egg and sperm come together to form the first cell of the baby. The children of a person with NF2 have a 50% chance of inheriting the changed or missing NF2 gene.
+
+A person with NF2 will develop an acoustic neuroma if the remaining unchanged NF2 gene becomes spontaneously changed or missing in one of the myelin sheath cells of their vestibular nerve. People with NF2 often develop acoustic neuromas at a younger age. The mean age of onset of acoustic neuroma in NF2 is 31 years of age versus 50 years of age for sporadic acoustic neuromas. Not all people with NF2, however, develop acoustic neuromas. People with NF2 are at increased risk for developing cataracts and tumors in other nerve cells.
+
+Most people with a unilateral acoustic neuroma are not affected with NF2. Some people with NF2, however, only  develop  a  tumor  in  one  of  the  vestibulocochlear nerves. Others may initially be diagnosed with a unilateral tumor but may develop a tumor in the other nerve a number of years later. NF2 should be considered in someone under the age of 40 who has a unilateral acoustic neuroma. Someone with a unilateral acoustic neuroma and other family members diagnosed with NF2 probably is affected with NF2. Someone with a unilateral acoustic neuroma and other symptoms of NF2 such as cataracts and other tumors may also be affected with NF2. On the other hand, someone over the age of 50 with a unilateral acoustic neuroma, no other tumors and no family history of NF2 is very unlikely to be affected with NF2.
+
+## SYMPTOMS
+
+Small acoustic neuromas usually only interfere with the functioning of the vestibulocochlear nerve. The most common first symptom of an acoustic neuroma is hearing loss, which is often accompanied by a ringing sound (tinnitis). People with acoustic neuromas sometimes report difficulties in using the phone and difficulties in perceiving the tone of a musical instrument or sound even when their hearing appears to be otherwise normal. In most cases the hearing loss is initially subtle and worsens gradually over time until deafness occurs in the affected ear. In approximately 10% of cases the hearing loss is sudden and severe.
+
+Acoustic neuromas can also affect the functioning of the vestibular branch of the vestibulocochlear nerve and van cause vertigo and dysequilibrium. Twenty percent of small tumors are associated with periodic vertigo, which is characterized by dizziness or a whirling sensation. Larger acoustic neuromas are less likely to cause vertigo but more likely to cause dysequilibrium. Dysequilibrium, which is characterized by minor clumsiness and a general feeling of instability, occurs in nearly 50% of people with an acoustic neuroma.
+
+As the tumor grows larger it can press on the surrounding cranial nerves. Compression of the fifth cranial nerve can result in facial pain and or numbness. Compression of the seventh cranial nerve can cause spasms, weakness or
+
+## KEY TERMS
+
+Benign tumor -A localized overgrowth of cells that does not spread to other parts of the body.
+
+uses an external magnetic field instead of x rays to visualize different tissues of the body.
+
+Chromosome -A microscopic structure, made of a complex of proteins and DNA, that is found within each cell of the body.
+
+Computed tomography (CT) -An examination that uses a computer to compile and analyze the images produced by x rays projected at a particular part of the body.
+
+Cranial nerves -The set of twelve nerves found on each side of the head and neck that control the sensory and muscle functions of a number of organs such as the eyes, nose, tongue face and throat.
+
+DNA testing -Testing for a change or changes in a gene or genes.
+
+Gene -A building block of inheritance, made up of a compound called DNA (deoxyribonucleic acid) and containing the instructions for the production of a particular protein. Each gene is found on a specific location on a chromosome.
+
+Magnetic resonance imaging (MRI) -A test which paralysis of the facial muscles. Double vision is a rare symptom but can result when the 6th cranial nerve is affected. Swallowing and/or speaking difficulties can occur if the tumor presses against the 9th, 10th, or 12th cranial nerves.
+
+If left untreated, the tumor can become large enough to press against and affect the functioning of the brain stem. The brain stem is the stalk like portion of the brain that joins the spinal cord to the cerebrum, the thinking and reasoning part of the brain. Different parts of the brainstem have different functions such as the control of breathing and muscle coordination. Large tumors that impact the brain stem can result in headaches, walking difficulties (gait ataxia) and involuntary shaking movements of the muscles ( tremors ). In rare cases when an acoustic neuroma remains undiagnosed and untreated it can cause nausea, vomiting, lethargy and eventually coma , respiratory difficulties and death . In the vast majority of cases, however, the tumor is discovered and treated long before it is large enough to cause such serious manifestations.
+
+## DIAGNOSIS
+
+Anyone with symptoms of hearing loss should undergo hearing evaluations. Pure tone and speech audiometry
+
+Myelin  sheath -The  cover  that  surrounds  many nerve  cells  and  helps  to  increase  the  speed  by which information travels along the nerve.
+
+Neurofibromatosis  type  2  (NF2) -A  hereditary condition associated with an increased risk of bilateral acoustic neuromas, other nerve cell tumors and cataracts.
+
+Protein -A substance produced by a gene that is involved in creating the traits of the human body such as hair and eye color or is involved in controlling the basic functions of the human body.
+
+Schwannoma -A tumor derived from the cells of the myelin sheath that surrounds many nerve cells.
+
+Tinnitus -A ringing sound or other noise in the ear.
+
+Vertigo -A feeling of spinning or whirling.
+
+Vestibulocochlear nerve (Eighth cranial nerve) -Nerve that transmits information, about hearing and balance from the ear to the brain.
+
+are two screening tests that are often used to evaluate hearing. Pure tone audiometry tests to see how well someone can hear tones of different volume and pitch and speech audiometry tests to see how well someone can hear and recognize speech. An acoustic neuroma is suspected in someone with unilateral hearing loss or hearing loss that is less severe in one ear than the other ear(asymmetrical).
+
+Sometimes an auditory brainstem response (ABR, BAER) test  is  performed  to  help  establish  whether someone is likely to have an acoustic neuroma. During the ABR examination, a harmless electrical impulse is passed from the inner ear to the brainstem. An acoustic neuroma can interfere with the passage of this electrical impulse and this interference can, sometimes be identified through the ABR evaluation. A normal ABR examination  does  not  rule  out  the  possibility  of  an acoustic  neuroma.  An  abnormal  ABR  examination increases the likelihood that an acoustic neuroma is present but other tests are necessary to confirm the presence of a tumor.
+
+If an acoustic neuroma is strongly suspected then magnetic  resonance  imaging (MRI)  is  usually  performed. The MRI is a very accurate evaluation that is
+
+able to detect nearly 100% of acoustic neuromas. Computerized tomography (CT scan, CAT scan)is unable to identify  smaller  tumors;  but  it  can  be  used  when  an acoustic neuroma is suspected and an MRI evaluation cannot be performed.
+
+Once an acoustic neuroma is diagnosed, an evaluation by genetic specialists such as a geneticist and genetic counselor may be recommended. The purpose of this evaluation  is  to  obtain  a  detailed  family  history  and check for signs of NF2. If NF2 is strongly suspected then DNA testing may be recommended. DNA testing involves checking the blood cells obtained from a routine blood draw for the common gene changes associated with NF2.
+
+## TREATMENT
+
+The three treatment options for acoustic neuroma are surgery, radiation, and observation. The physician and patient should discuss the pros and cons of the different options prior to making a decision about treatment. The patient's, physical health, age, symptoms, tumor size, and tumor location should be considered.
+
+## MICROSURGERY
+
+The surgical removal of the tumor or tumors is the most common treatment for acoustic neuroma. In most cases the entire tumor is removed during the surgery. If the tumor is large and causing significant symptoms, yet there is a need to preserve hearing in that ear, then only part of the tumor may be removed. During the procedure the tumor is removed under microscopic guidance and general anesthetic. Monitoring of the neighboring cranial nerves is done during the procedure so that damage to these nerves can be prevented. If preservation of hearing is a possibility, then monitoring of hearing will also take place during the surgery.
+
+Most people stay in the hospital four to seven days following the surgery. Total recovery usually takes four to six weeks. Most people experience fatigue and head discomfort following the surgery. Problems with balance and head and neck stiffness are also common. The mortality rate of this type of surgery is less than 2% at most major centers. Approximately 20% of patients experience some degree of post-surgical complications. In most cases these complications can be managed successfully and do not result in long term medical problems. Surgery brings with it a risk of stroke , damage to the brain stem, infection, leakage of spinal fluid and damage to the cranial nerves. Hearing loss and/or tinnitis often result from the surgery. A follow-up MRI is recommended one to five  years  following  the  surgery  because  of  possible regrowth of the tumor.
+
+## STEREOTACTIC RADIATION THERAPY
+
+During stereotactic radiation therapy , also called radiosurgery or radiotherapy, many small beams of radiation are aimed directly at the acoustic neuroma. The radiation is administered in a single large dose, under local anesthetic and is performed on an outpatient basis. This results in a high dose of radiation to the tumor but little radiation exposure to the surrounding area. This treatment approach is limited to small or medium tumors. The goal of the surgery is to cause tumor shrinkage or at least limit the growth of the tumor. The long term efficacy and risks of this treatment approach are not known. Periodic  MRI  monitoring  throughout  the  life  of  the patient is therefore recommended.
+
+Radiation therapy can cause hearing loss which can sometimes occurs even years later. Radiation therapy can also cause damage to neighboring cranial nerves, which can result in symptoms such as numbness, pain or paralysis of the facial muscles. In many cases these symptoms are temporary. Radiation treatment can also induce the formation of other benign or malignant schwannomas. This type of treatment may therefore be contraindicated in the treatment of acoustic neuromas in those with NF2 who are predisposed to developing schwannomas and other tumors.
+
+## OBSERVATION
+
+Acoustic neuromas are usually slow growing and in some cases they will stop growing and even become smaller or disappear entirely. It may therefore be appropriate in some cases to hold off on treatment and to periodically monitor the tumor through MRI evaluations. Long-term observation may be appropriate for example in an elderly person with a small acoustic neuroma and few symptoms. Periodic observation may also be indicated for someone with a small and asymptomatic acoustic neuroma that was detected through an evaluation for another medical problem. Observation may also be suggested for someone with an acoustic neuroma in the only hearing ear or in the ear that has better hearing. The danger of an observational approach is that as the tumor grows larger it can become more difficult to treat.
+
+## PROGNOSIS
+
+The prognosis for someone with a unilateral acoustic neuroma is usually quite good provided the tumor is diagnosed early and appropriate treatment is instituted. Long term hearing loss and tinnitis in the affected ear are common, even if appropriate treatment is provided. Regrowth of the tumor is also a possibility following surgery or radiation therapy and repeat treatment may be necessary. The prognosis can be poorer for those with NF2 who have an increased risk of bilateral acoustic neuromas and other tumors.## Resources
+
+## ACQUIRED HYPOGAMMAGLOBULINEMIA SEE
+
+
+
+## COMMON VARIABLE IMMUNODEFICIENCY
+
+Acquired immunodeficiency syndrome see AIDS
+
+# Acrocyanosis
+
+## DEFINITION
+
+Acrocyanosis is a decrease in the amount of oxygen delivered to the extremities. The hands and feet turn blue because of the lack of oxygen. Decreased blood supply to the affected areas is caused by constriction or spasm of small blood vessels.
+
+## DESCRIPTION
+
+Acrocyanosis is a painless disorder caused by constriction or narrowing of small blood vessels in the skin of affected patients. The spasm of the blood vessels decreases the amount of blood that passes through them, resulting in less blood being delivered to the hands and feet. The hands may be the main area affected. The affected areas turn blue and become cold and sweaty. Localized swelling may also occur. Emotion and cold temperatures can worsen the symptoms, while warmth can decrease symptoms. The disease is seen mainly in women and the effect of the disorder is mainly cosmetic. People with the disease tend to be uncomfortable, with sweaty, cold, bluish colored hands and feet.
+
+## CAUSES AND SYMPTOMS
+
+The sympathetic nerves cause constriction or spasms in the peripheral blood vessels that supply blood to the extremities. The spasms are a contraction of the muscles in  the  walls  of  the  blood  vessels.  The  contraction decreases  the  internal  diameter  of  the  blood  vessels, thereby decreasing the amount of blood flow through the affected area. The spasms occur on a persistent basis, resulting in long term reduction of blood supply to the hands and feet. Sufficient blood still passes through the blood vessels so that the tissue in the affected areas does not starve for oxygen or die. Mainly, blood vessels near the surface of the skin are affected.
+
+## DIAGNOSIS
+
+Diagnosis is made by observation of the main clinical  symptoms, including persistently blue and sweaty hands and/or feet and a lack of pain . Cooling the hands increases the blueness, while warming the hands decreas-
+
+## KEY TERMS
+
+Sympathetic nerve -A nerve of the autonomic nervous  system  that  regulates  involuntary  and automatic reactions, especially to stress.
+
+es the blue color. The acrocyanosis patient's pulse is normal, which rules out obstructive diseases. Raynaud's disease differs from acrocyanosis in that it causes white and red skin coloration phases, not just bluish discoloration.
+
+## TREATMENT
+
+Acrocyanosis usually isn't treated. Drugs that block the uptake of calcium ( calcium channel blockers ) and alpha-one  antagonists  reduce  the  symptoms  in  most cases. Drugs that dilate blood vessels are only effective some of the time. Sweating from the affected areas can be profuse and require treatment. Surgery to cut the sympathetic nerves is performed rarely.
+
+## PROGNOSIS
+
+Acrocyanosis is a benign and persistent disease. The main concern of patients is cosmetic. Left untreated, the disease does not worsen.
+
+# Acromegaly and gigantism
+
+## DEFINITION
+
+Acromegaly is a disorder in which the abnormal release of a particular chemical from the pituitary gland in the brain causes increased growth in bone and soft tissue, as well as a variety of other disturbances throughout the body. This chemical released from the pituitary gland is called growth hormone (GH). The body's ability to process and use nutrients like fats and sugars is also altered. In children whose bony growth plates have not closed, the chemical changes of acromegaly result in exceptional growth of long bones. This variant is called gigantism, with  the  additional  bone  growth  causing unusual height. When the abnormality occurs after bone growth stops, the disorder is called acromegaly.
+
+## DESCRIPTION
+
+Acromegaly is a relatively rare disorder, occurring in approximately 50 out of every one million people (50/ 1,000,000). Both men and women are affected. Because the symptoms of acromegaly occur so gradually, diagnosis  is  often  delayed. The  majority  of  patients  are  not identified until they are middle aged.
+
+## CAUSES AND SYMPTOMS
+
+The pituitary is a small gland located at the base of the brain. A gland is a collection of cells that releases certain chemicals, or hormones, which are important to the functioning of other organs or body systems. The pituitary hormones travel throughout the body and are involved in a large number of activities, including the regulation of growth and reproductive functions. The cause of acromegaly can be traced to the pituitary's production of GH.
+
+Under normal conditions, the pituitary receives input from another brain structure, the hypothalamus, located at the base of the brain. This input from the hypothalamus regulates the pituitary's release of hormones. For example, the hypothalamus produces growth hormonereleasing hormone (GHRH), which directs the pituitary to release GH. Input from the hypothalamus should also direct the pituitary to stop releasing hormones.
+
+In acromegaly, the pituitary continues to release GH and ignores signals from the hypothalamus. In the liver, GH causes production of a hormone called insulin-like growth factor 1 (IGF-1), which is responsible for growth throughout the body. When the pituitary refuses to stop producing GH, the levels of IGF-1 also reach abnormal peaks. Bones, soft tissue, and organs throughout the body begin  to  enlarge, and  the  body  changes  its  ability  to process and use nutrients like sugars and fats.
+
+In acromegaly, an individual's hands and feet begin to grow, becoming thick and doughy. The jaw line, nose, and forehead also grow, and facial features are described as 'coarsening'. The tongue grows larger, and because the jaw is larger, the teeth become more widely spaced. Due to swelling within the structures of the throat and sinuses, the voice becomes deeper and sounds more hollow, and patients may develop loud snoring . Various hormonal changes cause symptoms such as:
+
+- heavy sweating
+- oily skin
+- increased coarse body hair
+- improper processing of sugars in the diet (and sometimes actual diabetes)
+- high blood pressure
+- increased calcium in the urine (sometimes leading to kidney stones)
+- increased risk of gallstones ; and
+- swelling of the thyroid gland
+
+People with acromegaly have more skin tags, or outgrowths of tissue, than normal. This increase in skin tags is  also  associated  with  the  development  of  growths, called polyps, within the large intestine that may eventually become cancerous. Patients with acromegaly often suffer from headaches and arthritis.  The various swellings and enlargements throughout the body may press on nerves, causing sensations of local tingling or burning, and sometimes result in muscle weakness.
+
+The most common cause of this disorder (in 90% of patients) is the development of a noncancerous tumor within the pituitary, called a pituitary adenoma. These tumors are the source of the abnormal release of GH. As these tumors grow, they may press on nearby structures within the brain, causing headaches and changes in vision. As the adenoma grows, it may disrupt other pituitary tissue, interfering with the release of other hormones. These disruptions may be  responsible  for  changes  in  the  menstrual  cycle  of women, decreases in the sexual drive in men and women, and the abnormal production of breast milk in women. In rare cases, acromegaly is caused by the abnormal production of GHRH, which leads to the increased production of GH. Certain tumors in the pancreas, lungs, adrenal glands, thyroid, and intestine produce GHRH, which in turn triggers production of an abnormal quantity of GH.
+
+## DIAGNOSIS
+
+Because acromegaly produces slow changes over time, diagnosis is often significantly delayed. In fact, the characteristic coarsening of the facial features is often not recognized by family members, friends, or long-time family physicians. Often, the diagnosis is suspected by a new physician who sees the patient for the first time and is struck by the patient's characteristic facial appearance. Comparing old photographs from a number of different time periods will often increase suspicion of the disease.
+
+Because the quantity of GH produced varies widely under normal conditions, demonstrating high levels of GH in the blood is not sufficient to merit a diagnosis of acromegaly.  Instead, laboratory  tests  measuring  an
+
+Enlarged feet is one deformity caused by acromegaly. (Custom Medical Stock Photo. Reproduced by permission.)
+
+<!-- image -->
+
+increase of IGF-1 (3-10 times above the normal level) are useful. These results, however, must be carefully interpreted because normal laboratory values for IGF-1 vary when the patient is pregnant, undergoing puberty , elderly, or severely malnourished. Normal patients will show a decrease in GH production when given a large dose of sugar (glucose). Patients with acromegaly will not show this decrease, and will often show an increase in GH production. Magnetic resonance imaging (MRI) is useful for viewing the pituitary, and for identifying and locating an adenoma. When no adenoma can be located, the search for a GHRH-producing tumor in another location begins.
+
+## TREATMENT
+
+The first step in treatment of acromegaly is removal of all  or  part  of  the  pituitary  adenoma.  Removal  requires surgery, usually performed by entering the skull through the nose. While this surgery can cause rapid improvement of many acromegaly symptoms, most patients will also
+
+A comparison of the right hand of a person afflicted with acromegaly (left) and the hand of a normal sized person. (Custom Medical Stock Photo. Reproduced by permission.)
+
+<!-- image -->
+
+require additional treatment with medication. Bromocriptine (Parlodel) is a medication that can be taken by mouth, while octreotide (Sandostatin) must be injected every eight hours. Both of these medications are helpful in reducing GH production, but must often be taken for life and produce their own unique side effects. Some patients who cannot undergo surgery are treated with radiation therapy to the pituitary in an attempt to shrink the adenoma. Radiating the pituitary may take up to 10 years, however, and may also injure/destroy other normal parts of the pituitary.
+
+## PROGNOSIS
+
+Without  treatment, patients  with  acromegaly  will most likely die early because of the disease's effects on the heart, lungs, brain, or due to the development of cancer in the large intestine. With treatment, however, a patient with acromegaly may be able to live a normal lifespan.
+
+## KEY TERMS
+
+Adenoma -A  type  of  noncancerous  (benign) tumor that often involves the overgrowth of certain cells found in glands.
+
+Gland -A collection of cells that releases certain chemicals, or hormones, that are important to the functioning of other organs or body systems.
+
+Hormone -A chemical produced in one part of the body that travels to another part of the body in order to exert an effect.
+
+Hypothalamus -A  structure  within  the  brain responsible for a large number of normal functions throughout the body, including regulating sleep, temperature, eating, and sexual development. The hypothalamus also regulates the functions of the pituitary gland by directing the pituitary to stop or start production of its hormones.
+
+Pituitary -A gland located at the base of the brain that produces a number of hormones, including those that regulate growth and reproductive functions. Overproduction of the pituitary hormone called growth hormone (GH) is responsible for the condition known as acromegaly.
+
+## ACT SEE ALANINE AMINOTRANSFERASE TEST ACTH TEST SEE ADRENOCORTICOTROPIC
+
+
+
+## HORMONE TEST
+
+Actinomyces israelii infection see
+
+Actinomycosis
+
+# Actinomycosis
+
+## DEFINITION
+
+Actinomycosis is an infection primarily caused by the bacterium Actinomyces israelii . Infection most often occurs in the face and neck region and is characterized by the presence of a slowly enlarging, hard, red lump.
+
+## DESCRIPTION
+
+Actinomycosis is a relatively rare infection occurring in one out of 300,000(1/300,000) people per year. It is characterized by the presence of a lump or mass that often forms, draining sinus tracts to the skin surface. Fifty percent of actinomycosis cases are of the head and neck region (also called 'lumpy jaw' and 'cervicofacial actinomycosis'), 15% are in the chest, 20% are in the abdomen, and the rest are in the pelvis, heart, and brain. Men are three times more likely to develop actinomycosis than women.
+
+## CAUSES AND SYMPTOMS
+
+Actinomycosis is usually caused by the bacterium Actinomyces israelii . This bacterium is normally present in the mouth but can cause disease if it enters tissues following an injury. Actinomyces israelii is an anaerobic bacterium which means it dislikes oxygen but grows very well in deep tissues where oxygen levels are low. Tooth extraction , tooth disease, root canal treatment , jaw surgery, or poor dental hygiene can allow Actinomyces israelii to cause an infection in the head and neck region.
+
+The main symptom of cervicofacial actinomycosis is the presence of a hard lump on the face or neck. The lump may or may not be red. Fever occurs in some cases.
+
+## DIAGNOSIS
+
+Cervicofacial actinomycosis can be diagnosed by a family doctor or dentist and the patient may be referred to an oral surgeon or infectious disease specialist. The diagnosis of actinomycosis is based upon several things. The presence of a red lump with draining sinuses on the head or neck is strongly suggestive of cervicofacial actinomycosis. A recent history of tooth  extraction  or  signs  of tooth  decay or  poor  dental hygiene aid in the diagnosis. Microscopic examination of the fluid draining from the sinuses shows the characteristic 'sulfur granules' (small yellow colored material in the fluid) produced by Actinomyces israelii .  A biopsy may be performed to remove a sample of the infected tissue. This procedure can be performed under local anesthesia in the doctor's office. Occasionally the bacteria can be cultured from the sinus tract fluid or from samples of the infected tissue.
+
+Actinomycosis in  the  lungs, abdomen, pelvis, or brain can be very hard to diagnose since the symptoms often mimic those of other diseases. Actinomycosis of the lungs or abdomen can resemble tuberculosis or cancer . x-ray results, the presence of draining sinus tracts, and microscopic analysis and culturing of infected tissue assist in the diagnosis.
+
+## TREATMENT
+
+Actinomycosis is  difficult  to  treat  because  of  its dense tissue location. Surgery is often required to drain
+
+## KEY TERMS
+
+Biopsy -The process which removes a sample of tissue for microscopic examination to aid in the diagnosis of a disease.
+
+Sinus tract -A narrow, elongated channel in the body which allows the escape of fluid.
+
+the lesion and/or to remove the site of infection. To kill the bacteria, large doses of penicillin are given through a vein daily for two to six weeks followed by six to twelve months of penicillin taken by mouth. Tetracycline, clindamycin, or erythromycin may be used instead of penicillin. The antibiotic therapy must be completed to insure that the infection does not return. Hyperbaric oxygen (oxygen under high pressure) therapy in combination with the antibiotic therapy has been successful.
+
+## PROGNOSIS
+
+Complete recovery is achieved following treatment. If left untreated, the infection may cause localized bone destruction.
+
+## PREVENTION
+
+The best prevention is to maintain good dental hygiene.
+
+# Acupressure
+
+## DEFINITION
+
+Acupressure is a form of touch therapy that utilizes the principles of acupuncture and Chinese medicine. In acupressure, the same points on the body are used as in acupuncture, but  are  stimulated  with  finger  pressureTherapist working acupressure points on a woman's shoulder. (Photo Researchers, Inc. Reproduced by permission.)
+
+<!-- image -->
+
+instead of with the insertion of needles. Acupressure is used to relieve a variety of symptoms and pain .
+
+## PURPOSE
+
+Acupressure massage performed by a therapist can be very effective both as prevention and as a treatment for many health conditions, including headaches, general aches and pains, colds and flu, arthritis, allergies , asthma , nervous tension, menstrual  cramps, sinus  problems, sprains, tennis elbow , and toothaches, among others. Unlike acupuncture which requires a visit to a professional, acupressure can be performed by a layperson. Acupressure techniques are fairly easy to learn, and have been used to provide quick, cost-free, and  effective  relief  from  many  symptoms. Acupressure points can also be stimulated to increase energy and feelings of well-being, reduce stress , stimulate the immune system, and alleviate sexual dysfunction .
+
+## DESCRIPTION
+
+Origins
+
+One of the oldest text of Chinese medicine is the Huang Di , The Yellow Emperor's Classic of Internal
+
+Medicine, which may be at least 2,000 years old. Chinese medicine has developed acupuncture, acupressure, herbal remedies, diet, exercise , lifestyle changes, and other remedies as part of its healing methods. Nearly all of the forms of Oriental medicine that are used in the West today, including acupuncture, acupressure, shiatsu , and Chinese herbal medicine, have their roots in Chinese medicine. One legend has it that acupuncture and acupressure evolved as early Chinese healers studied the puncture wounds of Chinese warriors, noting that certain points on the body created interesting results when stimulated. The oldest known text specifically on acupuncture points, the Systematic Classic of Acupuncture , dates back to 282 A.D. Acupressure is the non-invasive form of acupuncture, as  Chinese  physicians  determined  that stimulating points on the body with massage and pressure could be effective for treating certain problems.
+
+Outside of Asian-American communities, Chinese medicine  remained  virtually  unknown  in  the  United States until the 1970s, when Richard Nixon became the first U.S. president to visit China. On Nixon's trip, journalists were amazed to observe major operations being performed on patients without the use of anesthetics. Instead, wide-awake patients were being operated on,
+
+with only acupuncture needles inserted into them to control pain. At that time, a famous columnist for the New York Times , James Reston, had to undergo surgery and elected to use acupuncture for anesthesia. Later, he wrote some convincing stories on its effectiveness.  Despite being neglected by mainstream medicine and the American Medical Association (AMA), acupuncture and Chinese medicine became a central to alternative medicine practitioners in the United States. Today, there are millions of patients who attest to its effectiveness, and nearly 9,000 practitioners in all 50 states.
+
+Acupressure is practiced as a treatment by Chinese medicine practitioners and acupuncturists, as well as by massage therapists. Most massage schools in American include acupressure techniques as part of their bodywork programs. Shiatsu massage is very closely related to acupressure, working with the same points on the body and the same general principles, although it was developed over centuries in Japan rather than in China. Reflexology is a form of bodywork based on acupressure concepts. Jin Shin Do is a bodywork technique with an increasing number of practitioners in America that combines acupressure and shiatsu principles with qigong , Reichian theory, and meditation .
+
+## ACUPRESSURE AND CHINESE MEDICINE
+
+Chinese medicine views the body as a small part of the universe, subject to laws and principles of harmony and balance. Chinese medicine does not make as sharp a destinction as Western medicine does between mind and body. The Chinese system believes that emotions and mental states are every bit as influential on disease as purely physical mechanisms, and considers factors like work, environment, and relationships as fundamental to a patient's health. Chinese medicine also uses very different symbols and ideas to discuss the body and health. While Western medicine typically describes health as mainly physical processes composed of chemical equations and reactions, the Chinese use ideas like yin and yang, chi, and the organ system to describe health and the body.
+
+Everything in the universe has properties of yin and yang. Yin is associated with cold, female, passive, downward, inward, dark, wet. Yang can be described as hot, male, active, upward, outward, light, dry, and  so  on. Nothing is either completely yin or yang. These two principles always interact and affect each other, although the body and its organs can become imbalanced by having either too much or too little of either.
+
+Chi (pronounced chee , also spelled qi or ki in Japanese shiatsu) is the fundamental life energy. It is found in food, air, water, and sunlight, and it travels through the body in channels called meridians . There are 12 major
+
+Acupressure points to relieve hay fever, sore throat, and heartburn. (Illustration by Electronic Illustrators Group.)
+
+<!-- image -->
+
+## KEY TERMS
+
+Acupoint -A pressure point stimulated in acupressure.
+
+Chi -Basic life energy.
+
+Meridian -A channel through which chi travels in the body.
+
+Moxibustion -An  acupuncture  technique  that burns the herb moxa or mugwort.
+
+Shiatsu -Japanese form of acupressure massage.
+
+Yin/yang -Universal characteristics used to describe aspects of the natural world.
+
+meridians in the body that transport chi, corresponding to the 12 main organs categorized by Chinese medicine.
+
+Disease is viewed as an imbalance of the organs and chi in the body. Chinese medicine has developed intricate systems of how organs are related to physical and mental  symptoms, and  it  has  devised  corresponding treatments using the meridian and pressure point networks that are classified and numbered. The goal of acupressure, and acupuncture, is to stimulate and unblock the circulation of chi, by activating very specific points, called pressure points or acupoints . Acupressure seeks to stimulate the points on the chi meridians that pass close to the skin, as these are easiest to unblock and manipulate with finger pressure.
+
+Acupressure  can  be  used  as  part  of  a  Chinese physician's prescription, as a session of massage therapy , or as a self-treatment for common aches and illnesses. A Chinese medicine practitioner examines a patient very thoroughly, looking at physical, mental and emotional  activity, taking  the  pulse  usually  at  the wrists, examining  the  tongue  and  complexion, and observing the patient's demeanor and attitude, to get a complete  diagnosis  of  which  organs  and  meridian points are out of balance. When the imbalance is located, the  physician  will  recommend  specific  pressure points for acupuncture or acupressure. If acupressure is recommended, the  patient  might  opt  for  a  series  of treatments from a massage therapist.
+
+In massage therapy, acupressurists will evaluate a patient's symptoms and overall health, but a massage therapist's diagnostic training isn't as extensive as a Chinese physician's. In a massage therapy treatment, a person usually lies down on a table or mat, with thin clothing on. The acupressurist will gently feel and palpate the abdomen and other parts of the body to deter- mine energy imbalances. Then, the therapist will work with different meridians throughout the body, depending on which organs are imbalanced in the abdomen. The therapist will use different types of finger movements and pressure on different acupoints, depending on whether the chi needs to be increased or dispersed at different points. The therapist observes and guides the energy flow through the patient's body throughout the session. Sometimes, special herbs ( Artemesia vulgaris or moxa) may be placed on a point to warm it, a process called moxibustion . A session of acupressure is generally a very pleasant experience, and some people experience great benefit immediately. For more chronic conditions, several sessions may be necessary to relieve and improve conditions.
+
+Acupressure massage usually costs from $30-70 per hour session. A visit to a Chinese medicine physician or acupuncturist can be more expensive, comparable to a visit to an allopathic physician if the practitioner is an MD. Insurance reimbursement varies widely, and consumers should be aware if their policies cover alternative treatment, acupuncture, or massage therapy.
+
+## SELF-TREATMENT
+
+Acupressure is easy to learn, and there are many good books that illustrate the position of acupoints and meridians on the body. It is also very versatile, as it can be done anywhere, and it's a good form of treatment for spouses and partners to give to each other and for parents to perform on children for minor conditions.
+
+While giving self-treatment or performing acupressure on another, a mental attitude of calmness and attention is important, as  one  person's  energy  can  be  used  to  help another's. Loose, thin clothing is recommended. There are three general techniques for stimulating a pressure point.
+
+- Tonifying is meant to strengthen weak chi, and is done by pressing the thumb or finger into an acupoint with a firm, steady pressure, holding it for up to two minutes.
+- Dispersing is meant to move stagnant or blocked chi, and the finger or thumb is moved in a circular motion or slightly in and out of the point for two minutes.
+- Calming the chi in a pressure point utilizes the palm to cover the point and gently stroke the area for about two minutes.
+
+There are many pressure points that are easily found and memorized to treat common ailments from headaches to colds.
+
+- For headaches, toothaches, sinus problems, and pain in the upper body, the 'LI4' point is recommended. It is located in the web between the thumb and index finger, on the back of the hand. Using the thumb and index finger of the other hand, apply a pinching pressure until
+
+- the point is felt, and hold it for two minutes. Pregnant women should never press this point.
+- To calm the nerves and stimulate digestion, find the 'CV12' point that is four thumb widths above the navel in the center of the abdomen. Calm the point with the palm, using gentle stroking for several minutes.
+- To stimulate the immune system, find the 'TH5' point on the back of the forearm two thumb widths above the wrist. Use a dispersing technique, or circular pressure with the thumb or finger, for two minutes on each arm.
+- For headaches, sinus congestion, and tension, locate the 'GB20' points at the base of the skull in the back of the head, just behind the bones in back of the ears. Disperse these points for two minutes with the fingers or thumbs. Also find the 'yintang' point, which is in the middle of the forehead between the eyebrows. Disperse it with gentle pressure for two minutes to clear the mind and to relieve headaches.
+
+## PRECAUTIONS
+
+Acupressure is a safe technique, but it is not meant to replace  professional  health  care.  A  physician  should always be consulted when there are doubts about medical conditions. If a condition is chronic, a professional should be consulted; purely symptomatic treatment can exacerbate  chronic  conditions.  Acupressure  should  not  be applied to open wounds, or where there is swelling and inflammation. Areas of scar tissue, blisters, boils , rashes , or varicose veins should be avoided. Finally, certain acupressure points should not be stimulated on people with high or low blood pressure and on pregnant women.
+
+## RESEARCH AND GENERAL ACCEPTANCE
+
+In general, Chinese medicine has been slow to gain acceptance in the West, mainly because it rests on ideas very foreign to the scientific model. For instance, Western scientists have trouble with the idea of chi, the invisible energy of the body, and the idea that pressing on certain points can alleviate certain conditions seems sometimes too simple for scientists to believe.
+
+Western scientists, in trying to account for the action of acupressure, have theorized that chi is actually part of the neuroendocrine system of the body. Celebrated orthopedic surgeon Robert O. Becker, who was twice nominated for the Nobel Prize, wrote a book on the subject called Cross Currents: The Promise of Electromedicine; The Perils of Electropollution . By using precise electrical measuring devices, Becker and his colleagues showed that the body has a complex web of electromagnetic energy, and that traditional acupressure meridians and points contained amounts of energy that non-acupressure points did not.
+
+The mechanisms of acupuncture and acupressure remain difficult to document in terms of the biochemical processes involved; numerous testimonials are the primary evidence backing up the effectiveness of acupressure and acupuncture. However, a body of research is growing that verifies the effectiveness in  acupressure  and acupuncture techniques in treating many problems and in controlling pain.
+
+# Acupuncture
+
+## DEFINITION
+
+Acupuncture is one of the main forms of treatment in traditional  Chinese  medicine .  It  involves  the  use  of sharp, thin needles that are inserted in the body at very specific points. This process is believed to adjust and alter the body's energy flow into healthier patterns, and is used to treat a wide variety of illnesses and health conditions.
+
+## PURPOSE
+
+The World Health Organization (WHO) recommends acupuncture as an effective treatment for over forty medical problems, including allergies , respiratory conditions, gastrointestinal disorders, gynecological problems, nervous  conditions, and  disorders  of  the  eyes, nose  and throat, and childhood illnesses, among others. Acupuncture has been used in the treatment of alcoholism and substance abuse. It is an effective and low-cost treatment
+
+Woman undergoing facial acupuncture. (Photograph by Yoav Levy. Phototake NYC. Reproduced by permission.)
+
+<!-- image -->
+
+for headaches and chronic pain , associated with problems like back injuries and arthritis. It has also been used to supplement invasive Western treatments like chemotherapy and surgery. Acupuncture is generally most effective when used as prevention or before a health condition becomes acute, but it has been used to help patients suffering from cancer and AIDS . Acupuncture is limited in treating  conditions  or  traumas  that  require  surgery  or emergency care (such as for broken bones).
+
+## DESCRIPTION
+
+Origins
+
+The  original  text  of  Chinese  medicine  is  the Nei Ching, The Yellow Emperor's Classic of Internal Medicine , which is estimated to be at least 2,500 years old. Thousands of books since then have been written on the subject of Chinese healing, and its basic philosophies spread long ago to other Asian civilizations. Nearly all of the forms of Oriental medicine which are used in the West today, including acupuncture, shiatsu , acupressure massage, and macrobiotics, are part of or have their roots in Chinese medicine. Legend has it that acupuncture developed when early Chinese physicians observed unpredict- ed effects of puncture wounds in Chinese warriors. The oldest known text on acupuncture, the Systematic Classic of Acupuncture , dates back to 282 A.D. Although acupuncture is its best known technique, Chinese medicine traditionally utilizes herbal remedies, dietary therapy, lifestyle changes and other means to treat patients.
+
+In the early 1900s, only a few Western physicians who had visited China were fascinated by acupuncture, but outside of Asian-American communities it remained virtually unknown until the 1970s, when Richard Nixon became the first U.S. president to visit China. On Nixon's trip, journalists were amazed to observe major operations being performed on patients without the use of anesthetics. Instead, wide-awake patients were being operated on with only acupuncture needles inserted into them to control pain. During that time, a famous columnist for the New York Times , James Reston, had to undergo surgery and elected to use acupuncture instead of pain medication, and he wrote some convincing stories on its effectiveness.
+
+Today acupuncture is being practiced in all 50 states by over 9,000 practitioners, with over 4,000 MDs including it in their practices. Acupuncture has shown notable success in treating many conditions, and over 15 million Americans have used it as a therapy. Acupuncture, how-Acupuncture sites and meridians on the face and neck. (Illustration by Hans &amp; Cassady.)
+
+<!-- image -->
+
+ever, remains largely unsupported by the medical establishment. The American Medical Association has been resistant to researching it, as it is based on concepts very different from the Western scientific model.
+
+Several forms of acupuncture are being used today in America. Japanese acupuncture uses extremely thin needles and does not incorporate herbal medicine in its practice. Auricular acupuncture uses acupuncture points only on the ear, which are believed to stimulate and balance internal organs. In France, where acupuncture is very popular and more accepted by the medical establishment, neurologist Paul Nogier developed a system of acupuncture based on neuroendocrine theory rather than on traditional Chinese concepts, which is gaining some use in America.
+
+## BASIC IDEAS OF CHINESE MEDICINE
+
+Chinese medicine views the body as a small part of the universe, and subject to universal laws and principles of  harmony  and  balance.  Chinese  medicine  does  not draw a sharp line, as Western medicine does, between mind and body. The Chinese system believes that emotions and mental states are every bit as influential on disease as purely physical mechanisms, and considers fac- tors like work, environment, lifestyle and relationships as fundamental to the overall picture of a patient's health. Chinese medicine also uses very different symbols and ideas to discuss the body and health. While Western medicine typically describes health in terms of measurable physical processes made up of chemical reactions, the Chinese use ideas like yin and yang, chi, the organ system, and the five elements to describe health and the body. To understand the ideas behind acupuncture, it is worthwhile to introduce some of these basic terms.
+
+YIN AND YANG. According to Chinese philosophy, the universe and the body can be described by two separate but complementary principles, that of yin and yang. For example, in temperature, yin is cold and yang is hot. In gender, yin is female and yang is male. In activity, yin is passive and yang is active. In light, yin is dark and yang is bright; in direction yin is inward and downward and yang is outward and up, and so on. Nothing is ever completely yin or yang, but a combination of the two. These two principles are always interacting, opposing, and influencing each other. The goal of Chinese medicine is not to eliminate either yin or yang, but to allow the two to balance each other and exist harmoniously together. For instance, if a person suffers from symptoms
+
+## KEY TERMS
+
+Acupressure -Form of massage using acupuncture points.
+
+Auricular acupuncture -Acupuncture using only points found on the ears.
+
+Chi -Basic life energy.
+
+Meridian -Channel through which chi travels in the body.
+
+Moxibustion -Acupuncture technique which burns the herb moxa or mugwort.
+
+Tonification -Acupuncture technique for strengthening the body.
+
+Yin/Yang -Universal characteristics used to describe aspects of the natural world.
+
+of high blood pressure, the Chinese system would say that  the  heart  organ  might  have  too  much  yang, and would recommend methods either to reduce the yang or to increase the yin of the heart, depending on the other symptoms and organs in the body. Thus, acupuncture therapies  seek  to  either  increase  or  reduce  yang, or increase or reduce yin in particular regions of the body.
+
+CHI. Another fundamental concept of Chinese medicine is that of chi (pronounced chee , also spelled qi ). Chi is the fundamental life energy of the universe. It is invisible and is found in the environment in the air, water, food and sunlight. In the body, it is the invisible vital force that creates and animates life. We are all born with inherited amounts of chi, and we also get acquired chi from the food we eat and the air we breathe. The level and quality of a person's chi also depends on the state of physical, mental  and  emotional  balance.  Chi  travels through the body along channels called meridians .
+
+THE ORGAN SYSTEM. In the Chinese system, there are twelve main organs: the lung, large intestine, stomach, spleen, heart, small intestine, urinary bladder, kidney, liver, gallbladder, pericardium, and  the  'triple warmer,' which represents the entire torso region. Each organ has chi energy associated with it, and each organ interacts with particular emotions on the mental level. As there are twelve organs, there are twelve types of chi which  can  move  through  the  body, and  these  move through  twelve  main  channels  or  meridians.  Chinese doctors connect symptoms to organs. That is, symptoms are  caused  by  yin/yang  imbalances  in  one  or  more organs, or by an unhealthy flow of chi to or from one organ to another. Each organ has a different profile of symptoms it can manifest.
+
+THE FIVE ELEMENTS. Another basis of Chinese theory is that the world and body are made up of five main elements: wood, fire, earth, metal, and water. These elements are all interconnected, and each element either generates  or  controls  another  element.  For  instance, water controls fire and earth generates metal. Each organ is associated with one of the five elements. The Chinese system uses elements and organs to describe and treat conditions. For instance, the kidney is associated with water and the heart is associated with fire, and the two organs are related as water and fire are related. If the kidney is weak, then there might be a corresponding fire problem in the heart, so treatment might be made by acupuncture or herbs to cool the heart system and/or increase energy in the kidney system.
+
+The Chinese have developed an intricate system of how organs and elements are related to physical and mental symptoms, and the above example is a very simple one. Although this system sounds suspect to Western scientists, some interesting parallels have been observed. For instance, Western medicine has observed that with severe heart problems, kidney failure often follows, but it still does not know exactly why. In Chinese medicine, this connection between the two organs has long been established.
+
+MEDICAL PROBLEMS AND ACUPUNCTURE. In Chinese medicine, disease as seen as imbalances in the organ system or chi meridians, and the goal of any remedy or treatment is to assist the body in reestablishing its innate harmony. Disease can be caused by internal factors like emotions, external  factors  like  the  environment  and weather, and other factors like injuries, trauma, diet, and germs.  However, infection  is  seen  not  as  primarily  a problem with germs and viruses, but as a weakness in the energy of the body which is allowing a sickness to occur. In Chinese medicine, no two illnesses are ever the same, as each body has its own characteristics of symptoms and balance. Acupuncture is used to open or adjust the flow of chi throughout the organ system, which will strengthen the body and prompt it to heal itself.
+
+A VISIT TO THE ACUPUNCTURIST. The first thing an acupuncturist will do is get a thorough idea of a patient's medical history and symptoms, both physical and emotional. This is done with a long questionnaire and interview. Then the acupuncturist will examine the patient to find further symptoms, looking closely at the tongue, the pulse at various points in the body, the complexion, general behavior, and other signs like coughs or pains. From this, the practitioner will be able to determine patterns of symptoms which indicate which organs and areas are
+
+imbalanced. Depending on the problem, the acupuncturist will insert needles to manipulate chi on one or more of the twelve organ meridians. On these twelve meridians, there are nearly 2,000 points which can be used in acupuncture, with around 200 points being most frequently used by traditional acupuncturists. During an individual treatment, one to twenty needles may be used, depending on which meridian points are chosen.
+
+Acupuncture needles are always sterilized  and acupuncture is a very safe procedure. The depth of insertion of needles varies, depending on which chi channels are being treated. Some points barely go beyond superficial layers of skin, while some acupuncture points require a depth of 1-3 in (2.5-7.5 cm) of needle. The needles generally do not cause pain. Patients sometimes report pinching sensations and often pleasant sensations, as the body experiences healing. Depending on the problem, the acupuncturist might spin or move the needles, or even pass a slight electrical current through some of them. Moxibustion may be sometimes used, in which an herbal mixture (moxa or mugwort) is either burned like incense on the acupuncture point or on the end of the needle, which is believed to stimulate chi in a particular way. Also, acupuncturists sometimes use cupping , during which small suction cups are placed on meridian points to stimulate them.
+
+How long the needles are inserted also varies. Some patients only require a quick in and out insertion to clear problems  and  provide tonification (strengthening  of health), while some other conditions might require needles inserted up to an hour or more. The average visit to an acupuncturist takes about thirty minutes. The number of visits to the acupuncturist varies as well, with some conditions improved in one or two sessions and others requiring a series of six or more visits over the course of weeks or months.
+
+Costs for acupuncture can vary, depending on whether the  practitioner  is  an  MD.  Initial  visits  with  non-MD acupuncturists can run from $50-$100, with follow-up visits  usually  costing  less.  Insurance  reimbursement  also varies widely, depending on the company and state. Regulations have been changing often. Some states authorize Medicaid to cover acupuncture for certain conditions, and some states have mandated that general coverage pay for acupuncture. Consumers should be aware of the provisions for acupuncture in their individual policies.
+
+## PRECAUTIONS
+
+Acupuncture is generally a very safe procedure. If a patient is in doubt about a medical condition, more than one physician should be consulted. Also, a patient should always feel comfortable and confident that their acupuncturist is knowledgable and properly trained.
+
+## RESEARCH AND GENERAL ACCEPTANCE
+
+Mainstream medicine has been slow to accept acupuncture; although more MDs are using it, the American Medical Association does not recognize it as a specialty. The reason for this is that the mechanism of acupuncture is difficult to scientifically understand or measure, such as the invisible energy of chi in the body. Western medicine, admitting that acupuncture works in many cases, has theorized that the energy meridians are actually part of the nervous system and that acupuncture relieves pain by releasing endorphins, or natural pain killers, into the bloodstream. Despite the ambiguity in the biochemistry involved, acupuncture continues to show effectiveness in clinical tests, from reducing pain to alleviating the symptoms of chronic illnesses, and research in acupuncture is currently growing. The Office of Alternative Medicine of the National Institute of Health is currently funding  research  in  the  use  of  acupuncture  for  treating depression and attention-deficit disorder.
+
+## POSTSTREPTOCOCCAL GLOMERULONEPHRITIS
+
+Acute homeopathic remedies see Homeopathic remedies, acute prescribing
+
+# Acute kidney failure
+
+## DEFINITION
+
+Acute kidney failure occurs when illness, infection, or injury damages the kidneys. Temporarily, the kidneys
+
+cannot adequately remove fluids and wastes from the body or maintain the proper level of certain kidney-regulated chemicals in the bloodstream.
+
+## DESCRIPTION
+
+The kidneys are the body's natural filtration system. They perform the critical task of processing approximately 200 quarts of fluid in the bloodstream every 24 hours. Waste products like urea and toxins, along with excess fluids, are removed from the bloodstream in the form of urine. Kidney (or renal) failure occurs when kidney functioning becomes impaired. Fluids and toxins begin to accumulate in the bloodstream. As fluids build up in the bloodstream, the patient with acute kidney failure may become puffy and swollen (edematous) in the face, hands, and feet. Their blood pressure typically begins to rise, and they may experience fatigue and nausea.
+
+Unlike chronic kidney failure , which is long term and irreversible, acute kidney failure is a temporary condition. With proper and timely treatment, it can typically be reversed. Often there is no permanent damage to the kidneys. Acute kidney failure appears most frequently as a complication of serious illness, like heart failure , liver failure, dehydration , severe burns , and excessive bleeding (hemorrhage). It may also be caused by an obstruction to the urinary tract or as a direct result of kidney disease, injury, or an adverse reaction to a medicine.
+
+## CAUSES AND SYMPTOMS
+
+Acute kidney failure can be caused by many different illnesses, injuries, and infections. These conditions fall into three main categories: prerenal , postrenal , and intrarenal conditions.
+
+Prerenal conditions do not damage the kidney, but can cause diminished kidney function. They are the most common cause of acute renal failure, and include:
+
+- dehydration
+- hemorrhage
+- septicemia, or sepsis
+- heart failure
+- liver failure
+- burns
+
+Postrenal conditions cause kidney failure by obstructing the urinary tract. These conditions include:
+
+- inflammation of the prostate gland in men (prostatitis)
+- enlargement  of  the  prostate  gland  (benign  prostatic hypertrophy)
+- bladder or pelvic tumors
+- kidney stones (calculi)
+
+Intrarenal  conditions  involve  kidney  disease  or direct injury to the kidneys. These conditions include:
+
+- lack of blood supply to the kidneys (ischemia)
+- use  of  radiocontrast  agents  in  patients  with  kidney problems
+- drug abuse or overdose
+- long-term use of nephrotoxic medications, like certain pain medicines
+- acute inflammation of the glomeruli, or filters, of the kidney ( glomerulonephritis )
+- kidney infections (pyelitis or pyelonephritis)
+
+Common symptoms of acute kidney failure include:
+
+- anemia. The kidneys are responsible for producing erythropoietin (EPO), a hormone that stimulates red blood cell production. If kidney disease causes shrinking of the kidney, red blood cell production is reduced, leading to anemia.
+- bad breath or bad taste in mouth. Urea in the saliva may cause an ammonia-like taste in the mouth.
+- bone and joint problems. The kidneys produce vitamin D, which helps the body absorb calcium and keeps bones strong. For patients with kidney failure, bones may become brittle. In children, normal growth may be stunted. Joint pain may also occur as a result of high phosphate levels in the blood. Retention of uric acid may cause gout .
+- edema. Puffiness or swelling in the arms, hands, feet, and around the eyes.
+- frequent urination.
+- foamy or bloody urine. Protein in the urine may cause it to foam significantly. Blood in the urine may indicate bleeding from diseased or obstructed kidneys, bladder, or ureters.
+- headaches. High blood pressure may trigger headaches.
+- hypertension, or high blood pressure. The retention of fluids and wastes causes blood volume to increase. This makes blood pressure rise.
+- increased fatigue. Toxic substances in the blood and the presence  of  anemia  may  cause  the  patient  to  feel exhausted.
+- itching. Phosphorus, normally eliminated in the urine, accumulates in the blood of patients with kidney failure. An increased phosphorus level may cause the skin to itch.
+- lower back pain. Patients suffering from certain kidney problems (like kidney stones and other obstructions) may have pain where the kidneys are located, in the small of the back below the ribs.
+- nausea.  Urea  in  the  gastric  juices  may  cause  upset stomach.
+
+## DIAGNOSIS
+
+Kidney failure is diagnosed by a doctor. A nephrologist, a doctor that specializes in the kidney, may be consulted to confirm the diagnosis and recommend treatment options. The patient that is suspected of having acute kidney failure will have blood and urine tests to determine the level of kidney function. A blood test will assess  the  levels  of  creatinine, blood  urea  nitrogen (BUN), uric acid, phosphate, sodium, and potassium. The kidney regulates these agents in the blood. Urine samples will also be collected, usually over a 24-hour period, to assess protein loss and/or creatinine clearance.
+
+Determining the cause of kidney failure is critical to proper treatment. A full assessment of the kidneys is necessary to determine if the underlying disease is treatable and if the kidney failure is chronic or acute. X rays, magnetic resonance imaging (MRI), computed tomography scan (CT), ultrasound, renal biopsy, and/or arteriogram of the kidneys may be used to determine the cause of kidney failure and level of remaining kidney function. X rays and ultrasound of the bladder and/or ureters may also be needed.
+
+## TREATMENT
+
+Treatment for acute kidney failure varies. Treatment is directed to the underlying, primary medical condition that has triggered kidney failure. Prerenal conditions may be treated with replacement fluids given through a vein, diuretics , blood transfusion , or medications. Postrenal conditions and intrarenal conditions may require surgery and/or medication.
+
+Frequently, patients in acute kidney failure require hemodialysis , hemofiltration , or peritoneal dialysis to filter fluids and wastes from the bloodstream until the primary medical condition can be controlled.
+
+## HEMODIALYSIS
+
+Hemodialysis  involves  circulating  the  patient's blood outside of the body through an extracorporeal circuit (ECC), or dialysis circuit. The ECC is made up of plastic blood tubing, a filter known as a dialyzer (or artificial kidney), and a dialysis machine that monitors and maintains blood flow and administers dialysate. Dialysate is a sterile chemical solution that is used to draw waste products out of the blood. The patient's blood leaves the body through the vein and travels through the ECC and the dialyzer, where fluid removal takes place.
+
+During dialysis, waste products in the bloodstream are carried out of the body. At the same time, electrolytes and other chemicals are added to the blood. The purified, chemically-balanced blood is then returned to the body.
+
+## KEY TERMS
+
+Blood urea nitrogen (BUN) -A waste product that is formed in the liver and collects in the bloodstream;  patients  with  kidney  failure  have  high BUN levels.
+
+Creatinine -A protein produced by muscle that healthy kidneys filter out.
+
+Extracorporeal -Outside of, or unrelated to, the body.
+
+Ischemia -A lack of blood supply to an organ or tissue.
+
+Nephrotoxic -Toxic, or damaging, to the kidney.
+
+Radiocontrast  agents -Dyes  administered  to  a patient for the purposes of a radiologic study.
+
+Sepsis -A bacterial infection of the bloodstream.
+
+Vasopressors -Medications that constrict the blood vessels.
+
+A dialysis 'run' typically lasts three to four hours, depending on the type of dialyzer used and the physical condition of the patient. Dialysis is used several times a week until acute kidney failure is reversed.
+
+Blood pressure changes associated with hemodialysis may pose a risk for patients with heart problems. Peritoneal dialysis may be the preferred treatment option in these cases.
+
+## HEMOFILTRATION
+
+Hemofiltration, also called continuous renal replacement therapy (CRRT), is a slow, continuous blood filtration therapy used to control acute kidney failure in critically ill patients. These patients are typically very sick and may have heart problems or circulatory problems. They cannot handle the rapid filtration rates of hemodialysis. They also frequently need antibiotics , nutrition , vasopressors, and other fluids given through a vein to treat their primary condition. Because hemofiltration is continuous, prescription fluids can be given to patients in kidney failure without the risk of fluid overload.
+
+Like hemodialysis, hemofiltration uses an ECC. A hollow fiber hemofilter is used instead of a dialyzer to remove fluids and toxins. Instead of a dialysis machine, a blood pump makes the blood flow through the ECC. The volume of blood circulating through the ECC in hemofiltration is less than that in hemodialysis. Filtration rates are  slower  and  gentler  on  the  circulatory  system.Hemofiltration treatment will generally be used until kidney failure is reversed.
+
+## PERITONEAL DIALYSIS
+
+Peritoneal dialysis may be used if an acute kidney failure patient is stable and not in immediate crisis. In peritoneal  dialysis  (PD), the  lining  of  the  patient's abdomen, the peritoneum, acts as a blood filter. A flexible tube-like instrument (catheter) is surgically inserted into the patient's abdomen. During treatment, the catheter is used to fill the abdominal cavity with dialysate. Waste products and excess fluids move from the patient's bloodstream into the dialysate solution. After a certain time period, the  waste-filled  dialysate  is  drained  from  the abdomen, and replaced with clean dialysate. There are three type of peritoneal dialysis, which vary according to treatment time and administration method.
+
+Peritoneal dialysis is often the best treatment option for infants and children. Their small size can make vein access difficult to maintain. It is not recommended for patients with abdominal adhesions or other abdominal defects (like a hernia ) that might reduce the efficiency of the treatment. It is also not recommended for patients who suffer  frequent  bouts  of  an  inflammation  of  the small pouches in the intestinal tract (diverticulitis).
+
+## PROGNOSIS
+
+Because many of the illnesses and underlying conditions that often trigger acute kidney failure are critical, the prognosis for these patients many times is not good. Studies have estimated overall death rates for acute kidney  failure  at  42-88%.  Many  people, however, die because of the primary disease that has caused the kidney  failure.  These  figures  may  also  be  misleading because  patients  who  experience  kidney  failure  as  a result  of  less  serious  illnesses  (like  kidney  stones  or dehydration)  have  an  excellent  chance  of  complete recovery.  Early  recognition  and  prompt, appropriate treatment are key to patient recovery.
+
+Up to 10% of patients who experience acute kidney failure will suffer irreversible kidney damage. They will eventually go on to develop chronic kidney failure or end-stage renal disease. These patients will require longterm dialysis or kidney transplantation to replace their lost renal functioning.
+
+## PREVENTION
+
+Since acute kidney failure can be caused by many things, prevention  is  difficult.  Medications  that  may impair  kidney  function  should  be  given  cautiously. Patients  with  pre-existing  kidney  conditions  who  are hospitalized for other illnesses or injuries should be carefully monitored for kidney failure complications. Treatments and procedures that may put them at risk for kidney failure (like diagnostic tests requiring radiocontrast agents or dyes) should be used with extreme caution.
+
+# Acute lymphangitis
+
+## DEFINITION
+
+Acute lymphangitis is a bacterial infection in the lymphatic vessels which is characterized by painful, red streaks below the skin surface. This is a potentially serious infection  which  can  rapidly  spread  to  the  bloodstream and be fatal.
+
+## DESCRIPTION
+
+Acute lymphangitis affects a critical member of the immune system-the lymphatic system. Waste materials from nearly every organ in the body drain into the lymphatic  vessels  and  are  filtered  in  small  organs  called lymph nodes. Foreign bodies, such as bacteria or viruses, are processed in the lymph nodes to generate an immune response to fight an infection.
+
+In  acute  lymphangitis, bacteria  enter  the  body through a cut, scratch, insect bite, surgical wound, or other skin injury. Once the bacteria enter the lymphatic system, they multiply rapidly and follow the lymphatic vessel  like  a  highway.  The  infected  lymphatic  vessel becomes inflamed, causing red streaks that are visible below the skin surface. The growth of the bacteria occurs so rapidly that the immune system does not respond fast enough to stop the infection.
+
+If  left  untreated, the  bacteria  can  cause  tissue destruction  in  the  area  of  the  infection. A  pus-filled, painful lump called an abscess may be formed in the infected area. Cellulitis , a generalized infection of the lower skin layers, may also occur. In addition, the bacteria may invade the bloodstream and cause septicemia. Lay people, for that reason, often call the red streaks seen in the skin 'blood poisoning.' Septicemia is a very serious illness and may be fatal.
+
+## CAUSES AND SYMPTOMS
+
+Acute lymphangitis is most often caused by the bacterium Streptococcus pyogenes . This potentially dangerous bacterium also causes strep throat , infections of the heart, spinal cord, and lungs, and in the 1990s has been called the 'flesh-eating bacterium.' Staphylococci bacteria may also cause lymphangitis.
+
+Although anyone can develop lymphangitis, some people are more at risk. People who have had radical mastectomy (removal of a breast and nearby lymph nodes), a leg vein removed for coronary bypass surgery, or recurrent lymphangitis caused by tinea pedis (a fungal infection on the foot) are at an increased risk for lymphangitis.
+
+The characteristic symptoms of acute lymphangitis are the wide, red streaks which travel from the site of infection to the armpit or groin. The affected areas are red, swollen, and painful. Blistering of the affected skin may occur. The bacterial infection causes a fever of 100-104°F (38°-40°C).  In  addition, a  general  ill  feeling, muscle aches, headache , chills, and loss of appetite may be felt.
+
+## DIAGNOSIS
+
+If lymphangitis is suspected, the person should call his or her doctor immediately or go to an emergency room. Acute lymphangitis could be diagnosed by the family doctor, infectious disease specialist, or an emergency room doctor. The painful, red streaks just below the skin surface and the high fever are diagnostic of acute lymphangitis. A sample of blood would be taken for culture to determine whether the bacteria have entered the bloodstream. A biopsy (removal of a piece of infected tissue) sample may be taken for culture to identify which
+
+## KEY TERMS
+
+Biopsy -The process which removes a sample of diseased or infected tissue for microscopic examination to aid in diagnosis.
+
+Lymphatic system -A component of the immune system  consisting  of  vessels  and  nodes.  Waste materials from organs drain into the lymphatic vessels and are filtered by the lymph nodes.
+
+Septicemia -Disease caused by the presence and growth of bacteria in the bloodstream.
+
+type of bacteria is causing the infection. Diagnosis is immediate because it is based primarily on the symptoms. Most insurance policies should cover the expenses for the diagnosis and treatment of acute lymphangitis.
+
+## TREATMENT
+
+Because of the serious nature of this infection, treatment would begin immediately even before the bacterial culture results were available. The only treatment for acute  lymphangitis  is  to  give  very  large  doses  of  an antibiotic, usually penicillin, through the vein. Growing streptococcal bacteria are usually eliminated rapidly and easily by penicillin. The antibiotic clindamycin may be included in the treatment to kill any streptococci which are not growing and are in a resting state. Alternatively, a 'broad spectrum' antibiotic may be used which would kill many different kinds of bacteria.
+
+Aspirin or other medications which reduce the pain and  the  fever  may  also  be  given.  Medications  which reduce any inflammation of the infected region may also be provided. The patient is likely to be hospitalized to administer the antibiotic and other medications and to closely monitor his or her condition. Surgical drainage of an abscess may be necessary.
+
+## PROGNOSIS
+
+Complete recovery is expected if antibiotic treatment is begun at an early stage of the infection. However, if untreated, acute lymphangitis can be a very serious and even deadly disease. Acute lymphangitis that goes untreated can spread, causing tissue damage. Extensive tissue damage would need to be repaired by plastic surgery. Spread of the infection into the bloodstream could be fatal.
+
+## PREVENTION
+
+Although acute lymphangitis can occur in anyone, good hygiene and general health may help to prevent infections.
+
+# Acute poststreptococcal glomerulonephritis
+
+## DEFINITION
+
+Acute poststreptococcal glomerulonephritis (APSGN)  is  an  inflammation  of  the  kidney  tubules (glomeruli) that filter waste products from the blood, following a streptococcal infection such as strep throat . APSGN is also called postinfectious glomerulonephritis.
+
+## DESCRIPTION
+
+APSGN develops after certain streptococcal bacteria (group A beta-hemolytic streptococci) have infected the skin  or  throat.  Antigens  from  the  dead  streptococci clump  together  with  the  antibodies  that  killed  them. These clumps are trapped in the kidney tubules, cause the tubules to become inflamed, and impair that organs' ability  to  filter  and  eliminate  body  wastes.  The  onset  of APSGN usually occurs one to six weeks (average two weeks) after the streptococcal infection.
+
+APSGN is a relatively uncommon disease affecting about one of every 10,000 people, although four or five times that many may actually be affected by it but show no symptoms. APSGN is most prevalent among boys between the ages of 3 and 7, but it can occur at any age.
+
+## CAUSES AND SYMPTOMS
+
+Frequent sore throats and a history of streptococcal infection increase the risk of acquiring APSGN. Symptoms of APSGN include:
+
+- fluid accumulation and tissue swelling ( edema ) initially in the face and around the eyes, later in the legs
+- low urine output (oliguria)
+- blood in the urine (hematuria)
+- protein in the urine (proteinuria)
+- high blood pressure
+- joint pain or stiffness
+
+## KEY TERMS
+
+Streptococcus -A gram-positive, round or oval bacteria  in  the  genus Streptococcus .  Group  A streptococci cause a number of human diseases including strep throat, impetigo, and ASPGN.
+
+## DIAGNOSIS
+
+Diagnosis of APSGN is made by taking the patient's history, assessing his/her symptoms, and performing certain laboratory tests. Urinalysis usually shows blood and protein in the urine. Concentrations of urea and creatinine (two waste products normally filtered out of the blood by the kidneys) in the blood are often high, indicating impaired kidney function. A reliable, inexpensive blood test called the anti-streptolysin-O test can confirm that a patient has or has had a streptococcal infection. A throat culture may also show the presence of group A beta-hemolytic streptococci.
+
+## TREATMENT
+
+Treatment  of  ASPGN  is  designed  to  relieve  the symptoms and prevent complications. Some patients are advised to stay in bed until they feel better and to restrict fluid and salt intake. Antibiotics may be prescribed to kill any lingering streptococcal bacteria, if their presence is confirmed. Antihypertensives may be given to help control high blood pressure and diuretics may be used to reduce fluid retention and swelling. Kidney dialysis is rarely needed.
+
+## PROGNOSIS
+
+Most  children  (up  to  95%)  fully  recover  from APSGN in a matter of weeks or months. Most adults (up to 70%) also recover fully. In those who do not recover fully, chronic or progressive problems of kidney function may occur. Kidney failure may result in some patients.
+
+## PREVENTION
+
+Receiving prompt treatment for streptococcal infections may prevent APSGN.
+
+# Acute stress disorder
+
+## DEFINITION
+
+Acute stress disorder (ASD) is an anxiety disorder characterized by a cluster of dissociative and anxiety symptoms occurring within one month of a traumatic event. (Dissociation is a psychological reaction to trauma in which the mind tries to cope by 'sealing off' some features of the trauma from conscious awareness).
+
+## DESCRIPTION
+
+Acute stress disorder is a new diagnostic category that was introduced in 1994 to differentiate time-limited reactions to trauma from post-traumatic stress disorder (PTSD).
+
+## CAUSES AND SYMPTOMS
+
+Acute stress disorder is caused by exposure to trauma, which is defined as a stressor that causes intense fear and, usually, involves threats to life or serious injury to oneself or others. Examples are rape, mugging, combat, natural disasters, etc.
+
+The symptoms of stress disorder include a combining of one or more dissociative and anxiety symptoms with the avoidance of reminders of the traumatic event. Dissociative symptoms include emotional detachment, temporary loss of memory, depersonalization, and derealization.
+
+Anxiety symptoms connected with acute stress disorder include irritability, physical restlessness, sleep problems, inability to concentrate, and being easily startled.
+
+## DIAGNOSIS
+
+Diagnosis of acute stress disorder is based on a combination of the patient's history and a physical examination to  rule  out  diseases  that  can  cause  anxiety.  The
+
+## KEY TERMS
+
+Depersonalization -A dissociative  symptom in which the patient feels that his or her body is unreal, is changing, or is dissolving.
+
+Derealization -A dissociative symptom in which the external environment is perceived as unreal.
+
+Dissociation -A reaction to trauma in which the mind splits off certain aspects of the trauma from conscious awareness. Dissociation can affect the patient's memory, sense of reality, and sense of identity.
+
+Trauma -In the context of ASD, a disastrous or life-threatening event.
+
+essential feature is a traumatic event within one month of the onset of symptoms. Other diagnostic criteria include:
+
+- The  symptoms  significantly  interfere  with  normal social or vocational functioning
+- The symptoms last between two days and four weeks.
+
+## TREATMENT
+
+Treatment for acute stress disorder usually includes a combination of antidepressant medications and shortterm psychotherapy.
+
+## ALTERNATIVE TREATMENT
+
+Acupuncture has been recommended as a treatment for acute stress disorder. Some  other alternative approaches, including meditation , breathing exercises, and yoga , may be helpful when combined with shortterm psychotherapy. Homeopathic treatment and the use of herbal medicine and flower essences also can help the person with acute stress disorder rebalance on the physical, mental, and emotional levels.
+
+## PROGNOSIS
+
+The prognosis for recovery is influenced by the severity and duration of the trauma, the patient's closeness to it, and the patient's previous level of functioning. Favorable signs include a short time period between the trauma and onset of symptoms, immediate treatment, and appropriate social  support.  If  the  patient's  symptoms  are  severe enough to interfere with normal life and have lasted longer than one month, the diagnosis may be changed to PTSD. If the symptoms have lasted longer than one month but are
+
+not severe enough to meet the definition of PTSD, the diagnosis may be changed to adjustment disorder.
+
+Patients  who  do  not  receive  treatment  for  acute stress disorder are at increased risk for substance abuse or major depressive disorders .
+
+## PREVENTION
+
+Traumatic events cannot usually be foreseen and, thus, cannot be prevented. However, in theory, professional intervention soon after a major trauma might reduce the likelihood or severity of ASD. In addition, some symptoms of acute stress disorder result from biochemical changes  in  the  central  nervous  system, muscles, and digestive tract that are not subject to conscious control.
+
+# Addiction
+
+## DEFINITION
+
+Addiction is a dependence on a behavior or substance that a person is powerless to stop. The term has been partially replaced by the word dependence for substance abuse. Addiction has been extended, however, to include  mood-altering  behaviors  or  activities.  Some researchers speak of two types of addictions: substance addictions (for example, alcoholism , drug abuse, and smoking ); and process addictions (for example, gambling, spending, shopping, eating, and sexual activity). There is a growing recognition that many addicts, such as polydrug abusers, are addicted to more than one substance or process.
+
+## DESCRIPTION
+
+Addiction is one of the most costly public health problems in the United States. It is a progressive syndrome, which means that it increases in severity over time unless it is treated. Substance abuse is characterized by frequent relapse, or return to the abused substance. Substance abusers often make repeated attempts to quit before they are successful.
+
+In 1995 the economic cost of substance abuse in the United States exceeded $414 billion, with health care costs attributed to substance abuse estimated at more than $114 billion.
+
+By eighth grade, 52% of adolescents have consumed alcohol, 41%  have  smoked  tobacco, and  20%  have smoked  marijuana.  Compared  to  females, males  are almost four times as likely to be heavy drinkers, nearly one and a half more likely to smoke a pack or more of cigarettes daily, and twice as likely to smoke marijuana weekly. However, among adolescents these gender differences are decreasing. Although frequent use of tobacco, cocaine and heavy drinking appears to have remained stable in the 1990s, marijuana use increased.
+
+In 1999, an estimated four million Americans over the age of 12 used prescription pain relievers, sedatives, and stimulants for 'nonmedical' reasons during one month.
+
+In the United States, 25% of the population regularly uses tobacco. Tobacco use reportedly kills 2.5 times as many people each year as alcohol and drug abuse combined. According to 1998 data from the World Health Organization, there were 1.1 billion smokers worldwide and 10,000 tobacco-related deaths per day. Furthermore, in the United States, 43% of children aged 2-11 years are exposed  to  environmental  tobacco  smoke, which  has been implicated in sudden infant death syndrome , low birth weight, asthma , middle ear disease, pneumonia , cough , and upper respiratory infection.
+
+Eating disorders, such as anorexia nervosa , bulimia nervosa , and binge eating, affect over five million American women and men. Fifteen percent of young women have substantially disordered attitudes toward eating and eating behaviors. More than 1,000 women die each year from anorexia nervosa.A 1997 Harvard study found that an estimated 15.4 million Americans suffered from a gambling addiction. Over half that number (7.9 million) were adolescents.
+
+## CAUSES AND SYMPTOMS
+
+Addiction to substances results from the interaction of several factors:
+
+## DRUG CHEMISTRY
+
+Some substances are more addictive than others, either because they produce a rapid and intense change in mood;  or  because  they  produce  painful  withdrawal symptoms when stopped suddenly.
+
+## GENETIC FACTOR
+
+Some people appear to be more vulnerable to addiction because their body chemistry increases their sensitivity  to  drugs.  Some  forms of substance abuse and dependence seem to run in families; and this may be the result of a genetic predisposition, environmental influences, or a combination of both.
+
+## BRAIN STRUCTURE AND FUNCTION
+
+Using  drugs  repeatedly  over  time  changes  brain structure and function in fundamental and long-lasting ways.  Addiction  comes  about  through  an  array  of changes in the brain and the strengthening of new memory connections. Evidence suggests that those long-lasting brain changes are responsible for the distortions of cognitive  and  emotional  functioning  that  characterize addicts, particularly  the  compulsion  to  use  drugs. Although the causes of addiction remain the subject of ongoing debate and research, many experts now consider addiction to be a brain disease: a condition caused by persistent changes in brain structure and function. However, having  this  brain  disease  does  not  absolve  the addict of responsibility for his or her behavior, but it does explain why many addicts cannot stop using drugs by sheer force of will alone.
+
+## SOCIAL LEARNING
+
+Social learning is considered the most important single factor. It includes patterns of use in the addict's family or subculture, peer pressure, and advertising or media influence.
+
+## AVAILABILITY
+
+Inexpensive or readily available tobacco, alcohol, or drugs produce marked increases in rates of addiction.
+
+Crack users. Crack, a form of cocaine, is one of the most addictive drugs. (Photograph by Roy Marsch, The Stock Market. Reproduced by permission.)
+
+<!-- image -->
+
+## INDIVIDUAL DEVELOPMENT
+
+Before the 1980s, the so-called addictive personality was used to explain the development of addiction. The addictive personality was described as escapist, impulsive, dependent, devious, manipulative, and  self-centered.  Many doctors now believe that these character traits  develop  in  addicts  as  a  result  of  the  addiction, rather than the traits being a cause of the addiction.
+
+## DIAGNOSIS
+
+In  addition  to  a  preoccupation  with  using  and acquiring the abused substance, the diagnosis of addiction is based on five criteria:
+
+- loss of willpower
+- harmful consequences
+- unmanageable lifestyle
+- tolerance or escalation of use
+- withdrawal symptoms upon quitting
+
+## TREATMENT
+
+Treatment requires both medical and social approaches. Substance addicts may need hospital treatment to manage withdrawal symptoms. Individual or group psychotherapy is often helpful, but only after substance use has stopped. Anti-addiction medications, such as methadone and naltrexone, are also commonly used.
+
+The most frequently recommended social form of outpatient treatment is the twelve-step program. Such programs are also frequently combined with psychotherapy. According to a recent study reported by the American Psychological Association (APA), anyone, regardless of his or her religious beliefs or lack of religious beliefs, can benefit from participation in 12-step programs such as Alcoholics Anonymous (AA) or Narcotics Anonymous (NA). The number of visits to 12-step self-help groups exceeds the number of visits to all mental health professionals combined. There are twelve-step groups for all major substance and process addictions.
+
+The Twelve Steps are:
+
+- Admit powerlessness over the addiction.
+- Believe that a Power greater than oneself could restore sanity.
+- Make a decision to turn your will and your life over to the care of God, as you understand him.
+- Make a searching and fearless moral inventory of self.
+- Admit to God, yourself, and another human being the exact nature of your wrongs.
+- Become willing to have God remove all these defects from your character.
+- Humbly ask God to remove shortcomings.
+- Make a list of all persons harmed by your wrongs and become willing to make amends to them all.
+- Make direct amends to such people, whenever possible except when to do so would injure them or others.
+- Continue  to  take  personal  inventory  and  promptly admit any future wrongdoings.
+- Seek to improve contact with a God of the individual's understanding through meditation and prayer.
+- Carry the message of spiritual awakening to others and practice these principles in all your affairs.
+
+## ALTERNATIVE TREATMENT
+
+Acupuncture and homeopathy have been used to treat withdrawal symptoms. Meditation, yoga , and reiki healing have been recommended for process addictions, however, the success of these programs has not been well documented through controlled studies.
+
+## KEY TERMS
+
+Addiction -Dependence on a habit-forming substance or behavior that the person is powerless to stop.
+
+Addictive personality -A concept that was formerly used to explain addiction as the result of pre-existing character defects in individuals.
+
+Process addiction -Addiction to certain moodaltering behaviors, such as eating disorders, gambling, sexual activity, overwork, and shopping.
+
+Tolerance -A condition in which an addict needs higher doses of a substance to achieve the same effect previously achieved with a lower dose.
+
+Withdrawal -The  unpleasant,  sometimes  lifethreatening physiological changes that occur, due to the discontinuation of use of some drugs after prolonged, regular use.
+
+## PROGNOSIS
+
+The  prognosis  for  recovery  from  any  addiction depends on the substance or process, the individual's circumstances, and underlying personality structure. Polydrug users have the worst prognosis for recovery.
+
+## PREVENTION
+
+The most effective form of prevention appears to be a stable family that models responsible attitudes toward mood-altering substances and behaviors. Prevention education programs are also widely used to inform the public of the harmfulness of substance abuse.

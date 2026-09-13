@@ -1,0 +1,19 @@
+{
+  "name": "medatlas",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "bun@1.3.14",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "bunx concurrently \"bun run --cwd client dev\" \"bun run --cwd server dev\"",
+    "build": "bun run --cwd client build && bun run --cwd server build",
+    "typecheck": "bun run --cwd client typecheck && bun run --cwd server typecheck",
+    "start": "bun run --cwd server start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
