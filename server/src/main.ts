@@ -6,7 +6,8 @@ import swaggerUi from 'swagger-ui-express';
 import { env } from './config/env.js';
 import { logger } from './config/logger.js';
 import { createOpenApiDocument } from './docs/swagger.js';
-import { ingestRoute } from './service/ingest.js';
+import healthRoutes from './routes/health.js';
+import ingestRoutes from './routes/ingest.js';
 
 const port = env.port;
 const clientUrl = env.clientUrl;
@@ -37,10 +38,9 @@ const openApiDocument = createOpenApiDocument(port);
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 app.get('/docs.json', (_request, response) => response.json(openApiDocument));
-app.get('/health', (_request, response) => {
-  response.json({ status: 'ok', service: 'api' });
-});
-app.post('/ingest', ingestRoute);
+
+app.use(healthRoutes);
+app.use(ingestRoutes);
 
 // app.get('/redis/health', async (_request, response) => {
 //   let redisStatus = 'disconnected';
