@@ -56,6 +56,11 @@ export async function retrieveChunks(
 
   const vector = await embedQuery(pinecone, config.model, query);
 
+  logger.info(
+    { namespace: config.namespace, query, topK, topic: filters.topic, subheadings: filters.subheadings },
+    'retrieving knowledge-base chunks',
+  );
+
   const results = await index.query({
     vector,
     topK: Math.min(Math.max(Math.trunc(topK), 1), MAX_TOP_K),

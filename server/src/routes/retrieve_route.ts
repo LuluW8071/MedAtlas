@@ -3,6 +3,6 @@ import { retrieveRoute } from '../service/retrieve.js';
 
 const router = Router();
 
-router.post('/retrieve', retrieveRoute);
+router.post('/pinecone/retrieve', retrieveRoute);
 
 export default router;
