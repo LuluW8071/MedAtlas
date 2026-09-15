@@ -5,9 +5,13 @@ import express from 'express';
 import swaggerUi from 'swagger-ui-express';
 import { env } from './config/env.js';
 import { logger } from './config/logger.js';
+
+
 import { createOpenApiDocument } from './docs/swagger.js';
-import healthRoutes from './routes/health.js';
-import ingestRoutes from './routes/ingest.js';
+import collectionRoutes from './routes/collection_route.js';
+import healthRoutes from './routes/health_route.js';
+import ingestRoutes from './routes/ingest_route.js';
+import retrieveRoutes from './routes/retrieve_route.js';
 
 const port = env.port;
 const clientUrl = env.clientUrl;
@@ -40,7 +44,9 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 app.get('/docs.json', (_request, response) => response.json(openApiDocument));
 
 app.use(healthRoutes);
+app.use(collectionRoutes);
 app.use(ingestRoutes);
+app.use(retrieveRoutes);
 
 // app.get('/redis/health', async (_request, response) => {
 //   let redisStatus = 'disconnected';

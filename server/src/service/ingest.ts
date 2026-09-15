@@ -1,45 +1,19 @@
 /** Validate uploads, generate embeddings, and persist chunks in Pinecone. */
 import { randomUUID } from 'node:crypto';
 import type { RequestHandler } from 'express';
-import { Pinecone } from '@pinecone-database/pinecone';
 import multer from 'multer';
 import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
 import { type KnowledgeBaseChunk } from '../models/chunk.js';
 import { processKnowledgeBase } from './chunker.js';
+import { createPineconeClient, getIngestionConfig, getIngestionIndex } from './clients/pinecone_client.js';
+import { delay, embedBatch } from './clients/embedding_client.js';
 
 const allowedExtensions = new Set(['.txt', '.md']);
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 20 * 1024 * 1024 },
 });
-
-/** Create a Pinecone client from environment configuration. */
-function createPineconeClient(): Pinecone {
-  const apiKey = env.pineconeApiKey;
-
-  if (!apiKey) {
-    throw new Error('PINECONE_API_KEY is required');
-  }
-
-  return new Pinecone({ apiKey });
-}
-
-/** Return required ingestion configuration or throw a readable error. */
-function getIngestionConfig() {
-  const indexName = env.pineconeIndexName;
-  const model = env.embeddingModel;
-  const namespace = env.pineconeNamespace;
-  const batchSize = env.maxBatchUpsert;
-
-  if (!indexName || !model || !namespace || !Number.isInteger(batchSize) || batchSize < 1) {
-    throw new Error(
-      'PINECONE_INDEX_NAME, EMBEDDING_MODEL, PINECONE_NAMESPACE, and valid MAX_BATCH_UPSERT are required',
-    );
-  }
-
-  return { indexName, model, namespace, batchSize };
-}
 
 /** Extract topic and subheading metadata from one chunk. */
 function getChunkMetadata(chunk: KnowledgeBaseChunk) {
@@ -59,83 +33,48 @@ function getChunkMetadata(chunk: KnowledgeBaseChunk) {
   };
 }
 
-/** Pause between Pinecone embedding requests to avoid token-rate limits. */
-function delay(milliseconds: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
-
-/** Generate embeddings, waiting and retrying when Pinecone returns HTTP 429. */
-async function embedBatch(
-  pinecone: Pinecone,
-  model: string,
-  contents: string[],
-) {
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
-    try {
-      return await pinecone.inference.embed({
-        model,
-        inputs: contents,
-        parameters: { inputType: 'passage', truncate: 'END' },
-      });
-    } catch (error) {
-      const message = error instanceof Error ? error.message : '';
-      const isRateLimited = message.includes('429') || message.includes('max tokens per minute');
-
-      if (!isRateLimited || attempt === 3) {
-        throw error;
-      }
-
-      logger.warn({ attempt, delayMs: env.embeddingDelayMs }, 'Pinecone rate limit reached; retrying');
-      await delay(env.embeddingDelayMs);
-    }
-  }
-
-  throw new Error('Embedding failed after retries');
-}
-
 /** Embed chunks with Pinecone inference and store vectors in configured namespace. */
 async function ingestChunks(chunks: KnowledgeBaseChunk[]): Promise<void> {
-  const { indexName, model, namespace, batchSize } = getIngestionConfig();
+  const config = getIngestionConfig();
   const pinecone = createPineconeClient();
-  const index = pinecone.index(indexName).namespace(namespace);
+  const index = await getIngestionIndex(pinecone, config);
 
-  for (let start = 0; start < chunks.length; start += batchSize) {
+  for (let start = 0; start < chunks.length; start += config.batchSize) {
     if (start > 0) {
       logger.info({ delayMs: env.embeddingDelayMs }, 'waiting between embedding batches');
       await delay(env.embeddingDelayMs);
     }
 
-    const batch = chunks.slice(start, start + batchSize);
+    const batch = chunks.slice(start, start + config.batchSize);
     const embeddings = await embedBatch(
       pinecone,
-      model,
+      config.model,
       batch.map(chunk => chunk.content),
+      'passage'
     );
 
     if (
       embeddings.vectorType !== 'dense' ||
-      embeddings.data.some(embedding => embedding.vectorType !== 'dense')
+      embeddings.data.some(
+  (embedding: { vectorType: string }) => embedding.vectorType !== 'dense',
+)
     ) {
       throw new Error('Configured embedding model did not return dense vectors');
     }
 
-    const records = batch.map((chunk, index) => ({
-        id: `${randomUUID()}-${start + index}`,
-        values: embeddings.data[index].vectorType === 'dense'
-          ? embeddings.data[index].values
-          : [],
-        metadata: getChunkMetadata(chunk),
-      }));
+    const records = batch.map((chunk, i) => ({
+      id: `${randomUUID()}-${start + i}`,
+      values: embeddings.data[i].vectorType === 'dense' ? embeddings.data[i].values : [],
+      metadata: getChunkMetadata(chunk),
+    }));
 
     logger.info({
-      namespace,
+      namespace: config.namespace,
       records: records.length,
       parts: records.map(record => record.metadata.parts),
     }, 'upserting embedded chunks');
 
-    await index.upsert({
-      records,
-    });
+    await index.upsert({ records });
   }
 }
 
