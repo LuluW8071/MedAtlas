@@ -1,5 +1,6 @@
 /** Embed a query and retrieve the most relevant knowledge-base chunks from Pinecone. */
 import type { RequestHandler } from 'express';
+import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
 import { retrieveRequestSchema } from '../schemas/api.js';
 import { createPineconeClient, getIngestionConfig, getIngestionIndex } from './clients/pinecone_client.js';
@@ -22,7 +23,47 @@ export interface RetrievedChunk {
 /** Optional metadata constraints to narrow a retrieval query. */
 export interface RetrievalFilters {
   topic?: string;
+  topicTerms?: string[];
   subheadings?: string[];
+}
+
+interface NerEntity {
+  text: string;
+  label: string;
+}
+
+interface NerResponse {
+  entities?: NerEntity[];
+}
+
+/** Match topic headings stored in title case. */
+function toTitleCase(value: string): string {
+  return value.toLowerCase().replace(/\b\w/g, character => character.toUpperCase());
+}
+
+/** Extract disease topics locally; retrieval stays available when NER is offline. */
+async function extractTopics(query: string): Promise<string[]> {
+  try {
+    const response = await fetch(env.nerUrl, {
+      method: 'POST',
+      headers: { accept: 'application/json', 'content-type': 'application/json' },
+      body: JSON.stringify({ text: query }),
+      signal: AbortSignal.timeout(env.nerTimeoutMs),
+    });
+
+    if (!response.ok) {
+      throw new Error(`NER service returned ${response.status}`);
+    }
+
+    const payload = await response.json() as NerResponse;
+    return [...new Set((payload.entities ?? [])
+      .filter(entity => entity.label.toLowerCase() === 'disease')
+      .map(entity => toTitleCase(entity.text.trim()))
+      .filter(Boolean))];
+  } catch (error) {
+    logger.warn({ err: error, nerUrl: env.nerUrl }, 'NER topic extraction unavailable');
+    return [];
+  }
 }
 
 /** Build a Pinecone metadata filter from optional topic/subheading constraints. */
@@ -31,6 +72,10 @@ function buildFilter(filters: RetrievalFilters): Record<string, unknown> | undef
 
   if (filters.topic) {
     clauses.push({ topic: { $eq: filters.topic } });
+  }
+
+  if (filters.topicTerms?.length) {
+    clauses.push({ topic: { $in: filters.topicTerms } });
   }
 
   if (filters.subheadings?.length) {
@@ -57,7 +102,14 @@ export async function retrieveChunks(
   const vector = await embedQuery(pinecone, config.model, query);
 
   logger.info(
-    { namespace: config.namespace, query, topK, topic: filters.topic, subheadings: filters.subheadings },
+    {
+      namespace: config.namespace,
+      query,
+      topK,
+      topic: filters.topic,
+      topicTerms: filters.topicTerms,
+      subheadings: filters.subheadings,
+    },
     'retrieving knowledge-base chunks',
   );
 
@@ -99,7 +151,8 @@ async function handleRetrieveRequest(
     }
 
     const { query, topK, topic, subheadings } = parsedRequest.data;
-    const chunks = await retrieveChunks(query, topK, { topic, subheadings });
+    const topicTerms = topic ? [] : await extractTopics(query);
+    const chunks = await retrieveChunks(query, topK, { topic, topicTerms, subheadings });
 
     response.status(200).json({ query, results: chunks });
   } catch (error) {

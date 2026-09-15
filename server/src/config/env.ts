@@ -27,6 +27,8 @@ export const env = {
   maxBatchUpsert: positiveIntegerEnv('MAX_BATCH_UPSERT', 96),
   embeddingDelayMs: positiveIntegerEnv('EMBEDDING_DELAY_MS', 15000),
   topK: positiveIntegerEnv('TOP_K', 5),
+  nerUrl: optionalEnv('NER_URL', 'http://localhost:8000/extract')!,
+  nerTimeoutMs: positiveIntegerEnv('NER_TIMEOUT_MS', 1500),
 
   logLevel: optionalEnv('LOG_LEVEL', 'info')!,
 } as const;
