@@ -17,7 +17,7 @@ function positiveIntegerEnv(name: string, fallback: number): number {
 export const env = {
   port: positiveIntegerEnv('PORT', 4000),
   clientUrl: optionalEnv('CLIENT_URL', 'http://localhost:3000')!,
-  redisUrl: optionalEnv('REDIS_URL', 'redis://localhost:6379')!,
+  redisUrl: optionalEnv('REDIS_URL', 'redis://127.0.0.1:6380')!,
 
   pineconeApiKey: optionalEnv('PINECONE_API_KEY'),
   pineconeIndexName: optionalEnv('PINECONE_INDEX_NAME'),

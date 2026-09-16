@@ -8,8 +8,10 @@ import { type KnowledgeBaseChunk } from '../models/chunk.js';
 import { processKnowledgeBase } from './chunker.js';
 import { createPineconeClient, getIngestionConfig, getIngestionIndex } from './clients/pinecone_client.js';
 import { delay, embedBatch } from './clients/embedding_client.js';
+import { getRedisClient } from './clients/redis_client.js';
 
 const allowedExtensions = new Set(['.txt', '.md']);
+const topicsRedisKey = 'topics';
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 20 * 1024 * 1024 },
@@ -31,6 +33,39 @@ function getChunkMetadata(chunk: KnowledgeBaseChunk) {
     subheadings,
     parts: parts[0] ?? 0,
   };
+}
+
+/** Build a deduplicated topic-to-subheading map from processed chunks. */
+function collectTopics(chunks: KnowledgeBaseChunk[]): Record<string, string[]> {
+  const topics = new Map<string, Set<string>>();
+
+  for (const chunk of chunks) {
+    const subheadings = topics.get(chunk.topicTitle) ?? new Set<string>();
+
+    for (const section of chunk.sections) {
+      subheadings.add(section.replace(/\s+\(\d+\/\d+\)$/, '').toLowerCase());
+    }
+
+    topics.set(chunk.topicTitle, subheadings);
+  }
+
+  return Object.fromEntries(
+    [...topics].map(([topic, subheadings]) => [topic, [...subheadings]]),
+  );
+}
+
+/** Persist all topics and subheadings in Redis. */
+async function storeTopics(chunks: KnowledgeBaseChunk[]): Promise<void> {
+  const topics = collectTopics(chunks);
+  const redis = await getRedisClient();
+  await redis.set(topicsRedisKey, JSON.stringify(topics));
+}
+
+/** Parse multipart payload flag, preserving Pinecone ingestion by default. */
+function parsePayload(value: unknown): boolean | undefined {
+  if (value === undefined || value === true || value === 'true') return true;
+  if (value === false || value === 'false') return false;
+  return undefined;
 }
 
 /** Embed chunks with Pinecone inference and store vectors in configured namespace. */
@@ -78,7 +113,7 @@ async function ingestChunks(chunks: KnowledgeBaseChunk[]): Promise<void> {
   }
 }
 
-/** Handle one multipart document upload and ingest its chunks into Pinecone. */
+/** Handle one multipart document upload and optionally ingest its chunks into Pinecone. */
 async function handleIngestRequest(
   request: Parameters<RequestHandler>[0],
   response: Parameters<RequestHandler>[1],
@@ -86,6 +121,13 @@ async function handleIngestRequest(
   try {
     if (!request.file) {
       response.status(400).json({ error: 'Upload one file in field "file"' });
+      return;
+    }
+
+    const payload = parsePayload(request.body?.payload);
+
+    if (payload === undefined) {
+      response.status(400).json({ error: 'payload must be true or false' });
       return;
     }
 
@@ -113,15 +155,22 @@ async function handleIngestRequest(
       return;
     }
 
-    await ingestChunks(chunks);
+    if (payload) {
+      await ingestChunks(chunks);
+    }
+
+    await storeTopics(chunks);
 
     logger.info({
       filename: request.file.originalname,
       chunks: chunks.length,
+      payload,
     }, 'document ingested');
 
     response.status(201).json({
-      message: 'Document ingested successfully',
+      message: payload
+        ? 'Document ingested successfully'
+        : 'Document topics stored successfully',
       chunks: chunks.length,
     });
   } catch (error) {

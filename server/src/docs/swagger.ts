@@ -16,6 +16,9 @@ const registry = new OpenAPIRegistry();
 
 const ingestRequestSchema = z.object({
   file: z.string().openapi({ format: 'binary' }),
+  payload: z.enum(['true', 'false']).optional().openapi({
+    description: 'Whether to ingest chunks into Pinecone. Defaults to true.',
+  }),
 });
 
 registry.register('Error', errorSchema);
@@ -26,6 +29,57 @@ registry.register('NamespaceList', namespaceListSchema);
 registry.register('RetrieveRequest', retrieveRequestSchema);
 registry.register('RetrieveResponse', retrieveResponseSchema);
 registry.register('IngestResponse', ingestResponseSchema);
+
+const redisListResponseSchema = z.record(z.string(), z.unknown());
+
+registry.registerPath({
+  method: 'get',
+  path: '/redis',
+  tags: ['Redis'],
+  summary: 'List Redis contents',
+  request: {
+    query: z.object({
+      key: z.string().min(1).optional().openapi({
+        description: 'Exact Redis key to return',
+      }),
+    }),
+  },
+  responses: {
+    200: {
+      description: 'Redis key-value contents',
+      content: { 'application/json': { schema: redisListResponseSchema } },
+    },
+    500: { description: 'Redis listing failed' },
+  },
+});
+
+registry.registerPath({
+  method: 'delete',
+  path: '/redis',
+  tags: ['Redis'],
+  summary: 'Clear Redis contents',
+  request: {
+    query: z.object({
+      key: z.string().min(1).optional().openapi({
+        description: 'Delete only this Redis key; omit to clear the database',
+      }),
+    }),
+  },
+  responses: {
+    200: {
+      description: 'Redis contents cleared',
+      content: {
+        'application/json': {
+          schema: z.union([
+            z.object({ message: z.string() }),
+            z.object({ key: z.string(), deleted: z.number().int().nonnegative() }),
+          ]),
+        },
+      },
+    },
+    500: { description: 'Redis clear failed' },
+  },
+});
 
 registry.registerPath({
   method: 'get',
@@ -161,6 +215,7 @@ export function createOpenApiDocument(port: number) {
     tags: [
       { name: 'Health', description: 'Service health endpoints' },
       { name: 'Pinecone', description: 'Pinecone knowledge-base endpoints' },
+      { name: 'Redis', description: 'Redis key-value endpoints' },
       { name: 'Documentation', description: 'API documentation endpoints' },
     ],
   });
