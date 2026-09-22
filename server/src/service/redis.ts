@@ -10,6 +10,33 @@ function parseRedisValue(value: string): unknown {
   }
 }
 
+/** Read Redis values without applying GET to non-string keys. */
+async function readRedisValue(redis: Awaited<ReturnType<typeof getRedisClient>>, key: string): Promise<unknown> {
+  const type = await redis.type(key);
+
+  switch (type) {
+    case 'string':
+      return parseRedisValue(await redis.get(key) ?? '');
+    case 'ReJSON-RL':
+    case 'json': {
+      const value = await redis.call('JSON.GET', key) as string | null;
+      return value === null ? null : parseRedisValue(value);
+    }
+    case 'hash':
+      return redis.hgetall(key);
+    case 'list':
+      return redis.lrange(key, 0, -1);
+    case 'set':
+      return redis.smembers(key);
+    case 'zset':
+      return redis.zrange(key, 0, -1, 'WITHSCORES');
+    case 'stream':
+      return redis.xrange(key, '-', '+');
+    default:
+      return { type };
+  }
+}
+
 /** List Redis contents, optionally restricted to one exact key. */
 export const listRedisRoute: RequestHandler = async (request, response) => {
   try {
@@ -19,13 +46,13 @@ export const listRedisRoute: RequestHandler = async (request, response) => {
       : undefined;
     const keys = requestedKey ? [requestedKey] : await redis.keys('*');
     const entries = await Promise.all(
-      keys.map(async key => [key, await redis.get(key)] as const),
+      keys.map(async key => [key, await readRedisValue(redis, key)] as const),
     );
 
     response.json(Object.fromEntries(
       entries
         .filter(([, value]) => value !== null)
-        .map(([key, value]) => [key, parseRedisValue(value!)]),
+        .map(([key, value]) => [key, value]),
     ));
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Redis listing failed';

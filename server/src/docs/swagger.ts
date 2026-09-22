@@ -2,6 +2,8 @@ import { OpenAPIRegistry, OpenApiGeneratorV3 } from '@asteasolutions/zod-to-open
 import { z } from 'zod';
 import {
   apiHealthSchema,
+  agentRequestSchema,
+  agentResponseSchema,
   errorSchema,
   ingestResponseSchema,
   namespaceListSchema,
@@ -29,8 +31,43 @@ registry.register('NamespaceList', namespaceListSchema);
 registry.register('RetrieveRequest', retrieveRequestSchema);
 registry.register('RetrieveResponse', retrieveResponseSchema);
 registry.register('IngestResponse', ingestResponseSchema);
+registry.register('AgentRequest', agentRequestSchema);
+registry.register('AgentResponse', agentResponseSchema);
 
 const redisListResponseSchema = z.record(z.string(), z.unknown());
+
+registry.registerPath({
+  method: 'post',
+  path: '/agent/invoke',
+  tags: ['Agent'],
+  summary: 'Invoke MedAtlas agent with Redis-backed conversation memory',
+  request: {
+    body: {
+      content: { 'application/json': { schema: agentRequestSchema } },
+      required: true,
+    },
+  },
+  responses: {
+    200: {
+      description: 'Server-sent event stream containing agent tokens',
+      content: {
+        'text/event-stream': {
+          schema: z.string().openapi({
+            description: 'SSE events: start, token, done, or error',
+          }),
+        },
+      },
+    },
+    400: {
+      description: 'Invalid agent request',
+      content: { 'application/json': { schema: errorSchema } },
+    },
+    500: {
+      description: 'Agent invocation failed',
+      content: { 'application/json': { schema: errorSchema } },
+    },
+  },
+});
 
 registry.registerPath({
   method: 'get',
@@ -216,6 +253,7 @@ export function createOpenApiDocument(port: number) {
       { name: 'Health', description: 'Service health endpoints' },
       { name: 'Pinecone', description: 'Pinecone knowledge-base endpoints' },
       { name: 'Redis', description: 'Redis key-value endpoints' },
+      { name: 'Agent', description: 'LangGraph agent endpoints' },
       { name: 'Documentation', description: 'API documentation endpoints' },
     ],
   });

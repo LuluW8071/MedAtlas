@@ -13,6 +13,8 @@ import healthRoutes from './routes/health_route.js';
 import ingestRoutes from './routes/ingest_route.js';
 import retrieveRoutes from './routes/retrieve_route.js';
 import redisRoutes from './routes/redis_route.js';
+import agentRoutes from './routes/agent_route.js';
+import conversationsRoutes from './routes/conversations_route.js';
 
 const port = env.port;
 const clientUrl = env.clientUrl;
@@ -49,6 +51,8 @@ app.use(collectionRoutes);
 app.use(ingestRoutes);
 app.use(retrieveRoutes);
 app.use(redisRoutes);
+app.use(agentRoutes);
+app.use(conversationsRoutes);
 
 // app.get('/redis/health', async (_request, response) => {
 //   let redisStatus = 'disconnected';

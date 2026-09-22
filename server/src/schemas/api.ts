@@ -58,3 +58,41 @@ export const ingestResponseSchema = z.object({
 });
 
 export type RetrieveRequest = z.infer<typeof retrieveRequestSchema>;
+
+export const agentRequestSchema = z.object({
+  message: z.string().trim().min(1),
+  threadId: z.string().uuid().openapi({
+    format: 'uuid',
+    example: '550e8400-e29b-41d4-a716-446655440000',
+    description: 'Random UUID identifying conversation thread',
+  }),
+  userId: z.string().trim().min(1).max(200).optional(),
+});
+
+export const agentResponseSchema = z.object({
+  threadId: z.string(),
+  response: z.string(),
+});
+
+export const conversationsRequestSchema = z.object({
+  userId: z.string().trim().min(1).max(200),
+});
+
+export const conversationMessageSchema = z.object({
+  id: z.string(),
+  role: z.enum(['user', 'assistant']),
+  content: z.string(),
+});
+
+export const conversationSchema = z.object({
+  threadId: z.string(),
+  title: z.string(),
+  updatedAt: z.number(),
+  messages: z.array(conversationMessageSchema),
+});
+
+export const conversationsResponseSchema = z.object({
+  conversations: z.array(conversationSchema),
+});
+
+export type AgentRequest = z.infer<typeof agentRequestSchema>;

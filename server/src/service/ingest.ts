@@ -12,6 +12,7 @@ import { getRedisClient } from './clients/redis_client.js';
 
 const allowedExtensions = new Set(['.txt', '.md']);
 const topicsRedisKey = 'topics';
+
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 20 * 1024 * 1024 },
