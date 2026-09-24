@@ -3,19 +3,17 @@ import { z } from 'zod';
 
 import { logger } from '../../config/logger.js';
 import { retrieveChunks } from '../../service/retrieve.js';
+import { serializeRetrieval } from '../citations.js';
 
 export const ragRetrievalTool = tool(
   async ({ query, topK }) => {
     logger.info({ query, topK }, 'rag tool called');
     try {
       const chunks = await retrieveChunks(query, topK ?? 5);
-      if (chunks.length === 0) return `No knowledge-base context found for: ${query}`;
-      return chunks
-        .map(chunk => `[${chunk.topic} | score ${chunk.score.toFixed(3)}]\n${chunk.text}`)
-        .join('\n\n');
+      return serializeRetrieval(chunks);
     } catch (error) {
       logger.error({ err: error, query }, 'rag tool retrieval failed');
-      return `Knowledge-base retrieval failed for: ${query}. Answer from general knowledge and note context unavailable.`;
+      return serializeRetrieval([]);
     }
   },
   {

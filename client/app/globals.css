@@ -455,6 +455,172 @@ h1 {
   color: #f43f5e;
   background: #27272a;
 }
+.citation-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+.citation-blob {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: min(220px, 70vw);
+  overflow: hidden;
+  border: 1px solid #3f4145;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+  color: #c8cbd0;
+  background: #171819;
+  font-size: 0.72rem;
+  text-align: left;
+}
+.citation-blob:hover {
+  border-color: #1d76bc;
+  background: #202326;
+}
+.citation-blob span:nth-child(2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.citation-blob small {
+  color: #71717a;
+}
+.citation-number {
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.25rem;
+  color: #7dd3fc;
+  background: #1d76bc33;
+  font-weight: 700;
+}
+.citation-table-link {
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 0.15rem 0.4rem;
+  color: #7dd3fc;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.citation-table-link:hover {
+  color: #fff;
+  background: #1d76bc33;
+}
+.citation-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: #000b;
+  backdrop-filter: blur(8px);
+}
+.citation-modal {
+  width: min(100%, 680px);
+  max-height: min(720px, calc(100dvh - 2rem));
+  overflow-y: auto;
+  border: 1px solid #3f4145;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  color: #e4e4e7;
+  background: #171819;
+  box-shadow: 0 24px 80px #000b;
+}
+.citation-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.citation-modal-kicker {
+  margin: 0 0 0.35rem;
+  color: #60a5d8;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+}
+.citation-modal h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.citation-modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: #7dd3fc;
+  font-size: 0.72rem;
+}
+.citation-modal-meta span:not(:first-child) {
+  color: #71717a;
+}
+.citation-modal .citation-path {
+  margin: 1rem 0 0;
+  color: #7dd3fc;
+  font-size: 0.75rem;
+}
+.citation-modal-text {
+  margin-top: 0.75rem;
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.citation-modal-text p {
+  margin: 0 0 0.75rem;
+}
+.citation-modal-text p:last-child {
+  margin-bottom: 0;
+}
+.citation-modal-text ul,
+.citation-modal-text ol {
+  margin: 0.6rem 0;
+  padding-left: 1.4rem;
+}
+.citation-modal-text blockquote {
+  margin: 0.75rem 0;
+  border-left: 3px solid var(--blue);
+  padding-left: 0.75rem;
+  color: #a1a1aa;
+  font-style: italic;
+}
+.citation-modal-text code {
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.3rem;
+  color: #7dd3fc;
+  background: #27272a;
+}
+.citation-modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  border-top: 1px solid #27272a;
+  padding-top: 0.85rem;
+  color: #71717a;
+  font-size: 0.75rem;
+}
+.citation-modal-nav button {
+  border: 1px solid #3f4145;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  color: #d4d4d8;
+  background: #202326;
+}
+.citation-modal-nav button:hover:not(:disabled) {
+  border-color: #1d76bc;
+  color: #fff;
+}
+.citation-modal-nav button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
 .assistant-mark {
   display: none;
 }

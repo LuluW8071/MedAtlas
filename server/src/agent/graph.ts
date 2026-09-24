@@ -25,10 +25,9 @@ const graphPromise = RedisSaver.fromUrl(env.redisUrl, {
     .addEdge('prepare_conversation', 'agent')
     .addConditionalEdges('agent', routeAfterAgent, {
       rag: 'rag_tool',
-      refiner: 'refiner',
       [END]: END,
     })
-    .addEdge('rag_tool', 'agent')
+    .addEdge('rag_tool', 'refiner')
     .addEdge('refiner', END)
     .compile({ checkpointer });
 

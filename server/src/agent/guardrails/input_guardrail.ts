@@ -12,7 +12,6 @@ export interface InputGuardrailResult {
   flagged: boolean;
   notice: string;
 }
-
 /** Detect instruction-like text without rejecting valid medical or general requests. */
 export function inspectUserInput(input: string): InputGuardrailResult {
   const flagged = INSTRUCTION_INJECTION_PATTERNS.some(pattern => pattern.test(input));

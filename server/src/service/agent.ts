@@ -4,6 +4,8 @@ import { HumanMessage, type BaseMessage } from '@langchain/core/messages';
 import { logger } from '../config/logger.js';
 import { agentRequestSchema } from '../schemas/api.js';
 import { getAgentGraph } from '../agent/graph.js';
+import { parseRetrieval } from '../agent/citations.js';
+import type { RetrievedChunk } from './retrieve.js';
 import { rememberConversation } from './conversations.js';
 
 function contentText(content: BaseMessage['content']): string {
@@ -43,8 +45,13 @@ export const agentRoute: RequestHandler = async (request, response) => {
       { configurable: { thread_id: threadId }, streamMode: 'messages' },
     );
     let streamedResponse = '';
+    let citations: RetrievedChunk[] = [];
 
     for await (const [chunk] of stream) {
+      if (chunk.type === 'tool') {
+        const nextCitations = parseRetrieval(contentText(chunk.content));
+        if (nextCitations.length) citations = nextCitations;
+      }
       if (chunk.type !== 'ai') continue;
       const token = contentText(chunk.content);
       if (!token) continue;
@@ -52,7 +59,8 @@ export const agentRoute: RequestHandler = async (request, response) => {
       sendEvent(response, 'token', { token });
     }
 
-    sendEvent(response, 'done', { threadId, response: streamedResponse });
+    if (citations.length) sendEvent(response, 'sources', { citations });
+    sendEvent(response, 'done', { threadId, response: streamedResponse, citations });
     if (userId) await rememberConversation(userId, threadId, message.slice(0, 80));
     response.end();
   } catch (error) {

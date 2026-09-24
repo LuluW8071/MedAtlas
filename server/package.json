@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "tsx watch src/main.ts",
-    "build": "tsc",
+    "build": "tsc && cp -R src/agent/prompt/*.md dist/src/agent/prompt/",
     "start": "bun dist/src/main.js",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/service/chunker.test.ts"

@@ -1,4 +1,5 @@
 import { Annotation, MessagesAnnotation } from '@langchain/langgraph';
+import type { RetrievedChunk } from '../service/retrieve.js';
 
 export const AgentState = Annotation.Root({
   ...MessagesAnnotation.spec,
@@ -9,6 +10,10 @@ export const AgentState = Annotation.Root({
   refinedContext: Annotation<string>({
     reducer: (_, update) => update,
     default: () => '',
+  }),
+  citations: Annotation<RetrievedChunk[]>({
+    reducer: (_, update) => update,
+    default: () => [],
   }),
   guardrailNotice: Annotation<string>({
     reducer: (_, update) => update,

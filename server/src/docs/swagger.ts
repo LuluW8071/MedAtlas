@@ -49,11 +49,11 @@ registry.registerPath({
   },
   responses: {
     200: {
-      description: 'Server-sent event stream containing agent tokens',
+      description: 'Server-sent event stream containing agent tokens and retrieved source chunks',
       content: {
         'text/event-stream': {
           schema: z.string().openapi({
-            description: 'SSE events: start, token, done, or error',
+            description: 'SSE events: start, token, sources, done, or error. sources and done include retrieved citation chunks.',
           }),
         },
       },

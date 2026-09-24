@@ -10,6 +10,16 @@ type Message = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  citations?: Citation[];
+};
+
+type Citation = {
+  id: string;
+  score: number;
+  text: string;
+  topic: string;
+  subheadings: string[];
+  parts: number;
 };
 
 type Conversation = {
@@ -55,6 +65,7 @@ function makeId() {
 async function readAgentStream(
   response: Response,
   onToken: (token: string) => void,
+  onCitations: (citations: Citation[]) => void,
 ): Promise<void> {
   if (!response.body) throw new Error("Agent returned no response stream.");
 
@@ -78,12 +89,16 @@ async function readAgentStream(
         token?: string;
         response?: string;
         error?: string;
+        citations?: Citation[];
       };
       if (eventType === "token" && payload.token) {
         receivedToken = true;
         onToken(payload.token);
       }
       if (eventType === "error") throw new Error(payload.error ?? "Agent could not answer.");
+      if ((eventType === "sources" || eventType === "done") && payload.citations) {
+        onCitations(payload.citations);
+      }
       if (eventType === "done" && payload.response && !receivedToken) {
         onToken(payload.response);
       }
@@ -108,6 +123,10 @@ export default function HomePage() {
     {},
   );
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [selectedCitation, setSelectedCitation] = useState<{
+    citations: Citation[];
+    index: number;
+  } | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -121,6 +140,15 @@ export default function HomePage() {
     textarea.style.height = "auto";
     textarea.style.height = `${Math.min(Math.max(textarea.scrollHeight, 28), 140)}px`;
   }, [input]);
+
+  useEffect(() => {
+    if (!selectedCitation) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelectedCitation(null);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [selectedCitation]);
 
   async function sendMessage(event?: FormEvent) {
     event?.preventDefault();
@@ -158,6 +186,10 @@ export default function HomePage() {
             ? { ...item, content: item.content + token }
             : item
         )));
+      }, (citations) => {
+        setMessages((current) => current.map((item) => (
+          item.id === assistantId ? { ...item, citations } : item
+        )));
       });
     } catch (requestError) {
       const message =
@@ -177,6 +209,7 @@ export default function HomePage() {
     setError("");
     setFeedback({});
     setCopiedId(null);
+    setSelectedCitation(null);
   }
 
   async function loadConversations(event: FormEvent) {
@@ -343,6 +376,24 @@ export default function HomePage() {
                     )}
                   </div>
                   {message.role === "assistant" && message.content && (
+                    <>
+                    {message.citations && message.citations.length > 0 && (
+                      <div className="citation-list" aria-label="Retrieved sources">
+                        {message.citations.map((citation, index) => (
+                          <button
+                            className="citation-blob"
+                            key={citation.id}
+                            type="button"
+                            onClick={() => setSelectedCitation({ citations: message.citations ?? [], index })}
+                            title="Open retrieved source"
+                          >
+                            <span className="citation-number">{index + 1}</span>
+                            <span>{citation.topic}</span>
+                            <small>{citation.score.toFixed(3)}</small>
+                          </button>
+                        ))}
+                      </div>
+                    )}
                     <div className="message-actions">
                       <button
                         type="button"
@@ -395,6 +446,7 @@ export default function HomePage() {
                         )}
                       </button>
                     </div>
+                    </>
                   )}
                 </div>
               </article>
@@ -459,6 +511,62 @@ export default function HomePage() {
             MedAtlas can make mistakes. Verify important clinical information.
           </p>
         </div>
+        {selectedCitation && (
+          <div
+            className="citation-modal-backdrop"
+            role="presentation"
+            onMouseDown={(event) => {
+              if (event.currentTarget === event.target) setSelectedCitation(null);
+            }}
+          >
+            <section className="citation-modal" role="dialog" aria-modal="true" aria-label="Retrieved source">
+              <div className="citation-modal-header">
+                <div>
+                  <p className="citation-modal-kicker">RETRIEVED SOURCE</p>
+                  <h2>{selectedCitation.citations[selectedCitation.index].topic}</h2>
+                </div>
+                <button type="button" className="close-button" onClick={() => setSelectedCitation(null)} aria-label="Close source">
+                  ×
+                </button>
+              </div>
+              <div className="citation-modal-meta">
+                <span>[{selectedCitation.index + 1}]</span>
+                <span>Score {selectedCitation.citations[selectedCitation.index].score.toFixed(3)}</span>
+                <span>{selectedCitation.citations[selectedCitation.index].id}</span>
+              </div>
+              {selectedCitation.citations[selectedCitation.index].subheadings.length > 0 && (
+                <p className="citation-path">
+                  {selectedCitation.citations[selectedCitation.index].subheadings.join(" > ")}
+                </p>
+              )}
+              <div className="citation-modal-text">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={markdownComponents}
+                >
+                  {selectedCitation.citations[selectedCitation.index].text}
+                </ReactMarkdown>
+              </div>
+              <div className="citation-modal-nav">
+                <button
+                  type="button"
+                  onClick={() => setSelectedCitation(current => current && current.index > 0 ? { ...current, index: current.index - 1 } : current)}
+                  disabled={selectedCitation.index === 0}
+                >
+                  &lt; Prev
+                </button>
+                <span>{selectedCitation.index + 1} / {selectedCitation.citations.length}</span>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCitation(current => current && current.index < current.citations.length - 1 ? { ...current, index: current.index + 1 } : current)}
+                  disabled={selectedCitation.index === selectedCitation.citations.length - 1}
+                >
+                  Next &gt;
+                </button>
+              </div>
+            </section>
+          </div>
+        )}
       </section>
     </main>
   );
