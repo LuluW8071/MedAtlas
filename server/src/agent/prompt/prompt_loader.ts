@@ -62,9 +62,21 @@ export async function buildRefinerPrompt(
   });
 }
 
+export async function buildBookingRefinerPrompt(
+  bookingResult: string,
+  userQuery: string,
+): Promise<string> {
+  const bookingPrompt = await loadPrompt('booking_refiner.md');
+  return renderPrompt(bookingPrompt, {
+    ...runtimeValues(),
+    booking_result: bookingResult,
+    user_query: userQuery,
+  });
+}
+
 function runtimeValues(): Record<string, string> {
   const now = new Date();
-  const timezone = 'Asia/Kathmandu';
+  const timezone = process.env.APPOINTMENT_TIMEZONE ?? 'Asia/Kathmandu';
   const dateFormatter = new Intl.DateTimeFormat('en-US', {
     dateStyle: 'long',
     timeZone: timezone,

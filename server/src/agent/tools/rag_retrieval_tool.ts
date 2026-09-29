@@ -18,10 +18,16 @@ export const ragRetrievalTool = tool(
   },
   {
     name: 'rag_retrieval',
-    description: 'Retrieve relevant context from the MedAtlas knowledge base.',
+    description: 'Retrieve MedAtlas knowledge-base evidence for any supported medical or health-information question. Mandatory before answering medical questions. Never answer a medical question directly or use general model knowledge instead.',
     schema: z.object({
       query: z.string().describe('User question to search for'),
-      topK: z.number().int().min(1).max(20).optional().describe('Number of chunks to retrieve'),
+      topK: z
+        .number()
+        .int()
+        .min(1)
+        .max(20)
+        .optional()
+        .describe('Number of chunks to retrieve'),
     }),
   },
 );

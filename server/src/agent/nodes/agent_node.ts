@@ -1,8 +1,9 @@
 import { ChatOpenAI } from '@langchain/openai';
+import { AIMessage } from '@langchain/core/messages';
 
 import { logger } from '../../config/logger.js';
 import { buildAgentPrompt } from '../prompt/prompt_loader.js';
-import { ragRetrievalTool } from '../tools/rag_retrieval_tool.js';
+import { agentTools } from '../tools/index.js';
 import type { AgentState } from '../state.js';
 
 const model = new ChatOpenAI({
@@ -15,25 +16,42 @@ const model = new ChatOpenAI({
     : undefined,
 });
 
-const modelWithTools = model.bindTools([ragRetrievalTool]);
-const modelWithRequiredTool = model.bindTools([ragRetrievalTool], {
+const modelWithRequiredTool = model.bindTools(agentTools, {
   tool_choice: 'required',
 });
-
 const basicConversationPattern = /^(?:hi|hello|hey|thanks|thank you|good morning|good afternoon|good evening)[!.? ]*$/i;
-// Force retrieval for medical requests; model tool choice remains optional for basic chat.
-const medicalRequestPattern =
-  /\b(?:symptom|symptoms|pain|ache|cold|cough|fever|medicine|medication|drug|dose|diagnos|treatment|remedy|rash|vomit|nausea|diarrhea|breath|bleed|injur|infection|disease|pregnan|chest|injection|inject|vaccine|vaccination|rabies|rabid|animal\s+bite|post[- ]exposure|exposure|hydrophobia|swallow)\w*\b/i;
+const greetingMessages = [
+  'Hello. How can I help with your health question today?',
+  'Hi. I can help with MedAtlas medical information or appointment booking.',
+  'Welcome. What would you like help with today?',
+];
 
 export async function agentNode(state: AgentState) {
   logger.info({ messageCount: state.messages.length }, 'agent node start');
 
-  const systemPrompt = await buildAgentPrompt(state.guardrailNotice);
+  // Tool result already contains response material; shared refiner owns final output.
+  if (state.messages.at(-1)?.type === 'tool') {
+    logger.info('agent node passing tool result to response refiner');
+    return { messages: [] };
+  }
+
   const latestHumanMessage = [...state.messages].reverse().find(message => message.type === 'human');
-  const userText = latestHumanMessage?.content?.toString() ?? '';
-  const requiresRetrieval =
-    medicalRequestPattern.test(userText) && !basicConversationPattern.test(userText.trim());
-  const routedModel = requiresRetrieval ? modelWithRequiredTool : modelWithTools;
+  const userText = latestHumanMessage?.content?.toString().trim() ?? '';
+  if (basicConversationPattern.test(userText)) {
+    const greeting = greetingMessages[Math.floor(Math.random() * greetingMessages.length)] ?? greetingMessages[0];
+    return { messages: [new AIMessage(greeting)] };
+  }
+
+  const systemPrompt = await buildAgentPrompt(state.guardrailNotice);
+  let latestHumanIndex = -1;
+  let latestBookingToolIndex = -1;
+  state.messages.forEach((message, index) => {
+    if (message.type === 'human') latestHumanIndex = index;
+    if (message.type === 'tool' && message.name === 'book_appointment') latestBookingToolIndex = index;
+  });
+  const followsBookingResult = latestBookingToolIndex >= 0 && latestHumanIndex > latestBookingToolIndex;
+  // Existing booking follow-ups should explain prior result, not create another booking.
+  const routedModel = followsBookingResult ? model : modelWithRequiredTool;
   const response = await routedModel.invoke([
     { role: 'system', content: systemPrompt },
     ...state.messages,

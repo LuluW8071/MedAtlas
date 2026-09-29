@@ -3,7 +3,7 @@ import { ChatOpenAI } from '@langchain/openai';
 
 import { logger } from '../../config/logger.js';
 import { formatRetrieval, parseRetrieval } from '../citations.js';
-import { buildRefinerPrompt } from '../prompt/prompt_loader.js';
+import { buildBookingRefinerPrompt, buildRefinerPrompt } from '../prompt/prompt_loader.js';
 import type { AgentState } from '../state.js';
 
 function messageText(message: BaseMessage): string {
@@ -31,13 +31,21 @@ export async function refinerNode(state: AgentState) {
   const retrievedContext = formatRetrieval(citations);
   const humanMessage = [...state.messages].reverse().find(message => message.type === 'human');
   const userQuery = humanMessage ? messageText(humanMessage) : '';
-  const prompt = await buildRefinerPrompt(retrievedContext, userQuery);
+  const isBookingResult = toolMessage?.name === 'book_appointment';
+  const prompt = isBookingResult
+    ? await buildBookingRefinerPrompt(messageText(toolMessage), userQuery)
+    : await buildRefinerPrompt(retrievedContext, userQuery);
   const response = await refinerModel.invoke([
     { role: 'system', content: prompt },
-    { role: 'user', content: 'Answer the user question using only approved retrieved evidence.' },
+    {
+      role: 'user',
+      content: isBookingResult
+        ? 'Write the appointment response using only the booking result.'
+        : 'Answer the user question using only approved retrieved evidence.',
+    },
   ]);
   const refinedContext = messageText(response);
 
-  logger.info({ retrievedContext, refinedContext }, 'refiner node done');
+  logger.info({ mode: isBookingResult ? 'booking' : 'rag', retrievedContext, refinedContext }, 'refiner node done');
   return { messages: [response], retrievedContext, refinedContext, citations };
 }

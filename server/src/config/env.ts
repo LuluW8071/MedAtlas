@@ -18,6 +18,8 @@ export const env = {
   port: positiveIntegerEnv('PORT', 4000),
   clientUrl: optionalEnv('CLIENT_URL', 'http://localhost:3000')!,
   redisUrl: optionalEnv('REDIS_URL', 'redis://127.0.0.1:6380')!,
+  appointmentsDbPath: optionalEnv('APPOINTMENTS_DB_PATH', 'appointments.sqlite')!,
+  appointmentTimezone: optionalEnv('APPOINTMENT_TIMEZONE', 'Asia/Kathmandu')!,
 
   pineconeApiKey: optionalEnv('PINECONE_API_KEY'),
   pineconeIndexName: optionalEnv('PINECONE_INDEX_NAME'),

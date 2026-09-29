@@ -10,3 +10,8 @@ coverage/
 .DS_Store
 *.tsbuildinfo
 assets/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+graph.png

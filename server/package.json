@@ -16,8 +16,10 @@
     "@langchain/langgraph-checkpoint-redis": "^1.0.11",
     "@langchain/openai": "^1.5.13",
     "@pinecone-database/pinecone": "^9.0.0",
+    "better-sqlite3": "^13.0.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.45.3",
     "express": "^4.21.1",
     "ioredis": "^5.4.1",
     "multer": "^2.3.0",
@@ -27,11 +29,13 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/multer": "^2.2.0",
     "@types/node": "^26.5.0",
     "@types/swagger-ui-express": "^4.1.8",
+    "drizzle-kit": "^0.31.11",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
   }

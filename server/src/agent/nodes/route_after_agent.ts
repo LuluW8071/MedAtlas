@@ -4,11 +4,13 @@ import { END } from '@langchain/langgraph';
 import { logger } from '../../config/logger.js';
 import type { AgentState } from '../state.js';
 
-export function routeAfterAgent(state: AgentState): 'rag' | 'refiner' | typeof END {
+export function routeAfterAgent(state: AgentState): 'invoke_tools' | 'refine_response' | typeof END {
   const latestMessage = state.messages.at(-1);
   const decision = latestMessage instanceof AIMessage && (latestMessage.tool_calls?.length ?? 0) > 0
-    ? 'rag'
-    : END;
+    ? 'invoke_tools'
+    : latestMessage?.type === 'tool'
+      ? 'refine_response'
+      : END;
   logger.info({ decision }, 'route after agent');
   return decision;
 }

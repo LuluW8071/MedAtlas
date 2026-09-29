@@ -11,24 +11,25 @@ import { agentNode } from './nodes/agent_node.js';
 import { refinerNode } from './nodes/refiner_node.js';
 import { routeAfterAgent } from './nodes/route_after_agent.js';
 import { prepareConversationNode } from './nodes/prepare_conversation_node.js';
-import { ragRetrievalTool } from './tools/rag_retrieval_tool.js';
+import { agentTools } from './tools/index.js';
 
 const graphPromise = RedisSaver.fromUrl(env.redisUrl, {
   refreshOnRead: true,
 }).then(checkpointer => {
   const graph = new StateGraph(AgentState)
     .addNode('agent', agentNode)
-    .addNode('rag_tool', new ToolNode([ragRetrievalTool]))
-    .addNode('refiner', refinerNode)
+    .addNode('tools', new ToolNode(agentTools))
+    .addNode('response_refiner', refinerNode)
     .addNode('prepare_conversation', prepareConversationNode)
     .addEdge(START, 'prepare_conversation')
     .addEdge('prepare_conversation', 'agent')
     .addConditionalEdges('agent', routeAfterAgent, {
-      rag: 'rag_tool',
+      invoke_tools: 'tools',
+      refine_response: 'response_refiner',
       [END]: END,
     })
-    .addEdge('rag_tool', 'refiner')
-    .addEdge('refiner', END)
+    .addEdge('tools', 'agent')
+    .addEdge('response_refiner', END)
     .compile({ checkpointer });
 
   void showAndSaveGraph(graph).catch(error => {
@@ -40,8 +41,16 @@ const graphPromise = RedisSaver.fromUrl(env.redisUrl, {
 
 async function showAndSaveGraph(graph: AgentGraph): Promise<void> {
   const drawableGraph = await graph.getGraphAsync();
-  logger.info({ mermaid: drawableGraph.drawMermaid() }, 'agent graph');
-  const png = await drawableGraph.drawMermaidPng({ backgroundColor: 'white' });
+  const mermaidOptions = {
+    curveStyle: 'basis' as const,
+    withStyles: true,
+    wrapLabelNWords: 4,
+  };
+  logger.info({ mermaid: drawableGraph.drawMermaid(mermaidOptions) }, 'agent graph');
+  const png = await drawableGraph.drawMermaidPng({
+    ...mermaidOptions,
+    backgroundColor: 'white',
+  });
   const outputPath = process.env.AGENT_GRAPH_IMAGE_PATH ?? 'graph.png';
   await writeFile(outputPath, Buffer.from(await png.arrayBuffer()));
   logger.info({ outputPath }, 'agent graph image saved');
