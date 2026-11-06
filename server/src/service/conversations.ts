@@ -1,35 +1,27 @@
-import Redis from 'ioredis';
+import { getDb } from './clients/mongo_client.js';
 
-import { env } from '../config/env.js';
-
-const redis = new Redis(env.redisUrl);
-
-function threadsKey(userId: string) {
-  return `medatlas:user:${userId}:threads`;
+interface ConversationDoc {
+  userId: string;
+  threadId: string;
+  title: string;
+  updatedAt: number;
 }
 
-function titleKey(userId: string, threadId: string) {
-  return `medatlas:user:${userId}:thread:${threadId}`;
-}
+const conversations = () => getDb().collection<ConversationDoc>('conversations');
+
+let indexReady: Promise<unknown> | undefined;
 
 export async function rememberConversation(userId: string, threadId: string, title: string) {
-  const updatedAt = Date.now();
-  await redis
-    .multi()
-    .zadd(threadsKey(userId), updatedAt, threadId)
-    .hset(titleKey(userId, threadId), 'title', title, 'updatedAt', updatedAt)
-    .exec();
+  indexReady ??= conversations().createIndex({ userId: 1, updatedAt: -1 });
+  await indexReady;
+  await conversations().updateOne(
+    { userId, threadId },
+    { $set: { title, updatedAt: Date.now() } },
+    { upsert: true },
+  );
 }
 
 export async function listConversationIds(userId: string, limit = 20) {
-  const threadIds = await redis.zrevrange(threadsKey(userId), 0, limit - 1);
-  const metadata = await Promise.all(threadIds.map(async (threadId) => {
-    const values = await redis.hgetall(titleKey(userId, threadId));
-    return {
-      threadId,
-      title: values.title ?? 'New conversation',
-      updatedAt: Number(values.updatedAt ?? 0),
-    };
-  }));
-  return metadata;
+  const docs = await conversations().find({ userId }).sort({ updatedAt: -1 }).limit(limit).toArray();
+  return docs.map(({ threadId, title, updatedAt }) => ({ threadId, title, updatedAt }));
 }

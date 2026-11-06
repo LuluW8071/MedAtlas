@@ -55,6 +55,20 @@ export const retrieveResponseSchema = z.object({
 export const ingestResponseSchema = z.object({
   message: z.string(),
   chunks: z.number().int().nonnegative(),
+  jobId: z.string().optional(),
+});
+
+export const ingestJobSchema = z.object({
+  jobId: z.string(),
+  status: z.enum(['running', 'completed', 'failed']),
+  total: z.number().int().nonnegative(),
+  embedded: z.number().int().nonnegative(),
+  skipped: z.number().int().nonnegative(),
+  error: z.string().optional(),
+});
+
+export const ingestJobParamsSchema = z.object({
+  jobId: z.string().min(1),
 });
 
 export type RetrieveRequest = z.infer<typeof retrieveRequestSchema>;
@@ -66,16 +80,23 @@ export const agentRequestSchema = z.object({
     example: '550e8400-e29b-41d4-a716-446655440000',
     description: 'Random UUID identifying conversation thread',
   }),
-  userId: z.string().trim().min(1).max(200).optional(),
 });
+
+export const authCredentialsSchema = z.object({
+  email: z.string().trim().email().max(254).transform(value => value.toLowerCase()),
+  password: z.string().min(8).max(128),
+});
+
+export const authUserSchema = z.object({
+  id: z.string().uuid(),
+  email: z.string().email(),
+});
+
+export const authResponseSchema = z.object({ user: authUserSchema });
 
 export const agentResponseSchema = z.object({
   threadId: z.string(),
   response: z.string(),
-});
-
-export const conversationsRequestSchema = z.object({
-  userId: z.string().trim().min(1).max(200),
 });
 
 export const conversationMessageSchema = z.object({

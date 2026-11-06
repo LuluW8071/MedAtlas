@@ -1,8 +1,21 @@
-import { and, gt, lt, sql } from 'drizzle-orm';
+import type { Filter, ObjectId } from 'mongodb';
+import { z } from 'zod';
 
 import { env } from '../config/env.js';
-import { appointmentsDb } from '../db/client.js';
-import { appointments } from '../db/schema.js';
+import { getDb } from './clients/mongo_client.js';
+
+interface AppointmentDoc {
+  _id: ObjectId;
+  name: string;
+  email: string;
+  appointmentAt: number;
+  durationMinutes: number;
+  timezone: string;
+  createdAt: number;
+  status: 'scheduled' | 'cancelled';
+}
+
+const appointments = () => getDb().collection<AppointmentDoc>('appointments');
 
 const timezone = env.appointmentTimezone;
 const appointmentDurationMs = 30 * 60 * 1000;
@@ -23,9 +36,13 @@ export interface AppointmentInput {
 export interface AppointmentResult {
   ok: boolean;
   message: string;
+  missingFields?: string[];
   appointmentAt?: string;
   appointmentEndsAt?: string;
+  previousAppointmentAt?: string;
 }
+
+const emailSchema = z.string().trim().email().max(254);
 
 function zonedParts(date: Date): DateParts & { hour: number; minute: number; second: number } {
   const parts = new Intl.DateTimeFormat('en-US', {
@@ -124,47 +141,123 @@ function displayDate(date: Date): string {
   }).format(date);
 }
 
-export function bookAppointment(input: AppointmentInput, now = new Date()): AppointmentResult {
-  const appointment = parseAppointmentDate(input.appointmentDate, input.appointmentTime, now);
-  if (!appointment) return { ok: false, message: 'Invalid appointment date or time.' };
+function normalizedEmail(value: string): string | null {
+  const parsed = emailSchema.safeParse(value);
+  return parsed.success ? parsed.data.toLowerCase() : null;
+}
+
+function validateSlot(dateInput: string, timeInput: string, now: Date): { appointment?: Date; error?: string } {
+  const appointment = parseAppointmentDate(dateInput, timeInput, now);
+  if (!appointment) return { error: 'Invalid appointment date or time.' };
 
   const local = zonedParts(appointment);
   if (local.hour < openingHour || local.hour > closingHour || (local.hour === closingHour && local.minute > 0)) {
-    return { ok: false, message: 'Appointments are available from 6:00 AM through 11:00 PM.' };
+    return { error: 'Appointments are available from 6:00 AM through 11:00 PM.' };
   }
   if (appointment.getTime() < now.getTime() + minimumLeadTimeMs) {
-    return { ok: false, message: 'Appointment must start at least one hour from now.' };
+    return { error: 'Appointment must start at least one hour from now.' };
   }
+  return { appointment };
+}
+
+function overlappingAppointment(start: number, end: number, excludeId?: ObjectId): Filter<AppointmentDoc> {
+  return {
+    status: 'scheduled',
+    ...(excludeId ? { _id: { $ne: excludeId } } : {}),
+    appointmentAt: { $lt: end },
+    $expr: { $gt: [{ $add: ['$appointmentAt', { $multiply: ['$durationMinutes', 60_000] }] }, start] },
+  };
+}
+
+/** The single scheduled appointment for an email, or the user-facing reason there is not exactly one. */
+async function scheduledFor(email: string): Promise<{ appointment?: AppointmentDoc; error?: string }> {
+  const matches = await appointments().find({ status: 'scheduled', email }).limit(2).toArray();
+  if (matches.length === 0) return { error: 'No scheduled appointment was found for that email address.' };
+  if (matches.length > 1) return { error: 'Multiple scheduled appointments match that email address. Please contact the clinic to resolve the ambiguity.' };
+  return { appointment: matches[0] };
+}
+
+export async function bookAppointment(input: AppointmentInput, now = new Date()): Promise<AppointmentResult> {
+  const email = normalizedEmail(input.email);
+  if (!email) return { ok: false, message: 'A valid email address is required.' };
+  const validation = validateSlot(input.appointmentDate, input.appointmentTime, now);
+  if (!validation.appointment) return { ok: false, message: validation.error! };
+  const appointment = validation.appointment;
 
   const start = appointment.getTime();
   const end = start + appointmentDurationMs;
-  const booked = appointmentsDb.transaction(tx => {
-    const conflict = tx.select({ id: appointments.id })
-      .from(appointments)
-      .where(and(
-        lt(appointments.appointmentAt, end),
-        gt(sql`${appointments.appointmentAt} + ${appointments.durationMinutes} * 60000`, start),
-      ))
-      .limit(1)
-      .get();
-    if (conflict) return false;
-
-    tx.insert(appointments).values({
-      name: input.name.trim(),
-      email: input.email.trim(),
-      appointmentAt: start,
-      durationMinutes: 30,
-      timezone,
-      createdAt: now.getTime(),
-    }).run();
-    return true;
-  });
-  if (!booked) return { ok: false, message: 'That time overlaps an existing appointment.' };
+  // shortcut: check-then-insert is not atomic on standalone Mongo; two simultaneous bookings of one slot can both pass, move to a replica set transaction if that matters.
+  if (await appointments().findOne(overlappingAppointment(start, end), { projection: { _id: 1 } })) {
+    return { ok: false, message: 'That time overlaps an existing appointment.' };
+  }
+  await appointments().insertOne({
+    name: input.name.trim(),
+    email,
+    appointmentAt: start,
+    durationMinutes: 30,
+    timezone,
+    createdAt: now.getTime(),
+    status: 'scheduled',
+  } as AppointmentDoc);
 
   return {
     ok: true,
-    message: `Appointment booked for ${displayDate(appointment)}. Duration: 30 minutes.`,
+    message: `Appointment booked for ${displayDate(appointment)} (${timezone}). Duration: 30 minutes.`,
     appointmentAt: appointment.toISOString(),
+    appointmentEndsAt: new Date(end).toISOString(),
+  };
+}
+
+export async function cancelAppointment(emailInput: string): Promise<AppointmentResult> {
+  const email = normalizedEmail(emailInput);
+  if (!email) return { ok: false, message: 'A valid email address is required.' };
+
+  const { appointment, error } = await scheduledFor(email);
+  if (!appointment) return { ok: false, message: error! };
+
+  const updated = await appointments().updateOne({ _id: appointment._id, status: 'scheduled' }, { $set: { status: 'cancelled' } });
+  if (updated.modifiedCount !== 1) return { ok: false, message: 'The appointment could not be cancelled.' };
+
+  const appointmentDate = new Date(appointment.appointmentAt);
+  return {
+    ok: true,
+    message: `Appointment for ${displayDate(appointmentDate)} (${appointment.timezone}) has been cancelled.`,
+    previousAppointmentAt: appointmentDate.toISOString(),
+  };
+}
+
+export async function rescheduleAppointment(
+  emailInput: string,
+  newDate: string,
+  newTime: string,
+  now = new Date(),
+): Promise<AppointmentResult> {
+  const email = normalizedEmail(emailInput);
+  if (!email) return { ok: false, message: 'A valid email address is required.' };
+
+  const found = await scheduledFor(email);
+  if (!found.appointment) return { ok: false, message: found.error! };
+  const appointment = found.appointment;
+
+  const validation = validateSlot(newDate, newTime, now);
+  if (!validation.appointment) return { ok: false, message: validation.error! };
+
+  const nextAppointment = validation.appointment;
+  const start = nextAppointment.getTime();
+  const end = start + appointment.durationMinutes * 60 * 1000;
+  if (await appointments().findOne(overlappingAppointment(start, end, appointment._id), { projection: { _id: 1 } })) {
+    return { ok: false, message: 'The requested time overlaps an existing appointment. The original appointment remains scheduled.' };
+  }
+
+  const updated = await appointments().updateOne({ _id: appointment._id, status: 'scheduled' }, { $set: { appointmentAt: start } });
+  if (updated.modifiedCount !== 1) return { ok: false, message: 'The appointment could not be rescheduled. The original appointment remains scheduled.' };
+
+  const previousAppointment = new Date(appointment.appointmentAt);
+  return {
+    ok: true,
+    message: `Appointment rescheduled from ${displayDate(previousAppointment)} to ${displayDate(nextAppointment)} (${appointment.timezone}). Duration: ${appointment.durationMinutes} minutes.`,
+    previousAppointmentAt: previousAppointment.toISOString(),
+    appointmentAt: nextAppointment.toISOString(),
     appointmentEndsAt: new Date(end).toISOString(),
   };
 }

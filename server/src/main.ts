@@ -15,6 +15,8 @@ import retrieveRoutes from './routes/retrieve_route.js';
 import redisRoutes from './routes/redis_route.js';
 import agentRoutes from './routes/agent_route.js';
 import conversationsRoutes from './routes/conversations_route.js';
+import authRoutes from './routes/auth_route.js';
+import mcpRoutes from './routes/mcp_route.js';
 
 const port = env.port;
 const clientUrl = env.clientUrl;
@@ -24,7 +26,7 @@ const clientUrl = env.clientUrl;
 // });
 
 const app = express();
-app.use(cors({ origin: clientUrl }));
+app.use(cors({ origin: clientUrl, credentials: true }));
 app.use(express.json());
 app.use((request, response, next) => {
   const startedAt = Date.now();
@@ -47,12 +49,14 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(openApiDocument));
 app.get('/docs.json', (_request, response) => response.json(openApiDocument));
 
 app.use(healthRoutes);
+app.use(authRoutes);
 app.use(collectionRoutes);
 app.use(ingestRoutes);
 app.use(retrieveRoutes);
 app.use(redisRoutes);
 app.use(agentRoutes);
 app.use(conversationsRoutes);
+app.use('/mcp', mcpRoutes);
 
 // app.get('/redis/health', async (_request, response) => {
 //   let redisStatus = 'disconnected';
