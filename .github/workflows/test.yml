@@ -11,6 +11,9 @@ jobs:
       mongo:
         image: mongo:8
         ports: ["27017:27017"]
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand(\"ping\").ok'"
+          --health-interval 5s --health-timeout 5s --health-retries 12
       redis:
         image: redis:8-alpine
         ports: ["6379:6379"]
@@ -30,3 +33,5 @@ jobs:
       - run: bun run typecheck
       - run: bunx tsx --test tests/*.test.ts
         working-directory: server
+      - if: failure()
+        run: docker ps -a && docker logs $(docker ps -aq --filter ancestor=mongo:8) 2>&1 | tail -40
