@@ -129,7 +129,7 @@ The legacy diagnostic script remains available without duplicating production
 chunking logic:
 
 ```bash
-npx tsx tests/chunk.ts ./knowledge.md
+npx tsx scripts/chunk.ts ./knowledge.md
 ```
 
 It prints parsed topics, chunk details, short chunks, and aggregate statistics.

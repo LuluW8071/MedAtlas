@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
+  DEFAULT_CHUNK_OPTIONS,
+  estimateTokens,
   parseKnowledgeBase,
   processKnowledgeBase,
 } from '../src/service/chunker.js';
@@ -44,36 +46,6 @@ test('returns no chunks for documents without populated sections', () => {
   assert.deepEqual(processKnowledgeBase('Plain text without Markdown headings.'), []);
 });
 
-test('limits each chunk to three distinct sections', () => {
-  const markdown = ['One', 'Two', 'Three', 'Four']
-    .map(section => `## ${section}\nContent for ${section}.`)
-    .join('\n\n');
-
-  const chunks = processKnowledgeBase(`# Topic\n\n${markdown}`);
-
-  assert.equal(chunks.length, 2);
-  assert.deepEqual(chunks[0].sections, ['One', 'Two', 'Three']);
-  assert.deepEqual(chunks[1].sections, ['Four']);
-});
-
-test('splits oversized sections with overlap and numbered headings', () => {
-  const words = Array.from({ length: 1_700 }, (_, index) => `word${index}`);
-  const chunks = processKnowledgeBase(
-    `# Topic\n\n## Definition\n${words.join(' ')}`,
-  );
-
-  assert.equal(chunks.length, 3);
-  assert.ok(chunks.every(chunk => chunk.wordCount <= 950));
-  assert.ok(chunks.every(chunk => chunk.hasOverlap));
-  assert.deepEqual(
-    chunks.map(chunk => chunk.sections[0]),
-    ['Definition (1/3)', 'Definition (2/3)', 'Definition (3/3)'],
-  );
-
-  assert.match(chunks[0].content, /word849/);
-  assert.match(chunks[1].content, /word775/);
-});
-
 test('assigns globally increasing chunk indexes across topics', () => {
   const chunks = processKnowledgeBase(`
 # First
@@ -87,4 +59,69 @@ Second content.
 
   assert.deepEqual(chunks.map(chunk => chunk.index), [1, 2]);
   assert.deepEqual(chunks.map(chunk => chunk.topicTitle), ['First', 'Second']);
+});
+
+test('decodes HTML entities in titles and content', () => {
+  const [chunk] = processKnowledgeBase('# Salt &amp; pepper\n\n## Use\nA &lt;b&gt; tag &amp; more.');
+
+  assert.equal(chunk.topicTitle, 'Salt & Pepper');
+  assert.match(chunk.content, /A <b> tag & more\./);
+});
+
+test('rejoins paragraphs broken mid-sentence', () => {
+  const [chunk] = processKnowledgeBase('# Topic\n\n## Use\nThe drug is given to patients\n\nwith severe disease. Done.');
+
+  assert.match(chunk.content, /patients with severe disease\./);
+});
+
+/** One token per word keeps budgets easy to reason about. */
+const words = (text: string) => text.split(/\s+/).filter(Boolean).length;
+
+test('splits oversized text on sentence boundaries and overlaps whole sentences', () => {
+  const sentences = Array.from({ length: 60 }, (_, i) => `Sentence number ${i} has exactly seven words.`);
+  const chunks = processKnowledgeBase(`# Topic\n\n## Body\n${sentences.join(' ')}`, {
+    maxChunkTokens: 100, overlapTokens: 16, length: words,
+  });
+
+  assert.ok(chunks.length > 2);
+  assert.ok(chunks.every(chunk => words(chunk.content) <= 100));
+  assert.ok(chunks.every(chunk => /\.\s*$/.test(chunk.content)));
+  assert.ok(chunks.slice(1).every(chunk => chunk.hasOverlap));
+  assert.deepEqual(chunks.map(chunk => chunk.sections[0]), chunks.map((_, i) => `Body (${i + 1}/${chunks.length})`));
+});
+
+test('merges small neighbouring sections into one chunk and keeps each heading', () => {
+  const chunks = processKnowledgeBase('# Topic\n\n## One\nFirst body.\n\n## Two\nSecond body.\n\n## Three\nThird body.', {
+    maxChunkTokens: 100, length: words,
+  });
+
+  assert.equal(chunks.length, 1);
+  assert.deepEqual(chunks[0].sections, ['One', 'Two', 'Three']);
+  assert.match(chunks[0].content, /^# Topic\n## One\n\nFirst body\.\n\n## Two\n\nSecond body\./);
+});
+
+test('does not merge sections that no longer fit the budget', () => {
+  const body = Array.from({ length: 40 }, (_, i) => `w${i}`).join(' ');
+  const chunks = processKnowledgeBase(`# Topic\n\n## One\n${body}\n\n## Two\n${body}`, { maxChunkTokens: 60, length: words });
+
+  assert.deepEqual(chunks.map(chunk => chunk.sections), [['One'], ['Two']]);
+});
+
+test('splits a long list by items and a table by rows with the header repeated', () => {
+  const list = Array.from({ length: 30 }, (_, i) => `- item ${i} alpha beta gamma`).join('\n');
+  const table = ['| a | b |', '| - | - |', ...Array.from({ length: 30 }, (_, i) => `| r${i} | x y z |`)].join('\n');
+  const chunks = processKnowledgeBase(`# Topic\n\n## List\n${list}\n\n## Table\n${table}`, { maxChunkTokens: 60, length: words });
+
+  assert.ok(chunks.every(chunk => words(chunk.content) <= 60));
+  const tableChunks = chunks.filter(chunk => chunk.sections[0].startsWith('Table'));
+  assert.ok(tableChunks.length > 1);
+  assert.ok(tableChunks.every(chunk => chunk.content.includes('| a | b |\n| - | - |')));
+  assert.ok(chunks.filter(chunk => chunk.sections[0].startsWith('List')).every(chunk => !/^[a-z]/.test(chunk.content.split('\n\n')[1])));
+});
+
+test('cuts a separator-free run to the budget instead of overflowing', () => {
+  const chunks = processKnowledgeBase(`# Topic\n\n## Blob\n${'x'.repeat(5000)}`);
+
+  assert.ok(chunks.length > 1);
+  assert.ok(chunks.every(chunk => estimateTokens(chunk.content) <= DEFAULT_CHUNK_OPTIONS.maxChunkTokens));
 });

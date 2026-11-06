@@ -1,31 +1,28 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-
-const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { ChatShell } from "@/components/chat/chat-shell";
+import { apiUrl } from "@/lib/types";
 
 export default function HomePage() {
-  const [status, setStatus] = useState('Checking API connection...');
+  const router = useRouter();
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    fetch(`${apiUrl}/health`)
-      .then((response) => {
-        if (!response.ok) throw new Error('API unavailable');
-        return response.json() as Promise<{ status: string }>;
+    fetch(`${apiUrl}/auth/me`, { credentials: "include" })
+      .then(async (response) => {
+        if (!response.ok) return router.replace("/auth");
+        const data = (await response.json()) as { user: { email: string } };
+        setEmail(data.user.email);
       })
-      .then((data) => setStatus(`API ${data.status}`))
-      .catch(() => setStatus('API unavailable'));
-  }, []);
+      .catch(() => router.replace("/auth"));
+  }, [router]);
 
-  return (
-    <main>
-      <p className="eyebrow">MEDATLAS / FOUNDATION</p>
-      <h1>Clinical knowledge, mapped clearly.</h1>
-      <p className="intro">Next.js client and Express API are ready for product development.</p>
-      <div className="status" role="status">
-        <span aria-hidden="true" />
-        {status}
-      </div>
-    </main>
-  );
+  async function logout() {
+    await fetch(`${apiUrl}/auth/logout`, { method: "POST", credentials: "include" });
+    router.replace("/auth");
+  }
+
+  return email ? <ChatShell email={email} onLogout={() => void logout()} /> : null;
 }

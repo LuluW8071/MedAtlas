@@ -4,21 +4,31 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "tsx watch src/main.ts",
-    "build": "tsc",
+    "build": "tsc && cp -R src/agent/prompt/*.md dist/src/agent/prompt/",
     "start": "bun dist/src/main.js",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/service/chunker.test.ts"
   },
   "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^9.1.0",
+    "@langchain/core": "^1.2.11",
+    "@langchain/langgraph": "^1.4.15",
+    "@langchain/langgraph-checkpoint-mongodb": "^1.5.0",
+    "@langchain/langgraph-checkpoint-redis": "^1.0.11",
+    "@langchain/openai": "^1.5.13",
+    "@modelcontextprotocol/server": "^2.3.0",
     "@pinecone-database/pinecone": "^9.0.0",
+    "@qdrant/js-client-rest": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "ioredis": "^5.4.1",
+    "mongodb": "^6.21.0",
     "multer": "^2.3.0",
     "pino": "^10.3.1",
     "pino-pretty": "^13.1.3",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

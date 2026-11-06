@@ -1,4 +1,5 @@
 node_modules/
+.venv/
 .next/
 dist/
 *.log
@@ -9,3 +10,10 @@ coverage/
 .DS_Store
 *.tsbuildinfo
 assets/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+graph.png
+data/
+CLAUDE.md
