@@ -7,6 +7,7 @@ import './helper/test_env.js';
 import { AIMessage, HumanMessage } from '@langchain/core/messages';
 
 import { mongoClient, getDb } from '../src/service/clients/mongo_client.js';
+import { closeRedisClient } from '../src/service/clients/redis_client.js';
 import { tailWithinBudget } from '../src/agent/nodes/truncate_history.js';
 import { qdrant, upsertChunks } from '../src/service/clients/qdrant_client.js';
 import { hybridSearch } from '../src/service/retrieve.js';
@@ -18,6 +19,7 @@ after(async () => {
   await qdrant.deleteCollection(process.env.QDRANT_COLLECTION!);
   await getDb().dropDatabase();
   await mongoClient.close();
+  closeRedisClient();
 });
 
 const chunk = (id: string, text: string, topic = 'Asthma') => ({ id, score: 0, text, topic, subheadings: ['overview'], parts: 1 });

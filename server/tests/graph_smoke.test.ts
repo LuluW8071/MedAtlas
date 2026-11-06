@@ -8,10 +8,12 @@ import { HumanMessage } from '@langchain/core/messages';
 import { getAgentGraph } from '../src/agent/graph.js';
 import { putCachedAnswer } from '../src/service/answer_cache.js';
 import { getDb, mongoClient } from '../src/service/clients/mongo_client.js';
+import { closeRedisClient } from '../src/service/clients/redis_client.js';
 
 after(async () => {
   await getDb().dropDatabase();
   await mongoClient.close();
+  closeRedisClient();
 });
 
 test('cached first-turn question ends at the fast probe and persists to the Mongo checkpointer', async () => {

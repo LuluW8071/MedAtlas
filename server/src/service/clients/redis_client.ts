@@ -14,3 +14,8 @@ export async function getRedisClient(): Promise<Redis> {
 
   return redis;
 }
+
+/** Close the shared connection (tests and shutdown); safe when never connected. */
+export function closeRedisClient(): void {
+  redis.disconnect();
+}
