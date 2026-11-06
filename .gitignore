@@ -15,3 +15,5 @@ assets/
 *.db
 *.db-journal
 graph.png
+data/
+CLAUDE.md
