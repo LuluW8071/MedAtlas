@@ -3,9 +3,10 @@ import type { RequestHandler } from 'express';
 import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
 import { retrieveRequestSchema } from '../schemas/api.js';
-import { createPineconeClient, getIngestionConfig, getIngestionIndex } from './clients/pinecone_client.js';
+import { bm25, qdrant, type ChunkPayload } from './clients/qdrant_client.js';
 import { embedQuery } from './clients/embedding_client.js';
-import { type KnowledgeBaseMetadata } from '../models/retrieve.js';
+import { rerank } from './rerank.js';
+import { matchTopics } from './topic_match.js';
 
 const DEFAULT_TOP_K = 5;
 const MAX_TOP_K = 20;
@@ -23,118 +24,78 @@ export interface RetrievedChunk {
 /** Optional metadata constraints to narrow a retrieval query. */
 export interface RetrievalFilters {
   topic?: string;
-  topicTerms?: string[];
   subheadings?: string[];
+  /** Disease or treatment the user named; fuzzy-matched to topic titles, which then filter the search. */
+  topicName?: string;
+  topicTerms?: string[];
 }
 
-interface NerEntity {
-  text: string;
-  label: string;
-}
+/** Build a Qdrant payload filter from optional topic/subheading constraints. */
+function buildFilter(filters: RetrievalFilters) {
+  const must: Array<{ key: string; match: { value: string } | { any: string[] } }> = [];
 
-interface NerResponse {
-  entities?: NerEntity[];
-}
-
-/** Match topic headings stored in title case. */
-function toTitleCase(value: string): string {
-  return value.toLowerCase().replace(/\b\w/g, character => character.toUpperCase());
-}
-
-/** Extract disease topics locally; retrieval stays available when NER is offline. */
-async function extractTopics(query: string): Promise<string[]> {
-  try {
-    const response = await fetch(env.nerUrl, {
-      method: 'POST',
-      headers: { accept: 'application/json', 'content-type': 'application/json' },
-      body: JSON.stringify({ text: query }),
-      signal: AbortSignal.timeout(env.nerTimeoutMs),
-    });
-
-    if (!response.ok) {
-      throw new Error(`NER service returned ${response.status}`);
-    }
-
-    const payload = await response.json() as NerResponse;
-    return [...new Set((payload.entities ?? [])
-      .filter(entity => entity.label.toLowerCase() === 'disease')
-      .map(entity => toTitleCase(entity.text.trim()))
-      .filter(Boolean))];
-  } catch (error) {
-    logger.warn({ err: error, nerUrl: env.nerUrl }, 'NER topic extraction unavailable');
-    return [];
-  }
-}
-
-/** Build a Pinecone metadata filter from optional topic/subheading constraints. */
-function buildFilter(filters: RetrievalFilters): Record<string, unknown> | undefined {
-  const clauses: Record<string, unknown>[] = [];
-
-  if (filters.topic) {
-    clauses.push({ topic: { $eq: filters.topic } });
-  }
-
-  if (filters.topicTerms?.length) {
-    clauses.push({ topic: { $in: filters.topicTerms } });
-  }
-
+  if (filters.topic) must.push({ key: 'topic', match: { value: filters.topic } });
+  if (filters.topicTerms?.length) must.push({ key: 'topic', match: { any: filters.topicTerms } });
   if (filters.subheadings?.length) {
-    clauses.push({ subheadings: { $in: filters.subheadings.map(subheading => subheading.toLowerCase()) } });
+    must.push({ key: 'subheadings', match: { any: filters.subheadings.map(subheading => subheading.toLowerCase()) } });
   }
 
-  if (clauses.length === 0) {
-    return undefined;
-  }
-
-  return clauses.length === 1 ? clauses[0] : { $and: clauses };
+  return must.length ? { must } : undefined;
 }
 
-/** Embed a natural-language query and return the closest matching knowledge-base chunks. */
+/** Dense + BM25 prefetch fused by Qdrant's native Reciprocal Rank Fusion. */
+export async function hybridSearch(
+  vector: number[],
+  query: string,
+  limit: number,
+  filters: RetrievalFilters = {},
+): Promise<RetrievedChunk[]> {
+  const filter = buildFilter(filters);
+  const { points } = await qdrant.query(env.qdrantCollection, {
+    prefetch: [
+      { query: vector, using: 'dense', limit, filter },
+      { query: bm25(query), using: 'bm25', limit, filter },
+    ],
+    query: { fusion: 'rrf' },
+    limit,
+    with_payload: true,
+  });
+
+  return points.map(point => {
+    const payload = point.payload as ChunkPayload;
+    return {
+      id: String(point.id),
+      score: point.score,
+      text: payload.text,
+      topic: payload.topic,
+      subheadings: payload.subheadings,
+      parts: payload.parts,
+    };
+  });
+}
+
+/** Hybrid retrieval (Qdrant dense + BM25, RRF-fused, scoped to a user-named topic), then Cohere rerank. */
 export async function retrieveChunks(
   query: string,
   topK: number = DEFAULT_TOP_K,
   filters: RetrievalFilters = {},
 ): Promise<RetrievedChunk[]> {
-  const config = getIngestionConfig();
-  const pinecone = createPineconeClient();
-  const index = await getIngestionIndex<KnowledgeBaseMetadata>(pinecone, config);
+  const limit = Math.min(Math.max(Math.trunc(topK), 1), MAX_TOP_K);
 
-  const vector = await embedQuery(pinecone, config.model, query);
+  logger.info({ query, topK: limit, ...filters }, 'retrieving knowledge-base chunks');
 
-  logger.info(
-    {
-      namespace: config.namespace,
-      query,
-      topK,
-      topic: filters.topic,
-      topicTerms: filters.topicTerms,
-      subheadings: filters.subheadings,
-    },
-    'retrieving knowledge-base chunks',
-  );
+  const vector = await embedQuery(query);
+  // Only a disease/treatment named by the user scopes the search; other questions stay unfiltered.
+  const topicTerms = filters.topic || !filters.topicName ? undefined : await matchTopics(filters.topicName);
+  let candidates = await hybridSearch(vector, query, MAX_TOP_K, { ...filters, topicTerms });
+  // A wrong match must not hide the answer: retry unscoped when the scoped search finds nothing.
+  if (!candidates.length && topicTerms?.length) {
+    candidates = await hybridSearch(vector, query, MAX_TOP_K, { ...filters, topicTerms: undefined });
+  }
+  const results = await rerank(query, candidates, limit);
 
-  const results = await index.query({
-    vector,
-    topK: Math.min(Math.max(Math.trunc(topK), 1), MAX_TOP_K),
-    includeMetadata: true,
-    filter: buildFilter(filters),
-  });
-
-  logger.info(
-    { namespace: config.namespace, matches: results.matches.length },
-    'retrieved knowledge-base chunks',
-  );
-
-  return results.matches
-    .filter((match): match is typeof match & { metadata: KnowledgeBaseMetadata } => match.metadata !== undefined)
-    .map(match => ({
-      id: match.id,
-      score: match.score ?? 0,
-      text: match.metadata.text,
-      topic: match.metadata.topic,
-      subheadings: match.metadata.subheadings,
-      parts: match.metadata.parts,
-    }));
+  logger.info({ candidates: candidates.length, returned: results.length }, 'retrieved knowledge-base chunks');
+  return results;
 }
 
 /** Handle a retrieval request: validate input, run the similarity search, return matches. */
@@ -151,8 +112,7 @@ async function handleRetrieveRequest(
     }
 
     const { query, topK, topic, subheadings } = parsedRequest.data;
-    const topicTerms = topic ? [] : await extractTopics(query);
-    const chunks = await retrieveChunks(query, topK, { topic, topicTerms, subheadings });
+    const chunks = await retrieveChunks(query, topK, { topic, subheadings });
 
     response.status(200).json({ query, results: chunks });
   } catch (error) {

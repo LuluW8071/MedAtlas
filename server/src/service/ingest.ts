@@ -1,17 +1,18 @@
-/** Validate uploads, generate embeddings, and persist chunks in Pinecone. */
-import { randomUUID } from 'node:crypto';
+/** Validate uploads, generate embeddings, and persist chunks in Qdrant. */
+import { createHash, randomUUID } from 'node:crypto';
 import type { RequestHandler } from 'express';
 import multer from 'multer';
 import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
 import { type KnowledgeBaseChunk } from '../models/chunk.js';
 import { processKnowledgeBase } from './chunker.js';
-import { createPineconeClient, getIngestionConfig, getIngestionIndex } from './clients/pinecone_client.js';
-import { delay, embedBatch } from './clients/embedding_client.js';
+import { deleteStaleTopicChunks, ensureCollection, existingIds, upsertChunks } from './clients/qdrant_client.js';
+import { embedBatch } from './clients/embedding_client.js';
 import { getRedisClient } from './clients/redis_client.js';
+import { bumpCorpusGeneration } from './answer_cache.js';
+import { invalidateTopicCache, topicsRedisKey } from './topic_match.js';
 
 const allowedExtensions = new Set(['.txt', '.md']);
-const topicsRedisKey = 'topics';
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -29,6 +30,7 @@ function getChunkMetadata(chunk: KnowledgeBaseChunk) {
     .map(Number);
 
   return {
+    ...chunk.metadata,
     text: chunk.content,
     topic: chunk.topicTitle,
     subheadings,
@@ -56,10 +58,11 @@ function collectTopics(chunks: KnowledgeBaseChunk[]): Record<string, string[]> {
 }
 
 /** Persist all topics and subheadings in Redis. */
-async function storeTopics(chunks: KnowledgeBaseChunk[]): Promise<void> {
+export async function storeTopics(chunks: KnowledgeBaseChunk[]): Promise<void> {
   const topics = collectTopics(chunks);
   const redis = await getRedisClient();
   await redis.set(topicsRedisKey, JSON.stringify(topics));
+  invalidateTopicCache();
 }
 
 /** Parse multipart payload flag, preserving Pinecone ingestion by default. */
@@ -69,52 +72,105 @@ function parsePayload(value: unknown): boolean | undefined {
   return undefined;
 }
 
-/** Embed chunks with Pinecone inference and store vectors in configured namespace. */
-async function ingestChunks(chunks: KnowledgeBaseChunk[]): Promise<void> {
-  const config = getIngestionConfig();
-  const pinecone = createPineconeClient();
-  const index = await getIngestionIndex(pinecone, config);
-
-  for (let start = 0; start < chunks.length; start += config.batchSize) {
-    if (start > 0) {
-      logger.info({ delayMs: env.embeddingDelayMs }, 'waiting between embedding batches');
-      await delay(env.embeddingDelayMs);
-    }
-
-    const batch = chunks.slice(start, start + config.batchSize);
-    const embeddings = await embedBatch(
-      pinecone,
-      config.model,
-      batch.map(chunk => chunk.content),
-      'passage'
-    );
-
-    if (
-      embeddings.vectorType !== 'dense' ||
-      embeddings.data.some(
-  (embedding: { vectorType: string }) => embedding.vectorType !== 'dense',
-)
-    ) {
-      throw new Error('Configured embedding model did not return dense vectors');
-    }
-
-    const records = batch.map((chunk, i) => ({
-      id: `${randomUUID()}-${start + i}`,
-      values: embeddings.data[i].vectorType === 'dense' ? embeddings.data[i].values : [],
-      metadata: getChunkMetadata(chunk),
-    }));
-
-    logger.info({
-      namespace: config.namespace,
-      records: records.length,
-      parts: records.map(record => record.metadata.parts),
-    }, 'upserting embedded chunks');
-
-    await index.upsert({ records });
-  }
+/** Stable UUID from chunk content, so re-ingesting the same text overwrites instead of duplicating. */
+export function chunkId(chunk: KnowledgeBaseChunk): string {
+  const hex = createHash('sha1').update(`${chunk.topicTitle}\n${chunk.content}`).digest('hex');
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-5${hex.slice(13, 16)}-a${hex.slice(17, 20)}-${hex.slice(20, 32)}`;
 }
 
-/** Handle one multipart document upload and optionally ingest its chunks into Pinecone. */
+export interface IngestProgress {
+  embedded: number;
+  skipped: number;
+}
+
+/**
+ * Embed and upsert chunks into Qdrant. Idempotent: unchanged chunks are skipped, and a
+ * re-ingested topic loses any of its old chunks that the new text no longer produces.
+ */
+export async function ingestChunks(
+  chunks: KnowledgeBaseChunk[],
+  onProgress: (progress: IngestProgress) => void = () => undefined,
+): Promise<IngestProgress> {
+  const batchSize = env.maxBatchUpsert;
+  await ensureCollection();
+
+  const progress: IngestProgress = { embedded: 0, skipped: 0 };
+
+  for (let start = 0; start < chunks.length; start += batchSize) {
+    const batch = chunks.slice(start, start + batchSize);
+    const ids = batch.map(chunkId);
+    const stored = await existingIds(ids);
+    const pending = batch.map((chunk, i) => ({ chunk, id: ids[i] })).filter(({ id }) => !stored.has(id));
+    progress.skipped += batch.length - pending.length;
+
+    if (pending.length > 0) {
+      const vectors = await embedBatch(pending.map(({ chunk }) => chunk.content));
+
+      logger.info({ collection: env.qdrantCollection, records: pending.length }, 'upserting embedded chunks');
+
+      await upsertChunks(pending.map(({ chunk, id }, i) => ({
+        id,
+        vector: vectors[i],
+        payload: getChunkMetadata(chunk),
+      })));
+      progress.embedded += pending.length;
+    }
+
+    onProgress({ ...progress });
+  }
+
+  const idsByTopic = new Map<string, string[]>();
+  for (const chunk of chunks) {
+    idsByTopic.set(chunk.topicTitle, [...(idsByTopic.get(chunk.topicTitle) ?? []), chunkId(chunk)]);
+  }
+  for (const [topic, keepIds] of idsByTopic) await deleteStaleTopicChunks(topic, keepIds);
+
+  await bumpCorpusGeneration();
+  return progress;
+}
+
+export interface IngestJob {
+  jobId: string;
+  status: 'running' | 'completed' | 'failed';
+  total: number;
+  embedded: number;
+  skipped: number;
+  error?: string;
+}
+
+// shortcut: job state is in-memory, so it is lost on restart; persist it if jobs must survive deploys.
+const ingestJobs = new Map<string, IngestJob>();
+
+/** Run ingestion in the background so a large upload doesn't hold the HTTP request open. */
+function startIngestJob(chunks: KnowledgeBaseChunk[]): IngestJob {
+  const job: IngestJob = { jobId: randomUUID(), status: 'running', total: chunks.length, embedded: 0, skipped: 0 };
+  ingestJobs.set(job.jobId, job);
+
+  void ingestChunks(chunks, progress => Object.assign(job, progress))
+    .then(() => storeTopics(chunks))
+    .then(() => {
+      job.status = 'completed';
+      logger.info({ ...job }, 'ingest job completed');
+    })
+    .catch(error => {
+      job.status = 'failed';
+      job.error = error instanceof Error ? error.message : 'Ingestion failed';
+      logger.error({ err: error, jobId: job.jobId }, 'ingest job failed');
+    });
+
+  return job;
+}
+
+export const ingestStatusRoute: RequestHandler = (request, response) => {
+  const job = ingestJobs.get(String(request.params.jobId));
+  if (!job) {
+    response.status(404).json({ error: 'Ingest job not found' });
+    return;
+  }
+  response.json(job);
+};
+
+/** Handle one multipart document upload; ingestion runs as a background job. */
 async function handleIngestRequest(
   request: Parameters<RequestHandler>[0],
   response: Parameters<RequestHandler>[1],
@@ -157,23 +213,20 @@ async function handleIngestRequest(
     }
 
     if (payload) {
-      await ingestChunks(chunks);
+      const job = startIngestJob(chunks);
+      response.status(202).json({
+        message: 'Document ingestion started',
+        chunks: chunks.length,
+        jobId: job.jobId,
+      });
+      return;
     }
 
     await storeTopics(chunks);
 
-    logger.info({
-      filename: request.file.originalname,
-      chunks: chunks.length,
-      payload,
-    }, 'document ingested');
+    logger.info({ filename: request.file.originalname, chunks: chunks.length }, 'document topics stored');
 
-    response.status(201).json({
-      message: payload
-        ? 'Document ingested successfully'
-        : 'Document topics stored successfully',
-      chunks: chunks.length,
-    });
+    response.status(201).json({ message: 'Document topics stored successfully', chunks: chunks.length });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Ingestion failed';
     logger.error({ err: error, message }, 'document ingestion failed');

@@ -1,36 +1,35 @@
 import type { RequestHandler } from 'express';
 import { logger } from '../config/logger.js';
 import { namespaceParamsSchema } from '../schemas/api.js';
-import { createPineconeClient, getIngestionConfig } from './clients/pinecone_client.js';
+import { bumpCorpusGeneration } from './answer_cache.js';
+import { qdrant } from './clients/qdrant_client.js';
 
 function errorMessage(error: unknown): string {
-  return error instanceof Error ? error.message : 'Pinecone request failed';
+  return error instanceof Error ? error.message : 'Qdrant request failed';
 }
 
-/** Check Pinecone availability. */
+/** Check Qdrant availability. */
 export async function checkPineconeHealth(): Promise<{ status: 'ok'; service: 'pinecone' }> {
-  const pinecone = createPineconeClient();
-  await pinecone.indexes.list();
+  await qdrant.getCollections();
+  // Service literal stays 'pinecone' to keep the public /pinecone/* contract stable.
   return { status: 'ok', service: 'pinecone' };
 }
 
-/** Return namespaces and vector counts from configured Pinecone index. */
+/** Return Qdrant collections (exposed as namespaces) and point counts. */
 export async function listPineconeNamespaces(): Promise<{
   namespaces: Array<{ name: string; recordCount: number }>;
 }> {
-  const pinecone = createPineconeClient();
-  const { indexName } = getIngestionConfig();
-  const stats = await pinecone.index(indexName).describeIndexStats();
+  const { collections } = await qdrant.getCollections();
 
   return {
-    namespaces: Object.entries(stats.namespaces ?? {}).map(([name, details]) => ({
+    namespaces: await Promise.all(collections.map(async ({ name }) => ({
       name,
-      recordCount: details.recordCount ?? 0,
-    })),
+      recordCount: (await qdrant.count(name, { exact: true })).count,
+    }))),
   };
 }
 
-/** Delete one Pinecone namespace by removing its vectors. */
+/** Delete one Qdrant collection; the next ingest recreates it. */
 export async function deletePineconeNamespace(namespace: string | string[]): Promise<void> {
   const parsedParams = namespaceParamsSchema.safeParse({ namespace });
 
@@ -38,9 +37,8 @@ export async function deletePineconeNamespace(namespace: string | string[]): Pro
     throw new Error(parsedParams.error.issues[0]?.message ?? 'Invalid namespace');
   }
 
-  const pinecone = createPineconeClient();
-  const { indexName } = getIngestionConfig();
-  await pinecone.index(indexName).namespace(parsedParams.data.namespace).deleteAll();
+  await qdrant.deleteCollection(parsedParams.data.namespace);
+  await bumpCorpusGeneration();
 }
 
 /** Handle Pinecone health requests. */
