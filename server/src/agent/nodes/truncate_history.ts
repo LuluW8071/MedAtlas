@@ -9,12 +9,12 @@ export function historyTokens(messages: BaseMessage[]): number {
   return messages.reduce((sum, message) => sum + estimateTokens(message), 0);
 }
 
-/** ika's needs_summary: the transcript no longer fits the budget. */
+/** The transcript no longer fits the budget. */
 export function needsTruncation(messages: BaseMessage[], budget: number): boolean {
   return historyTokens(messages) > budget;
 }
 
-/** ika's should_start_summarizing: a lower bar so a summary exists before truncation starts dropping turns. */
+/** A lower bar so a summary exists before truncation starts dropping turns. */
 export function shouldStartSummarizing(messages: BaseMessage[], budget: number, ratio = 0.6): boolean {
   return historyTokens(messages) >= budget * ratio;
 }

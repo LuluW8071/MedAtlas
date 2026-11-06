@@ -14,7 +14,7 @@ export function newUserTurnsSince(messages: BaseMessage[], watermarkId: string):
 }
 
 /**
- * ika's summarize_history_delta: fold new user turns into the running summary. It runs
+ * Fold new user turns into the running summary. It runs
  * alongside the turn (see service/agent.ts), never ahead of routing, and never throws:
  * on failure the previous summary and watermark stay as they were so the next turn retries.
  */

@@ -33,7 +33,7 @@ export function hasPendingClarification(messages: BaseMessage[]): boolean {
   return previous?.type === 'ai' && previous.additional_kwargs?.clarification === true;
 }
 
-/** ika's route-node shortcuts: skip the router LLM for a follow-up click or whole-message small talk. */
+/** Router shortcuts: skip the router LLM for a follow-up click or whole-message small talk. */
 export function routerShortcut(state: AgentState): { route: 'knowledge_base' | 'chitchat'; query: string } | null {
   const text = messageText(state.messages.filter(message => message.type === 'human').at(-1)!).trim();
   if (hasPendingClarification(state.messages)) return null;

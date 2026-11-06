@@ -55,7 +55,7 @@ export const agentRoute: RequestHandler = async (request, response) => {
     const graph = await getAgentGraph();
     sendEvent(response, 'start', { threadId });
 
-    // ika's off-critical-path summary: starts now, read by the next turn's router, awaited after streaming.
+    // Off-critical-path summary: starts now, read by the next turn's router, awaited after streaming.
     const prior = (await graph.getState({ configurable: { thread_id: threadId } })).values as {
       messages?: BaseMessage[]; historySummary?: string; summaryThroughId?: string;
     };

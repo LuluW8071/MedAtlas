@@ -17,7 +17,7 @@ const routeSchema = z.object({
 const router = routerModel.withStructuredOutput(routeSchema, { name: 'route' });
 
 export async function routerNode(state: AgentState) {
-  // ika's route node: deterministic shortcuts first, the LLM only when they do not apply.
+  // Deterministic shortcuts first, the LLM only when they do not apply.
   const shortcut = routerShortcut(state);
   if (shortcut) {
     logger.info(shortcut, 'router shortcut');

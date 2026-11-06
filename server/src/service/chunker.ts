@@ -223,7 +223,7 @@ export function parseKnowledgeBase(markdown: string): KnowledgeBaseTopic[] {
   return topics;
 }
 
-// Structure-aware chunking, ported from the internal knowledge agent's markdown chunker.
+// Structure-aware markdown chunking: token-budgeted, with overlap and table/list handling.
 
 type BlockKind = 'paragraph' | 'list' | 'table';
 interface Block { kind: BlockKind; text: string }

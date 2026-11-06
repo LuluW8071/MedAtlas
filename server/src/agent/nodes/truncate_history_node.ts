@@ -3,7 +3,7 @@ import { logger } from '../../config/logger.js';
 import type { AgentState } from '../state.js';
 import { needsTruncation } from './truncate_history.js';
 
-/** Edge after the cache probe (ika `_summary_branch`): only an over-budget transcript passes through truncate_history. */
+/** Edge after the cache probe: only an over-budget transcript passes through truncate_history. */
 export function routeAfterProbe(state: AgentState) {
   if (state.route === 'cache_hit') return 'hit';
   return needsTruncation(state.messages, env.historyTokenBudget) ? 'truncate_history' : 'router';
