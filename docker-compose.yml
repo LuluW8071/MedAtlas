@@ -24,5 +24,106 @@ services:
 
     restart: unless-stopped
 
+  qdrant:
+    image: qdrant/qdrant:v1.19.2
+    ports:
+      - "127.0.0.1:6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2G
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:8
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  llama:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    command: >
+      -hf luluw/Qwen3-MedEmbed-0.6B-Miriad-32k-en-trim-gguf:Q4_K_M
+      -c 2048 --batch-size 768 --ubatch-size 768 -t 4
+      --host 0.0.0.0 --port 8080 --embedding --pooling last
+      --parallel 4 --flash-attn on
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - llama_cache:/root/.cache
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: 2G
+    restart: unless-stopped
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    ports:
+      - "127.0.0.1:4000:4000"
+    # dotenv reads the mounted file; values below win because dotenv never overrides existing env.
+    volumes:
+      - ./server/.env:/app/server/.env:ro
+    environment:
+      PORT: "4000"
+      CLIENT_URL: http://localhost:3000
+      MONGODB_URI: mongodb://mongo:27017
+      REDIS_URL: redis://redis:6379
+      QDRANT_URL: http://qdrant:6333
+      EMBEDDING_URL: http://llama:8080
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+      llama:
+        condition: service_started
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1G
+    restart: unless-stopped
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:4000
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - server
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 768M
+    restart: unless-stopped
+
 volumes:
+  llama_cache:
   redis_data:
+  mongo_data:
+  qdrant_data:
