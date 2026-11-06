@@ -26,7 +26,8 @@ jobs:
       - run: bun run typecheck
 
   test:
-    runs-on: ubuntu-latest
+    # mongo:8 refuses to start on kernels >= 6.19 (SERVER-121912); the older image has an older kernel.
+    runs-on: ubuntu-22.04
     timeout-minutes: 10
     services:
       mongo:
