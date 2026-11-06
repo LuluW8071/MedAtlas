@@ -32,7 +32,7 @@ async function main(): Promise<void> {
   await logger.flush();
 }
 
-if (process.argv[1]?.endsWith('/tests/agent.ts')) {
+if (process.argv[1]?.endsWith('/scripts/agent.ts')) {
   void main().catch(error => {
     logger.error({ error }, 'agent execution failed');
     process.exitCode = 1;
