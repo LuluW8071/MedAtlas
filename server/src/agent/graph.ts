@@ -1,43 +1,59 @@
 import { writeFile } from 'node:fs/promises';
 
 import { END, START, StateGraph } from '@langchain/langgraph';
-import { ToolNode } from '@langchain/langgraph/prebuilt';
-import { RedisSaver } from '@langchain/langgraph-checkpoint-redis';
+import { MongoDBSaver } from '@langchain/langgraph-checkpoint-mongodb';
 
+import { agentConfig } from '../config/agent_config.js';
 import { env } from '../config/env.js';
 import { logger } from '../config/logger.js';
 import { AgentState } from './state.js';
-import { agentNode } from './nodes/agent_node.js';
+import { bookingNode } from './nodes/booking_node.js';
 import { refinerNode } from './nodes/refiner_node.js';
-import { routeAfterAgent } from './nodes/route_after_agent.js';
-import { prepareConversationNode } from './nodes/prepare_conversation_node.js';
-import { agentTools } from './tools/index.js';
+import { cacheLookupNode, fastCacheProbeNode, routeAfterCache } from './nodes/cache_nodes.js';
+import { clarifyNode } from './nodes/clarify_node.js';
+import { followupNode } from './nodes/followup_node.js';
+import { chitchatNode } from './nodes/chitchat_node.js';
+import { retrieveNode } from './nodes/retrieve_node.js';
+import { routeAfterRouter, routerNode } from './nodes/router_node.js';
+import { mongoClient } from '../service/clients/mongo_client.js';
+import { routeAfterProbe, truncateHistoryNode } from './nodes/truncate_history_node.js';
 
-const graphPromise = RedisSaver.fromUrl(env.redisUrl, {
-  refreshOnRead: true,
-}).then(checkpointer => {
+function buildGraph() {
   const graph = new StateGraph(AgentState)
-    .addNode('agent', agentNode)
-    .addNode('tools', new ToolNode(agentTools))
+    .addNode('fast_cache_probe', fastCacheProbeNode)
+    .addNode('truncate_history', truncateHistoryNode)
+    .addNode('router', routerNode)
+    .addNode('chitchat', chitchatNode)
+    .addNode('cache_lookup', cacheLookupNode)
+    .addNode('retrieve', retrieveNode)
+    .addNode('clarify', clarifyNode)
+    .addNode('booking', bookingNode)
     .addNode('response_refiner', refinerNode)
-    .addNode('prepare_conversation', prepareConversationNode)
-    .addEdge(START, 'prepare_conversation')
-    .addEdge('prepare_conversation', 'agent')
-    .addConditionalEdges('agent', routeAfterAgent, {
-      invoke_tools: 'tools',
-      refine_response: 'response_refiner',
-      [END]: END,
+    .addNode('followup', followupNode)
+    .addEdge(START, 'fast_cache_probe')
+    .addConditionalEdges('fast_cache_probe', routeAfterProbe, { hit: END, truncate_history: 'truncate_history', router: 'router' })
+    .addEdge('truncate_history', 'router')
+    .addConditionalEdges('router', state => routeAfterRouter(state), ['chitchat', 'cache_lookup', 'booking', 'clarify'])
+    .addEdge('clarify', END)
+    .addEdge('chitchat', END)
+    .addConditionalEdges('cache_lookup', state => routeAfterCache(state, 'retrieve'), {
+      hit: END,
+      retrieve: 'retrieve',
     })
-    .addEdge('tools', 'agent')
-    .addEdge('response_refiner', END)
-    .compile({ checkpointer });
+    .addEdge('retrieve', 'response_refiner')
+    .addEdge('booking', END)
+    .addConditionalEdges('response_refiner', () => (agentConfig.followup.enabled ? 'followup' : END), ['followup', END])
+    .addEdge('followup', END)
+    .compile({ checkpointer: new MongoDBSaver({ client: mongoClient, dbName: env.mongoDbName }) });
 
   void showAndSaveGraph(graph).catch(error => {
     logger.warn({ err: error }, 'agent graph visualization failed');
   });
-  logger.info({ redisUrl: env.redisUrl }, 'agent graph compiled with Redis checkpointer');
+  logger.info({ mongoDb: env.mongoDbName }, 'agent graph compiled with MongoDB checkpointer');
   return graph;
-});
+}
+
+const graphPromise = Promise.resolve(buildGraph());
 
 async function showAndSaveGraph(graph: AgentGraph): Promise<void> {
   const drawableGraph = await graph.getGraphAsync();

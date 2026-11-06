@@ -40,11 +40,11 @@ export function renderPrompt(template: string, values: Record<string, string>): 
   return template.replace(/{{([a-z_]+)}}/g, (_match, key: string) => values[key] ?? '');
 }
 
-export async function buildAgentPrompt(guardrailNotice: string): Promise<string> {
-  const agentPrompt = await loadPrompt('agent_node.md');
+export async function buildBookingPrompt(guardrailNotice: string): Promise<string> {
+  const bookingPrompt = await loadPrompt('booking_node.md');
   const runtime = runtimeValues();
 
-  return renderPrompt(agentPrompt, {
+  return renderPrompt(bookingPrompt, {
     ...runtime,
     guardrail_notice: guardrailNotice || 'No additional input safety notice.',
   });
@@ -62,23 +62,11 @@ export async function buildRefinerPrompt(
   });
 }
 
-export async function buildBookingRefinerPrompt(
-  bookingResult: string,
-  userQuery: string,
-): Promise<string> {
-  const bookingPrompt = await loadPrompt('booking_refiner.md');
-  return renderPrompt(bookingPrompt, {
-    ...runtimeValues(),
-    booking_result: bookingResult,
-    user_query: userQuery,
-  });
-}
-
 function runtimeValues(): Record<string, string> {
   const now = new Date();
   const timezone = process.env.APPOINTMENT_TIMEZONE ?? 'Asia/Kathmandu';
   const dateFormatter = new Intl.DateTimeFormat('en-US', {
-    dateStyle: 'long',
+    dateStyle: 'full',
     timeZone: timezone,
   });
   const timeFormatter = new Intl.DateTimeFormat('en-US', {
