@@ -9,7 +9,8 @@ import { rerank } from './rerank.js';
 import { matchTopics } from './topic_match.js';
 
 const DEFAULT_TOP_K = 5;
-const MAX_TOP_K = 20;
+/** Candidates fetched from hybrid search and sent to the reranker; the final topK (default 5) is kept from them. */
+const MAX_TOP_K = 15;
 
 /** One retrieved chunk, flattened from its Pinecone match and metadata. */
 export interface RetrievedChunk {

@@ -35,7 +35,7 @@ export const retrieveRequestSchema = z.object({
   query: z.string().refine(value => value.trim().length > 0, 'must be a non-empty string'),
   subheadings: z.array(z.string()).optional(),
   topic: z.string().optional(),
-  topK: z.number().int().min(1).max(20).optional(),
+  topK: z.number().int().min(1).max(15).optional(),
 });
 
 export const retrievedChunkSchema = z.object({
