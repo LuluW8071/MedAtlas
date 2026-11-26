@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { logger } from '../src/config/logger.js';
 import {
   parseKnowledgeBase,
   processKnowledgeBase,
@@ -19,32 +20,33 @@ function wordCount(text: string): number {
 
 /** Print parsed topic headings. */
 function printTopics(topics: KnowledgeBaseTopic[]): void {
-  console.log('\nPARSED TOPICS');
+  logger.info('PARSED TOPICS');
 
   for (const topic of topics) {
-    console.log(`# ${topic.title}`);
+    logger.info(`# ${topic.title}`);
     for (const section of topic.sections) {
-      console.log(`  ## ${section.heading} (${section.wordCount} words)`);
+      logger.info(`  ## ${section.heading} (${section.wordCount} words)`);
     }
   }
 }
 
 /** Print chunk sizes and chunks shorter than 25 words. */
 function printChunkInfo(chunks: KnowledgeBaseChunk[]): void {
-  console.log('\nCHUNKING INFORMATION');
-  console.log(`\nTotal chunks: ${chunks.length}`);
+  logger.info('CHUNKING INFORMATION');
+  logger.info({ totalChunks: chunks.length }, 'total chunks');
 
   const totalWords = chunks.reduce((sum, chunk) => sum + chunk.wordCount, 0);
-  console.log(`Total words: ${totalWords}`);
+  logger.info({ totalWords }, 'total words');
 
   const shortChunks = chunks.filter(chunk => wordCount(chunk.content) < 25);
-  console.log(`\nChunks under 25 words: ${shortChunks.length}`);
+  logger.info({ shortChunks: shortChunks.length }, 'chunks under 25 words');
 
   for (const chunk of shortChunks) {
-    console.log('----');
-    console.log(`Chunk ${chunk.index} (${wordCount(chunk.content)} words):`);
-    console.log(chunk.content);
-    console.log('----');
+    logger.info({
+      index: chunk.index,
+      words: wordCount(chunk.content),
+      content: chunk.content,
+    }, 'short chunk');
   }
 }
 
@@ -53,7 +55,7 @@ function printSummary(
   topics: KnowledgeBaseTopic[],
   chunks: KnowledgeBaseChunk[],
 ): void {
-  console.log('\nSUMMARY');
+  logger.info('SUMMARY');
 
   const totalSections = topics.reduce(
     (sum, topic) => sum + topic.sections.length,
@@ -66,12 +68,12 @@ function printSummary(
     ? sizes.reduce((sum, size) => sum + size, 0) / sizes.length
     : 0;
 
-  console.log(`Topics: ${topics.length}`);
-  console.log(`Sections: ${totalSections}`);
-  console.log(`Chunks: ${chunks.length}`);
-  console.log(`Min chunk: ${minimum} words`);
-  console.log(`Max chunk: ${maximum} words`);
-  console.log(`Avg chunk: ${average.toFixed(2)} words`);
+  logger.info({ topics: topics.length }, 'topics');
+  logger.info({ sections: totalSections }, 'sections');
+  logger.info({ chunks: chunks.length }, 'chunks');
+  logger.info({ minimum }, 'minimum chunk words');
+  logger.info({ maximum }, 'maximum chunk words');
+  logger.info({ average: average.toFixed(2) }, 'average chunk words');
 }
 
 /** Read input, process knowledge-base chunks, and print diagnostics. */
@@ -80,7 +82,7 @@ function main(): void {
   const resolvedPath = path.resolve(inputFile);
 
   if (!fs.existsSync(resolvedPath)) {
-    console.error(`File not found: ${resolvedPath}`);
+    logger.error({ path: resolvedPath }, 'input file not found');
     process.exitCode = 1;
     return;
   }
@@ -88,11 +90,10 @@ function main(): void {
   const markdown = fs.readFileSync(resolvedPath, 'utf8');
   const topics = parseKnowledgeBase(markdown);
 
-  console.log('Input file:', resolvedPath);
-  console.log('Input words:', wordCount(markdown));
+  logger.info({ path: resolvedPath, words: wordCount(markdown) }, 'input loaded');
 
   if (topics.length === 0) {
-    console.error('\nNo # topics with ## subheadings found.');
+    logger.error('no topics with subheadings found');
     process.exitCode = 1;
     return;
   }

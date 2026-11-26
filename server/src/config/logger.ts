@@ -4,7 +4,7 @@ import { env } from './env.js';
 
 /** Shared structured logger with readable console output. */
 export const logger = pino({
-  level: env.logLevel,
+  level: 'debug',
   transport: {
     target: 'pino-pretty',
     options: {

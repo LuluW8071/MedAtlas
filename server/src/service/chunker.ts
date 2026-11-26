@@ -1,17 +1,31 @@
 /** Parse Markdown knowledge bases into embedding-ready chunks. */
+import { createHash } from 'node:crypto';
+
 import type {
   KnowledgeBaseChunk,
   KnowledgeBaseSection,
   KnowledgeBaseTopic,
-  SectionPiece,
 } from '../models/chunk.js';
 
 // Configuration.
 
-const MAX_CHUNK_WORDS = 950;
-const MARKDOWN_SPLIT_WORDS = 850;
-const OVERLAP_WORDS = 75;
-const MAX_DISTINCT_SECTIONS = 3;
+/** Chunk-size knobs, in embedder tokens. */
+export interface ChunkOptions {
+  /** Hard budget per chunk, headings included; the embedder context is 512 tokens. */
+  maxChunkTokens: number;
+  /** Trailing sentences carried from one chunk into the next when they share a section. */
+  overlapTokens: number;
+  length: (text: string) => number;
+}
+
+// shortcut: chars/3.8 estimates Qwen3 tokens (measured 4.5 chars/token on the corpus); ingest verifies the exact count with llama-server and truncates the rare overflow.
+export const estimateTokens = (text: string): number => Math.ceil(text.length / 3.8);
+
+export const DEFAULT_CHUNK_OPTIONS: ChunkOptions = {
+  maxChunkTokens: 480,
+  overlapTokens: 50,
+  length: estimateTokens,
+};
 
 // Text utilities.
 
@@ -32,6 +46,39 @@ function normalizeWhitespace(text: string): string {
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
+
+/** Decode the few HTML entities present in the source text. */
+function decodeEntities(text: string): string {
+  return text
+    .replace(/&nbsp;/g, " ")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&");
+}
+
+/**
+ * Rejoin paragraphs that the source extraction cut mid-sentence: a block that does not end a
+ * sentence, followed by one starting in lowercase, is a single paragraph.
+ */
+function rejoinBrokenParagraphs(text: string): string {
+  const joined: string[] = [];
+
+  for (const block of text.split(/\n\s*\n/)) {
+    const previous = joined.at(-1);
+
+    if (previous !== undefined && !/[.!?:;)"'\]]$/.test(previous.trimEnd()) && /^[a-z]/.test(block.trimStart())) {
+      joined[joined.length - 1] = `${previous.trimEnd()} ${block.trimStart()}`;
+    } else {
+      joined.push(block);
+    }
+  }
+
+  return joined.join("\n\n");
+}
+
+const SENTENCE_BOUNDARY = /(?<=[.!?]["')\]]?)\s+(?=[A-Z0-9"'(\[\u2022-])/;
 
 /** Convert headings to title case while preserving acronyms and digits. */
 export function toTitleCase(text: string): string {
@@ -92,7 +139,7 @@ export function parseKnowledgeBase(markdown: string): KnowledgeBaseTopic[] {
       return;
     }
 
-    const content = normalizeWhitespace(currentContent.join("\n"));
+    const content = rejoinBrokenParagraphs(normalizeWhitespace(decodeEntities(currentContent.join("\n"))));
 
     if (!content) {
       currentContent = [];
@@ -101,7 +148,7 @@ export function parseKnowledgeBase(markdown: string): KnowledgeBaseTopic[] {
 
     currentTopic.sections.push({
       topicTitle: currentTopic.title,
-      heading: toTitleCase(currentHeading),
+      heading: toTitleCase(decodeEntities(currentHeading)),
       content,
       wordCount: wordCount(content),
     });
@@ -142,7 +189,7 @@ export function parseKnowledgeBase(markdown: string): KnowledgeBaseTopic[] {
       const rawTitle = line.replace(/^#\s+/, "").trim();
 
       currentTopic = {
-        title: toTitleCase(rawTitle),
+        title: toTitleCase(decodeEntities(rawTitle)),
         sections: [],
       };
 
@@ -176,241 +223,329 @@ export function parseKnowledgeBase(markdown: string): KnowledgeBaseTopic[] {
   return topics;
 }
 
-/** Split text into overlapping chunks limited by word count. */
-function splitByWords(
-  text: string,
-  maxWords: number,
-  overlapWords: number,
-): string[] {
-  const words = text
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
+// Structure-aware markdown chunking: token-budgeted, with overlap and table/list handling.
 
-  if (words.length <= maxWords) {
-    return [text.trim()];
-  }
-
-  const chunks: string[] = [];
-
-  let start = 0;
-
-  while (start < words.length) {
-    const end = Math.min(start + maxWords, words.length);
-
-    chunks.push(words.slice(start, end).join(" "));
-
-    if (end >= words.length) {
-      break;
-    }
-
-    start = end - overlapWords;
-  }
-
-  return chunks;
+type BlockKind = 'paragraph' | 'list' | 'table';
+interface Block { kind: BlockKind; text: string }
+/** A chunk under construction: bodies grouped under the section heading they came from. */
+interface Draft {
+  parts: Array<{ heading: string; body: string }>;
+  table: boolean;
+  overlap: boolean;
+  kind: BlockKind;
+  /** Set on table pieces: stable table id plus this piece's position. */
+  tablePart?: { id: string; part: number; total: number };
 }
 
-/** Split oversized section content into numbered section pieces. */
-function recursivelySplitSection(
-  section: KnowledgeBaseSection,
-  maxWords: number = MARKDOWN_SPLIT_WORDS,
-  overlapWords: number = OVERLAP_WORDS,
-): KnowledgeBaseSection[] {
-  if (section.wordCount <= maxWords) {
-    return [section];
-  }
+const LIST_ITEM = /^(\s*)([-+*]|\d+[.)])\s+/;
+const SEPARATORS: Array<string | RegExp> = ['\n\n', '\n', SENTENCE_BOUNDARY, ' '];
 
-  const pieces = splitByWords(
-    section.content,
-    maxWords,
-    overlapWords,
-  );
-
-  return pieces.map((content, index): KnowledgeBaseSection => ({
-    topicTitle: section.topicTitle,
-
-    heading:
-      pieces.length > 1
-        ? `${section.heading} (${index + 1}/${pieces.length})`
-        : section.heading,
-
-    content,
-
-    wordCount: wordCount(content),
-  }));
+function isTableSeparator(line: string): boolean {
+  const trimmed = line.trim();
+  return trimmed.includes('|') && trimmed.replace(/^\||\|$/g, '').split('|').every(cell => /^\s*:?-+:?\s*$/.test(cell));
 }
 
-/** Split section Markdown blocks while preserving paragraph boundaries. */
-function splitSectionByMarkdown(section: KnowledgeBaseSection): SectionPiece[] {
-  const blocks = section.content
-    .split(/\n\s*\n/)
-    .map(block => block.trim())
-    .filter(Boolean);
+/** Split section text into paragraph, list, and table blocks. */
+function parseBlocks(text: string): Block[] {
+  const lines = text.split('\n');
+  const blocks: Block[] = [];
+  const separatorFollows = (index: number) => {
+    let next = index + 1;
+    while (next < lines.length && !lines[next].trim()) next += 1;
+    return next < lines.length && isTableSeparator(lines[next]);
+  };
+  const indent = (line: string) => line.length - line.trimStart().length;
 
-  const pieces: Array<{ content: string; hasOverlap: boolean }> = [];
-  let currentBlocks: string[] = [];
-  let currentWords = 0;
+  for (let i = 0; i < lines.length;) {
+    if (!lines[i].trim()) { i += 1; continue; }
+    const start = i;
+    let kind: BlockKind = 'paragraph';
 
-  /** Flush accumulated Markdown blocks into one section piece. */
-  function flushMarkdownBlocks() {
-    if (currentBlocks.length === 0) return;
-
-    pieces.push({
-      content: currentBlocks.join("\n\n"),
-      hasOverlap: false,
-    });
-    currentBlocks = [];
-    currentWords = 0;
+    if (lines[i].includes('|') && separatorFollows(i)) {
+      kind = 'table';
+      while (i < lines.length && lines[i].trim() && (lines[i].includes('|') || isTableSeparator(lines[i]))) i += 1;
+    } else if (LIST_ITEM.test(lines[i])) {
+      kind = 'list';
+      const base = indent(lines[i]);
+      i += 1;
+      while (i < lines.length && lines[i].trim() && (LIST_ITEM.test(lines[i]) || indent(lines[i]) > base)) i += 1;
+    } else {
+      i += 1;
+      while (i < lines.length && lines[i].trim() && !LIST_ITEM.test(lines[i]) && !(lines[i].includes('|') && separatorFollows(i))) i += 1;
+    }
+    blocks.push({ kind, text: lines.slice(start, i).join('\n') });
   }
 
-  for (const block of blocks) {
-    const blockWords = wordCount(block);
+  return blocks;
+}
 
-    if (blockWords > MARKDOWN_SPLIT_WORDS) {
-      flushMarkdownBlocks();
-      pieces.push(
-        ...recursivelySplitSection(
-          {
-            ...section,
-            content: block,
-            wordCount: blockWords,
-          },
-          MARKDOWN_SPLIT_WORDS,
-          OVERLAP_WORDS,
-        ).map(piece => ({
-          content: piece.content,
-          hasOverlap: true,
-        })),
-      );
-      continue;
-    }
+/** Last resort for text without separators: cut by length, preferring a space. */
+function hardSplit(text: string, budget: number, length: ChunkOptions['length']): string[] {
+  const pieces: string[] = [];
+  let rest = text;
 
-    if (
-      currentWords > 0 &&
-      currentWords + blockWords > MARKDOWN_SPLIT_WORDS
-    ) {
-      flushMarkdownBlocks();
-    }
-
-    currentBlocks.push(block);
-    currentWords += blockWords;
+  while (rest) {
+    let end = Math.min(rest.length, budget * 4);
+    while (end > 1 && length(rest.slice(0, end)) > budget) end = Math.floor(end * 0.8);
+    const space = rest.lastIndexOf(' ', end);
+    if (end < rest.length && space > 0) end = space;
+    pieces.push(rest.slice(0, end).trim());
+    rest = rest.slice(end).trim();
   }
 
-  flushMarkdownBlocks();
+  return pieces.filter(Boolean);
+}
 
-  const needsLabels = pieces.length > 1;
+/** Recursive splitter: paragraphs, then lines, then sentences, then words. */
+function splitText(text: string, budget: number, length: ChunkOptions['length'], level = 0): string[] {
+  if (length(text) <= budget) return [text];
+  if (level >= SEPARATORS.length) return hardSplit(text, budget, length);
 
-  return pieces.map((piece, index) => ({
-    section: {
-      ...section,
-      heading: needsLabels
-        ? `${section.heading} (${index + 1}/${pieces.length})`
-        : section.heading,
-      content: piece.content,
-      wordCount: wordCount(piece.content),
-    },
-    hasOverlap: piece.hasOverlap,
-  }));
+  const separator = SEPARATORS[level];
+  const parts = text.split(separator).map(part => part.trim()).filter(Boolean);
+  if (parts.length < 2) return splitText(text, budget, length, level + 1);
+
+  const joiner = typeof separator === 'string' ? separator : ' ';
+  const out: string[] = [];
+  let current = '';
+
+  for (const part of parts) {
+    for (const piece of splitText(part, budget, length, level + 1)) {
+      const candidate = current ? `${current}${joiner}${piece}` : piece;
+      if (current && length(candidate) > budget) {
+        out.push(current);
+        current = piece;
+      } else {
+        current = candidate;
+      }
+    }
+  }
+
+  if (current) out.push(current);
+  return out;
+}
+
+/** Pack list items into pieces; an item over budget is split as text. */
+function splitList(text: string, budget: number, length: ChunkOptions['length']): string[] {
+  if (length(text) <= budget) return [text];
+
+  const items: string[] = [];
+  for (const line of text.split('\n')) {
+    if (LIST_ITEM.test(line) || items.length === 0) items.push(line);
+    else items[items.length - 1] += `\n${line}`;
+  }
+
+  const out: string[] = [];
+  let current = '';
+  for (const item of items) {
+    if (length(item) > budget) {
+      if (current) out.push(current);
+      current = '';
+      out.push(...splitText(item, budget, length));
+    } else if (current && length(`${current}\n${item}`) > budget) {
+      out.push(current);
+      current = item;
+    } else {
+      current = current ? `${current}\n${item}` : item;
+    }
+  }
+
+  if (current) out.push(current);
+  return out;
+}
+
+/** Split a table by rows, repeating its header row in every piece. */
+function splitTable(text: string, budget: number, length: ChunkOptions['length']): string[] {
+  if (length(text) <= budget) return [text];
+
+  const lines = text.split('\n');
+  const hasSeparator = lines.length > 1 && isTableSeparator(lines[1]);
+  let base = hasSeparator ? `${lines[0]}\n${lines[1]}` : lines[0];
+  if (length(base) + 1 > budget) base = '';
+  const rows = lines.slice(hasSeparator ? 2 : 1);
+  const room = Math.max(1, budget - (base ? length(base) + 1 : 0));
+
+  const out: string[] = [];
+  let current: string[] = [];
+  const flush = () => {
+    if (current.length > 0) out.push([base, ...current].filter(Boolean).join('\n'));
+    current = [];
+  };
+
+  for (const row of rows) {
+    if (length([...current, row].join('\n')) > room) flush();
+    if (length(row) > room) {
+      for (const piece of splitText(row, room, length)) out.push([base, piece].filter(Boolean).join('\n'));
+    } else {
+      current.push(row);
+    }
+  }
+
+  flush();
+  return out.length > 0 ? out : [text];
+}
+
+/** Trailing whole sentences of text totalling at most maxTokens; empty if none fit. */
+function tailSentences(text: string, maxTokens: number, length: ChunkOptions['length']): string {
+  const tail: string[] = [];
+  let total = 0;
+
+  for (const sentence of text.split(SENTENCE_BOUNDARY).reverse()) {
+    total += length(sentence);
+    if (total > maxTokens) break;
+    tail.unshift(sentence);
+  }
+
+  return tail.join(' ');
+}
+
+/** Render a draft: `# Topic`, then each section heading once, then bodies. */
+function render(topicTitle: string, parts: Draft['parts']): string {
+  let out = `# ${topicTitle}`;
+  let heading = '';
+
+  for (const [index, part] of parts.entries()) {
+    if (part.heading !== heading) {
+      out += index === 0 ? `\n## ${part.heading}\n\n${part.body}` : `\n\n## ${part.heading}\n\n${part.body}`;
+      heading = part.heading;
+    } else {
+      out += `\n\n${part.body}`;
+    }
+  }
+
+  return out;
+}
+
+/** Split every section into block pieces that each fit the budget alongside their heading. */
+function emitDrafts(topic: KnowledgeBaseTopic, options: ChunkOptions): Draft[] {
+  const { maxChunkTokens: max, length } = options;
+  const drafts: Draft[] = [];
+
+  for (const section of topic.sections) {
+    const budget = Math.max(1, max - length(`# ${topic.title}\n## ${section.heading}\n\n`));
+    // Leave room for the overlap tail, otherwise full pieces could never receive one.
+    const textBudget = Math.max(Math.ceil(budget / 2), budget - options.overlapTokens);
+
+    for (const block of parseBlocks(section.content)) {
+      const pieces = block.kind === 'table'
+        ? splitTable(block.text, budget, length)
+        : block.kind === 'list'
+          ? splitList(block.text, textBudget, length)
+          : splitText(block.text, textBudget, length);
+
+      const id = createHash('sha256').update(block.text).digest('hex').slice(0, 16);
+      pieces.forEach((body, i) => {
+        drafts.push({
+          parts: [{ heading: section.heading, body }],
+          table: block.kind === 'table',
+          overlap: false,
+          kind: block.kind,
+          tablePart: block.kind === 'table' ? { id, part: i + 1, total: pieces.length } : undefined,
+        });
+      });
+    }
+  }
+
+  return drafts;
+}
+
+/** Greedily merge neighbours: same section when it fits, or two small sections. Tables stay alone. */
+function mergeDrafts(topicTitle: string, drafts: Draft[], options: ChunkOptions): Draft[] {
+  const { maxChunkTokens: max, length } = options;
+  const merged: Draft[] = [];
+
+  for (const draft of drafts) {
+    const current = merged.at(-1);
+
+    if (current && !current.table && !draft.table) {
+      const sameSection = current.parts.at(-1)!.heading === draft.parts[0].heading;
+      const bothSmall = length(render(topicTitle, current.parts)) <= max / 2
+        && length(render(topicTitle, draft.parts)) <= max / 2;
+
+      if (sameSection || bothSmall) {
+        const parts = [...current.parts, ...draft.parts];
+        if (length(render(topicTitle, parts)) <= max) {
+          merged[merged.length - 1] = { ...current, parts };
+          continue;
+        }
+      }
+    }
+
+    merged.push(draft);
+  }
+
+  return merged;
+}
+
+/** Carry the previous chunk's closing sentences into the next one when they continue the same section. */
+function addOverlap(topicTitle: string, drafts: Draft[], options: ChunkOptions): void {
+  const { maxChunkTokens: max, overlapTokens, length } = options;
+  const lastBodies = drafts.map(draft => draft.parts.at(-1)!.body);
+
+  for (let i = 1; i < drafts.length; i += 1) {
+    const [previous, current] = [drafts[i - 1], drafts[i]];
+    if (previous.table || current.table) continue;
+    if (previous.parts.at(-1)!.heading !== current.parts[0].heading) continue;
+
+    const tail = tailSentences(lastBodies[i - 1], overlapTokens, length);
+    if (!tail || tail === lastBodies[i - 1]) continue;
+
+    const [first, ...rest] = current.parts;
+    const parts = [{ ...first, body: `${tail}\n\n${first.body}` }, ...rest];
+    if (length(render(topicTitle, parts)) > max) continue;
+
+    drafts[i] = { ...current, parts, overlap: true };
+  }
 }
 
 /** Build embedding chunks for one parsed knowledge-base topic. */
-function chunkTopic(topic: KnowledgeBaseTopic): KnowledgeBaseChunk[] {
-  const chunks: KnowledgeBaseChunk[] = [];
+function chunkTopic(topic: KnowledgeBaseTopic, options: ChunkOptions): KnowledgeBaseChunk[] {
+  const drafts = mergeDrafts(topic.title, emitDrafts(topic, options), options);
+  addOverlap(topic.title, drafts, options);
 
-  let currentContent: string[] = [];
-  let currentSections: string[] = [];
-  let currentSectionKeys = new Set<string>();
-  let currentHasOverlap = false;
+  // A section that ended up in several chunks is labelled "(k/n)", which ingest reads back as `parts`.
+  const total = new Map<string, number>();
+  for (const draft of drafts) {
+    for (const heading of new Set(draft.parts.map(part => part.heading))) total.set(heading, (total.get(heading) ?? 0) + 1);
+  }
+  const seen = new Map<string, number>();
 
-  /** Flush accumulated sections into one embedding chunk. */
-  function flushCurrent() {
-    if (currentContent.length === 0) return;
-
-    const content = `# ${topic.title}\n\n${currentContent.join("\n\n")}`;
-
-    chunks.push({
-      index: chunks.length + 1,
-      topicTitle: topic.title,
-      sections: [...currentSections],
-      content,
-      wordCount: wordCount(content),
-      hasOverlap: currentHasOverlap,
+  return drafts.map((draft, index) => {
+    const content = render(topic.title, draft.parts);
+    const sections = [...new Set(draft.parts.map(part => part.heading))].map(heading => {
+      const k = (seen.get(heading) ?? 0) + 1;
+      seen.set(heading, k);
+      return total.get(heading)! > 1 ? `${heading} (${k}/${total.get(heading)})` : heading;
     });
 
-    currentContent = [];
-    currentSections = [];
-    currentSectionKeys = new Set<string>();
-    currentHasOverlap = false;
-  }
+    const headings = [...new Set(draft.parts.map(part => part.heading))];
+    const metadata: Record<string, unknown> = {
+      heading: headings[0],
+      heading_path: [`# ${topic.title}`, `## ${headings[0]}`],
+      level: 2,
+      parent_section: topic.title,
+      block_kind: draft.kind,
+      char_count: content.length,
+      token_count: options.length(content),
+      token_limit: options.maxChunkTokens,
+      chunk_index: index,
+    };
+    if (draft.tablePart) Object.assign(metadata, { table_id: draft.tablePart.id, table_part: draft.tablePart.part, table_total: draft.tablePart.total });
+    if (draft.overlap) metadata.overlap_with_previous = true;
+    if (headings.length > 1) metadata.merged_heading_paths = headings.map(heading => [`# ${topic.title}`, `## ${heading}`]);
 
-  for (const originalSection of topic.sections) {
-    for (const { section, hasOverlap } of splitSectionByMarkdown(
-      originalSection,
-    )) {
-      const sectionKey = originalSection.heading;
-      const renderedSection = `## ${section.heading}\n\n${section.content}`;
-      const candidate = `# ${topic.title}\n\n${[
-        ...currentContent,
-        renderedSection,
-      ].join("\n\n")}`;
-
-      if (
-        currentContent.length > 0 &&
-        (wordCount(candidate) > MAX_CHUNK_WORDS ||
-          (!currentSectionKeys.has(sectionKey) &&
-            currentSectionKeys.size >= MAX_DISTINCT_SECTIONS))
-      ) {
-        flushCurrent();
-      }
-
-      currentContent.push(renderedSection);
-      currentSections.push(section.heading);
-      currentSectionKeys.add(sectionKey);
-      currentHasOverlap ||= hasOverlap;
-    }
-  }
-
-  // Flush remaining content.
-
-  if (currentContent.length > 0) {
-    flushCurrent();
-  }
-
-  return chunks;
-}
-
-/** Ensure every chunk starts with its topic heading. */
-function addTopicHeaders(chunks: KnowledgeBaseChunk[]): KnowledgeBaseChunk[] {
-  return chunks.map(chunk => {
-    if (!chunk.content.startsWith(`# ${chunk.topicTitle}`)) {
-      const content =
-        `# ${chunk.topicTitle}\n\n${chunk.content}`;
-
-      return {
-        ...chunk,
-        content,
-        wordCount: wordCount(content),
-      };
-    }
-
-    return chunk;
+    return { index: index + 1, topicTitle: topic.title, sections, content, wordCount: wordCount(content), hasOverlap: draft.overlap, metadata };
   });
 }
 
 /** Parse Markdown and return globally indexed embedding chunks. */
-export function processKnowledgeBase(markdown: string): KnowledgeBaseChunk[] {
-  const topics = parseKnowledgeBase(markdown);
+export function processKnowledgeBase(
+  markdown: string,
+  options: Partial<ChunkOptions> = {},
+): KnowledgeBaseChunk[] {
+  const resolved = { ...DEFAULT_CHUNK_OPTIONS, ...options };
 
-  const allChunks: KnowledgeBaseChunk[] = [];
-
-  for (const topic of topics) {
-    const chunks = chunkTopic(topic);
-
-    allChunks.push(...addTopicHeaders(chunks));
-  }
-
-  return allChunks.map((chunk, index) => ({
-    ...chunk,
-    index: index + 1,
-  }));
+  return parseKnowledgeBase(markdown)
+    .flatMap(topic => chunkTopic(topic, resolved))
+    .map((chunk, index) => ({ ...chunk, index: index + 1 }));
 }

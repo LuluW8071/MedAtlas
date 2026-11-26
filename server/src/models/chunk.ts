@@ -22,10 +22,6 @@ export interface KnowledgeBaseChunk {
   content: string;
   wordCount: number;
   hasOverlap: boolean;
-}
-
-/** Intermediate section piece produced during Markdown splitting. */
-export interface SectionPiece {
-  section: KnowledgeBaseSection;
-  hasOverlap: boolean;
+  /** Structural metadata: heading_path, block_kind, token_count, table_*, source of the chunk. */
+  metadata: Record<string, unknown>;
 }
